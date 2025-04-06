@@ -1,0 +1,150 @@
+{
+    "version": 1,
+    "directus": "11.0.0",
+    "vendor": "postgres",
+    "collections": [
+        {
+            "collection": "posts",
+            "meta": {
+                "icon": "article",
+                "note": "Blog posts",
+                "sort": 2
+            },
+            "schema": {
+                "name": "posts"
+            }
+        },
+        {
+            "collection": "categories",
+            "meta": {
+                "icon": "category",
+                "note": "Post categories",
+                "sort": 3
+            },
+            "schema": {
+                "name": "categories"
+            }
+        }
+    ],
+    "fields": [
+        {
+            "collection": "posts",
+            "field": "id",
+            "type": "integer",
+            "schema": {
+                "is_primary_key": true,
+                "is_nullable": false
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "title",
+            "type": "string",
+            "schema": {
+                "is_nullable": false,
+                "max_length": 200
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "content",
+            "type": "text",
+            "schema": {
+                "is_nullable": true
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "author",
+            "type": "integer",
+            "schema": {
+                "is_nullable": false
+            },
+            "meta": {
+                "interface": "select-dropdown-m2o",
+                "special": [
+                    "m2o"
+                ]
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "category",
+            "type": "integer",
+            "schema": {
+                "is_nullable": true
+            },
+            "meta": {
+                "interface": "select-dropdown-m2o",
+                "special": [
+                    "m2o"
+                ]
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "published_at",
+            "type": "dateTime",
+            "schema": {
+                "is_nullable": true
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "tags",
+            "type": "json",
+            "schema": {
+                "is_nullable": true
+            },
+            "meta": {
+                "special": [
+                    "json"
+                ]
+            }
+        },
+        {
+            "collection": "categories",
+            "field": "id",
+            "type": "integer",
+            "schema": {
+                "is_primary_key": true,
+                "is_nullable": false
+            }
+        },
+        {
+            "collection": "categories",
+            "field": "name",
+            "type": "string",
+            "schema": {
+                "is_nullable": false,
+                "max_length": 100
+            }
+        },
+        {
+            "collection": "categories",
+            "field": "description",
+            "type": "text",
+            "schema": {
+                "is_nullable": true
+            }
+        }
+    ],
+    "relations": [
+        {
+            "collection": "posts",
+            "field": "author",
+            "related_collection": "users",
+            "meta": {
+                "one_field": "posts"
+            }
+        },
+        {
+            "collection": "posts",
+            "field": "category",
+            "related_collection": "categories",
+            "meta": {
+                "one_field": "posts"
+            }
+        }
+    ]
+}

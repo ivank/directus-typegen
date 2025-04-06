@@ -1,0 +1,179 @@
+version: 1
+directus: 11.0.0
+vendor: postgres
+collections:
+  - collection: products
+    meta:
+      icon: shopping_cart
+      note: Product catalog
+      sort: 1
+    schema:
+      name: products
+  - collection: orders
+    meta:
+      icon: receipt
+      note: Customer orders
+      sort: 2
+    schema:
+      name: orders
+  - collection: customers
+    meta:
+      icon: person
+      note: Customer information
+      sort: 3
+    schema:
+      name: customers
+
+fields:
+  - collection: products
+    field: id
+    type: uuid
+    schema:
+      is_primary_key: true
+      is_nullable: false
+  - collection: products
+    field: name
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 255
+  - collection: products
+    field: description
+    type: text
+    schema:
+      is_nullable: true
+  - collection: products
+    field: price
+    type: decimal
+    schema:
+      is_nullable: false
+      numeric_precision: 10
+      numeric_scale: 2
+  - collection: products
+    field: stock
+    type: integer
+    schema:
+      is_nullable: false
+      default_value: 0
+  - collection: products
+    field: image
+    type: binary
+    schema:
+      is_nullable: true
+  - collection: products
+    field: metadata
+    type: json
+    schema:
+      is_nullable: true
+    meta:
+      special: ["json"]
+  - collection: products
+    field: created_at
+    type: dateTime
+    schema:
+      is_nullable: false
+      default_value: "CURRENT_TIMESTAMP"
+  - collection: products
+    field: updated_at
+    type: dateTime
+    schema:
+      is_nullable: false
+      default_value: "CURRENT_TIMESTAMP"
+
+  - collection: orders
+    field: id
+    type: uuid
+    schema:
+      is_primary_key: true
+      is_nullable: false
+  - collection: orders
+    field: customer
+    type: uuid
+    schema:
+      is_nullable: false
+    meta:
+      interface: select-dropdown-m2o
+      special: ["m2o"]
+  - collection: orders
+    field: status
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 20
+    meta:
+      interface: select-dropdown
+      options:
+        choices:
+          - text: Pending
+            value: pending
+          - text: Processing
+            value: processing
+          - text: Shipped
+            value: shipped
+          - text: Delivered
+            value: delivered
+  - collection: orders
+    field: items
+    type: json
+    schema:
+      is_nullable: false
+    meta:
+      special: ["json"]
+  - collection: orders
+    field: total
+    type: decimal
+    schema:
+      is_nullable: false
+      numeric_precision: 10
+      numeric_scale: 2
+  - collection: orders
+    field: created_at
+    type: dateTime
+    schema:
+      is_nullable: false
+      default_value: "CURRENT_TIMESTAMP"
+
+  - collection: customers
+    field: id
+    type: uuid
+    schema:
+      is_primary_key: true
+      is_nullable: false
+  - collection: customers
+    field: name
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 255
+  - collection: customers
+    field: email
+    type: string
+    schema:
+      is_nullable: false
+      max_length: 255
+  - collection: customers
+    field: phone
+    type: string
+    schema:
+      is_nullable: true
+      max_length: 20
+  - collection: customers
+    field: address
+    type: json
+    schema:
+      is_nullable: true
+    meta:
+      special: ["json"]
+  - collection: customers
+    field: created_at
+    type: dateTime
+    schema:
+      is_nullable: false
+      default_value: "CURRENT_TIMESTAMP"
+
+relations:
+  - collection: orders
+    field: customer
+    related_collection: customers
+    meta:
+      one_field: orders 
