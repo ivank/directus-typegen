@@ -14,16 +14,22 @@ export function generateTypesFromSnapshot(schema: Snapshot): string {
   // Create type nodes for each collection
   const collectionTypes = schema.collections
     .filter((collection) =>
-      schema.fields.some((field) => field.collection === collection.collection)
+      schema.fields.some(
+        (field) =>
+          field.collection === collection.collection &&
+          !field.field?.startsWith("divider")
+      )
     )
     .map((collection) => {
       const fields = schema.fields.filter(
-        (field) => field.collection === collection.collection
+        (field) =>
+          field.collection === collection.collection &&
+          !field.field?.startsWith("divider")
       );
 
       return factory.createTypeAliasDeclaration(
         [factory.createModifier(SyntaxKind.ExportKeyword)],
-        factory.createIdentifier(capitalizeFirstLetter(collection.collection)),
+        factory.createIdentifier(collection.collection),
         undefined,
         factory.createTypeLiteralNode(
           fields.map((field) => {
@@ -50,7 +56,9 @@ export function generateTypesFromSnapshot(schema: Snapshot): string {
     schema.collections
       .filter((collection) =>
         schema.fields.some(
-          (field) => field.collection === collection.collection
+          (field) =>
+            field.collection === collection.collection &&
+            !field.field?.startsWith("divider")
         )
       )
       .map((collection) => {
@@ -58,11 +66,11 @@ export function generateTypesFromSnapshot(schema: Snapshot): string {
           undefined,
           collection.collection,
           undefined,
-          factory.createTypeReferenceNode(
-            factory.createIdentifier(
-              capitalizeFirstLetter(collection.collection)
-            ),
-            undefined
+          factory.createArrayTypeNode(
+            factory.createTypeReferenceNode(
+              factory.createIdentifier(collection.collection),
+              undefined
+            )
           )
         );
       })
@@ -91,9 +99,7 @@ function mapDirectusTypeToTypeScript(
     );
     if (relation?.related_collection) {
       return factory.createTypeReferenceNode(
-        factory.createIdentifier(
-          capitalizeFirstLetter(relation.related_collection)
-        ),
+        factory.createIdentifier(relation.related_collection),
         undefined
       );
     }
@@ -138,8 +144,4 @@ function mapDirectusTypeToTypeScript(
     default:
       return factory.createKeywordTypeNode(SyntaxKind.UnknownKeyword);
   }
-}
-
-function capitalizeFirstLetter(string: string): string {
-  return string.charAt(0).toUpperCase() + string.slice(1);
 }

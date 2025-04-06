@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generateTypesFromSnapshot generates correct types for blog.json 1`] = `
-"export type Posts = {
+"export type posts = {
     id: number;
     title: string;
     content?: string;
-    author: Users;
-    category?: Categories;
+    author: users;
+    category?: categories;
     published_at?: Date;
     tags?: Record<string, any>;
 };
-export type Categories = {
+export type categories = {
     id: number;
     name: string;
     description?: string;
 };
 export interface Schema {
-    posts: Posts;
-    categories: Categories;
+    posts: posts[];
+    categories: categories[];
 }
 "
 `;
 
 exports[`generateTypesFromSnapshot generates correct types for complex.yaml 1`] = `
-"export type Products = {
+"export type products = {
     id: string;
     name: string;
     description?: string;
@@ -34,15 +34,15 @@ exports[`generateTypesFromSnapshot generates correct types for complex.yaml 1`] 
     created_at: Date;
     updated_at: Date;
 };
-export type Orders = {
+export type orders = {
     id: string;
-    customer: Customers;
+    customer: customers;
     status: string;
     items: Record<string, any>;
     total: number;
     created_at: Date;
 };
-export type Customers = {
+export type customers = {
     id: string;
     name: string;
     email: string;
@@ -51,15 +51,15 @@ export type Customers = {
     created_at: Date;
 };
 export interface Schema {
-    products: Products;
-    orders: Orders;
-    customers: Customers;
+    products: products[];
+    orders: orders[];
+    customers: customers[];
 }
 "
 `;
 
 exports[`generateTypesFromSnapshot generates correct types for schema.yaml 1`] = `
-"export type App_block_richtext = {
+"export type app_block_richtext = {
     id: string;
     sort?: number;
     user_created?: string;
@@ -70,7 +70,7 @@ exports[`generateTypesFromSnapshot generates correct types for schema.yaml 1`] =
     content?: string;
     status: string;
 };
-export type App_static_settings = {
+export type app_static_settings = {
     id: string;
     user_created?: string;
     date_created?: Date;
@@ -82,10 +82,10 @@ export type App_static_settings = {
     section_personal_data_usage: any;
     section_consent_manager: any;
     section_legal_title?: string;
-    section_third_party_consent_content?: App_block_richtext;
+    section_third_party_consent_content?: app_block_richtext;
     section_third_party_consent_title?: string;
     section_personal_data_usage_title?: string;
-    section_personal_data_usage_content?: App_block_richtext;
+    section_personal_data_usage_content?: app_block_richtext;
     section_consent_manager_title?: string;
     sharing: any;
     section_socialmedia: any;
@@ -98,7 +98,7 @@ export type App_static_settings = {
     section_fluent_support: any;
     section_faqs_title?: string;
     section_fluent_support_title?: string;
-    section_fluent_support_content?: App_block_richtext;
+    section_fluent_support_content?: app_block_richtext;
     section_socialmedia_links: any;
     account_settings: any;
     account_settings_title?: string;
@@ -119,13 +119,13 @@ export type App_static_settings = {
     section_legal_consent_content?: string;
     section_legal_terms_content?: string;
 };
-export type App_static_settings_socialmedia_links = {
+export type app_static_settings_socialmedia_links = {
     id: number;
     app_static_settings_id?: string;
     socialmedia_links_id?: string;
     sort?: number;
 };
-export type Article_sources = {
+export type article_sources = {
     id: string;
     user_created?: string;
     date_created?: Date;
@@ -136,7 +136,7 @@ export type Article_sources = {
     article_source_publish_date?: Date;
     article_source_primary?: boolean;
 };
-export type Articles = {
+export type articles = {
     id: string;
     status: string;
     sort?: number;
@@ -148,14 +148,14 @@ export type Articles = {
     article_hero_image?: string;
     article_blocks: any;
     article_additional_information: any;
-    article_reviewer?: Medical_reviewer;
+    article_reviewer?: medical_reviewer;
     article_tags?: Record<string, any>;
     article_topics: any;
     dashboard_cards: any;
     article_cards: any;
     web_cards: any;
     story_cards: any;
-    primary_topic?: Topics;
+    primary_topic?: topics;
     secondary_topics: any;
     article_type?: string;
     blog: any;
@@ -164,8 +164,8 @@ export type Articles = {
     article_teaser?: string;
     article_blocks_blog: any;
     article_publish_date?: Date;
-    article_author?: Authors;
-    page_metadata?: Website_page_metadata;
+    article_author?: authors;
+    page_metadata?: website_page_metadata;
     article_content: any;
     article_fh_recommends?: boolean;
     blog_featured?: boolean;
@@ -177,54 +177,54 @@ export type Articles = {
     article_stories: any;
     article_deeplink?: string;
 };
-export type Articles_article_blocks = {
+export type articles_article_blocks = {
     id: number;
     articles_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Articles_article_blocks_blog = {
+export type articles_article_blocks_blog = {
     id: number;
     articles_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Articles_article_sources = {
+export type articles_article_sources = {
     id: number;
     articles_id?: string;
     article_sources_id?: string;
 };
-export type Articles_article_sources_1 = {
+export type articles_article_sources_1 = {
     id: number;
     articles_id?: string;
     article_sources_id?: string;
 };
-export type Articles_articles_cards_dashboard = {
+export type articles_articles_cards_dashboard = {
     id: number;
     articles_id?: string;
     articles_cards_dashboard_id?: number;
     sort?: number;
 };
-export type Articles_articles_cards_story = {
+export type articles_articles_cards_story = {
     id: number;
     articles_id?: string;
     articles_cards_story_id?: number;
     sort?: number;
 };
-export type Articles_articles_cards_web = {
+export type articles_articles_cards_web = {
     id: number;
     articles_id?: string;
     articles_cards_web_id?: number;
     sort?: number;
 };
-export type Articles_block_breaker_text = {
+export type articles_block_breaker_text = {
     id: number;
     articles_id?: string;
     block_breaker_text_id?: number;
 };
-export type Articles_cards_dashboard = {
+export type articles_cards_dashboard = {
     id: number;
     status: string;
     user_created?: string;
@@ -235,7 +235,7 @@ export type Articles_cards_dashboard = {
     title?: string;
     image?: string;
 };
-export type Articles_cards_story = {
+export type articles_cards_story = {
     id: number;
     status: string;
     user_created?: string;
@@ -250,7 +250,7 @@ export type Articles_cards_story = {
     quote_author?: string;
     quote_author_title?: string;
 };
-export type Articles_cards_web = {
+export type articles_cards_web = {
     id: number;
     status: string;
     user_created?: string;
@@ -263,7 +263,7 @@ export type Articles_cards_web = {
     subtitle?: string;
     image?: string;
 };
-export type Articles_stories = {
+export type articles_stories = {
     id: string;
     status: string;
     sort?: number;
@@ -271,9 +271,6 @@ export type Articles_stories = {
     date_created?: Date;
     user_updated?: string;
     date_updated?: Date;
-    divider-4vg96k: any;
-    divider-du_ncs: any;
-    divider-ponjs9: any;
     dashboard_card_design?: string;
     dashboard_card_title?: string;
     dashboard_card_image?: string;
@@ -291,17 +288,17 @@ export type Articles_stories = {
     web_card_image?: string;
     fk_articles?: string;
 };
-export type Articles_topics = {
+export type articles_topics = {
     id: number;
     articles_id?: string;
     topics_id?: string;
 };
-export type Articles_topics_1 = {
+export type articles_topics_1 = {
     id: number;
     articles_id?: string;
     topics_id?: string;
 };
-export type Authors = {
+export type authors = {
     id: string;
     status: string;
     user_created?: string;
@@ -319,7 +316,7 @@ export type Authors = {
     sync: any;
     prismic_id?: string;
 };
-export type Block_breaker_image = {
+export type block_breaker_image = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -329,7 +326,7 @@ export type Block_breaker_image = {
     image_caption?: string;
     image_alt?: string;
 };
-export type Block_breaker_list = {
+export type block_breaker_list = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -340,7 +337,7 @@ export type Block_breaker_list = {
     list_items?: Record<string, any>;
     list_type?: string;
 };
-export type Block_breaker_quicktip = {
+export type block_breaker_quicktip = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -349,7 +346,7 @@ export type Block_breaker_quicktip = {
     title?: string;
     paragraph?: string;
 };
-export type Block_breaker_quote = {
+export type block_breaker_quote = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -359,7 +356,7 @@ export type Block_breaker_quote = {
     content?: string;
     academic_title?: string;
 };
-export type Block_breaker_stats = {
+export type block_breaker_stats = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -369,7 +366,7 @@ export type Block_breaker_stats = {
     content?: string;
     illustration?: string;
 };
-export type Block_breaker_text = {
+export type block_breaker_text = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -377,7 +374,7 @@ export type Block_breaker_text = {
     date_updated?: Date;
     content?: string;
 };
-export type Block_inline_image = {
+export type block_inline_image = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -385,7 +382,7 @@ export type Block_inline_image = {
     date_updated?: Date;
     image?: string;
 };
-export type Block_richtext = {
+export type block_richtext = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -393,7 +390,7 @@ export type Block_richtext = {
     date_updated?: Date;
     content?: string;
 };
-export type Block_richtext_blog = {
+export type block_richtext_blog = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -403,7 +400,7 @@ export type Block_richtext_blog = {
     anchor_title?: string;
     Anchor?: boolean;
 };
-export type Care_story_card_dashboard = {
+export type care_story_card_dashboard = {
     id: string;
     status: string;
     sort?: number;
@@ -414,7 +411,7 @@ export type Care_story_card_dashboard = {
     title?: string;
     design?: string;
 };
-export type Care_story_card_endslate = {
+export type care_story_card_endslate = {
     id: string;
     status: string;
     sort?: number;
@@ -427,7 +424,7 @@ export type Care_story_card_endslate = {
     cta_button_label?: string;
     cta_label?: string;
 };
-export type Care_story_card_openslate = {
+export type care_story_card_openslate = {
     id: string;
     status: string;
     sort?: number;
@@ -443,7 +440,7 @@ export type Care_story_card_openslate = {
     cta_button_target?: string;
     cta_button_type?: string;
 };
-export type Care_story_card_questionnaire = {
+export type care_story_card_questionnaire = {
     id: string;
     status: string;
     sort?: number;
@@ -453,7 +450,7 @@ export type Care_story_card_questionnaire = {
     date_updated?: Date;
     emr_questionnaire_identifier?: string;
 };
-export type Consultation_specialty_areas = {
+export type consultation_specialty_areas = {
     id: number;
     sort?: number;
     user_created?: string;
@@ -463,9 +460,9 @@ export type Consultation_specialty_areas = {
     tile_icon?: string;
     tile_color?: string;
     tile_description?: string;
-    fact_code?: Fact;
+    fact_code?: fact;
 };
-export type Docapp_settings = {
+export type docapp_settings = {
     id: string;
     status: string;
     user_created?: string;
@@ -501,7 +498,7 @@ export type Docapp_settings = {
     professional_details_cta_cr_label?: string;
     professional_details_cta_cr_url?: string;
 };
-export type Fact = {
+export type fact = {
     fact_code: string;
     status: string;
     sort?: number;
@@ -518,7 +515,7 @@ export type Fact = {
     fact_id?: string;
     fmh_fact_id?: string;
 };
-export type Faq_groups = {
+export type faq_groups = {
     id: string;
     status: string;
     sort?: number;
@@ -530,13 +527,13 @@ export type Faq_groups = {
     faqs: any;
     faq_group_type?: string;
 };
-export type Faq_groups_faqs = {
+export type faq_groups_faqs = {
     id: number;
     faq_groups_id?: string;
     faqs_id?: string;
     sort?: number;
 };
-export type Faqs = {
+export type faqs = {
     id: string;
     status: string;
     sort?: number;
@@ -547,9 +544,9 @@ export type Faqs = {
     question?: string;
     answer?: string;
     image?: string;
-    faq_group?: Faq_groups;
+    faq_group?: faq_groups;
 };
-export type Fluent_team = {
+export type fluent_team = {
     id: string;
     status: string;
     sort?: number;
@@ -567,7 +564,7 @@ export type Fluent_team = {
     background_color?: string;
     designation?: string;
 };
-export type Language = {
+export type language = {
     code: string;
     user_created?: string;
     date_created?: Date;
@@ -576,7 +573,7 @@ export type Language = {
     display_value?: string;
     language_code?: number;
 };
-export type Medical_reviewer = {
+export type medical_reviewer = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -587,7 +584,7 @@ export type Medical_reviewer = {
     reviewer_email?: string;
     reviewer_registration_id?: string;
     reviewer_bio?: string;
-    reviewer_specialty?: Fact;
+    reviewer_specialty?: fact;
     image?: string;
     yoe_since?: Date;
     status: string;
@@ -595,12 +592,12 @@ export type Medical_reviewer = {
     qualifications: any;
     languages: any;
 };
-export type Medical_reviewer_medical_reviewer_qualification = {
+export type medical_reviewer_medical_reviewer_qualification = {
     id: number;
     medical_reviewer_id?: number;
     medical_reviewer_qualification_id?: number;
 };
-export type Medical_reviewer_qualification = {
+export type medical_reviewer_qualification = {
     id: number;
     user_created?: string;
     date_created?: Date;
@@ -610,7 +607,7 @@ export type Medical_reviewer_qualification = {
     qualification_title?: string;
     qualification_description?: string;
 };
-export type Open_positions = {
+export type open_positions = {
     id: string;
     status: string;
     sort?: number;
@@ -623,7 +620,7 @@ export type Open_positions = {
     job_description?: string;
     job_source_id?: string;
 };
-export type Press_articles = {
+export type press_articles = {
     id: string;
     status: string;
     sort?: number;
@@ -638,7 +635,7 @@ export type Press_articles = {
     teaser?: string;
     title?: string;
 };
-export type Profile_completion_reference = {
+export type profile_completion_reference = {
     id: string;
     status: string;
     sort?: number;
@@ -652,7 +649,7 @@ export type Profile_completion_reference = {
     description?: string;
     patient_confirm_na?: boolean;
 };
-export type Record_story_card_dashboard = {
+export type record_story_card_dashboard = {
     id: string;
     status: string;
     sort?: number;
@@ -664,7 +661,7 @@ export type Record_story_card_dashboard = {
     title?: string;
     image?: string;
 };
-export type Record_story_card_prompt = {
+export type record_story_card_prompt = {
     id: string;
     status: string;
     sort?: number;
@@ -680,7 +677,7 @@ export type Record_story_card_prompt = {
     cta_type?: string;
     cta_target?: string;
 };
-export type Record_stroy_card_dyk = {
+export type record_stroy_card_dyk = {
     id: string;
     status: string;
     sort?: number;
@@ -694,7 +691,7 @@ export type Record_stroy_card_dyk = {
     paragraph?: string;
     image?: string;
 };
-export type Socialmedia_links = {
+export type socialmedia_links = {
     id: string;
     status: string;
     sort?: number;
@@ -708,7 +705,7 @@ export type Socialmedia_links = {
     icon_patapp?: string;
     application?: Record<string, any>;
 };
-export type Stories = {
+export type stories = {
     id: string;
     status: string;
     sort?: number;
@@ -734,31 +731,31 @@ export type Stories = {
     fmh_fact_codes: any;
     period: any;
 };
-export type Stories_care_story_card_dashboard = {
+export type stories_care_story_card_dashboard = {
     id: number;
     stories_id?: string;
     care_story_card_dashboard_id?: string;
 };
-export type Stories_care_story_story_cards = {
+export type stories_care_story_story_cards = {
     id: number;
     stories_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Stories_record_story_card_dashboard = {
+export type stories_record_story_card_dashboard = {
     id: number;
     stories_id?: string;
     record_story_card_dashboard_id?: string;
 };
-export type Stories_record_story_story_cards = {
+export type stories_record_story_story_cards = {
     id: number;
     stories_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Testimonials = {
+export type testimonials = {
     id: string;
     status: string;
     sort?: number;
@@ -769,7 +766,7 @@ export type Testimonials = {
     content?: string;
     name?: string;
 };
-export type Topics = {
+export type topics = {
     id: string;
     status: string;
     user_created?: string;
@@ -780,16 +777,16 @@ export type Topics = {
     image?: string;
     teaser?: string;
     description?: string;
-    fact_code?: Fact;
+    fact_code?: fact;
     slug?: string;
     subtopics: any;
 };
-export type Topics_topics = {
+export type topics_topics = {
     id: number;
     topics_id?: string;
     related_topics_id?: string;
 };
-export type Torchbearer = {
+export type torchbearer = {
     id: string;
     status: string;
     sort?: number;
@@ -803,7 +800,7 @@ export type Torchbearer = {
     target_webapp?: string;
     querystring_uuid_variable?: string;
 };
-export type Website_block_carousel = {
+export type website_block_carousel = {
     id: string;
     status: string;
     sort?: number;
@@ -818,7 +815,7 @@ export type Website_block_carousel = {
     icon_slide_left?: string;
     icon_slide_right?: string;
 };
-export type Website_block_carousel_slides = {
+export type website_block_carousel_slides = {
     id: string;
     status: string;
     sort?: number;
@@ -834,13 +831,13 @@ export type Website_block_carousel_slides = {
     image_mobile?: string;
     cta_button_label?: string;
 };
-export type Website_block_carousel_website_block_carousel_slides = {
+export type website_block_carousel_website_block_carousel_slides = {
     id: number;
     website_block_carousel_id?: string;
     website_block_carousel_slides_id?: string;
     sort?: number;
 };
-export type Website_block_faq = {
+export type website_block_faq = {
     id: string;
     user_created?: string;
     date_created?: Date;
@@ -855,12 +852,12 @@ export type Website_block_faq = {
     image_parallax_right?: string;
     icon_menu_selector?: string;
 };
-export type Website_block_faq_faq_groups = {
+export type website_block_faq_faq_groups = {
     id: number;
     website_block_faq_id?: string;
     faq_groups_id?: string;
 };
-export type Website_block_hero = {
+export type website_block_hero = {
     id: string;
     status: string;
     sort?: number;
@@ -879,7 +876,7 @@ export type Website_block_hero = {
     image_background?: string;
     subtitle?: string;
 };
-export type Website_block_menuitem = {
+export type website_block_menuitem = {
     id: string;
     status: string;
     sort?: number;
@@ -890,7 +887,7 @@ export type Website_block_menuitem = {
     cta_title?: string;
     cta_target?: string;
 };
-export type Website_block_portfolio = {
+export type website_block_portfolio = {
     id: string;
     status: string;
     sort?: number;
@@ -915,7 +912,7 @@ export type Website_block_portfolio = {
     filter_attributes: any;
     portfolio_attributes: any;
 };
-export type Website_block_prallax = {
+export type website_block_prallax = {
     id: number;
     status: string;
     sort?: number;
@@ -929,7 +926,7 @@ export type Website_block_prallax = {
     paragraph_bottom_row?: string;
     image_bottom_row?: string;
 };
-export type Website_block_process = {
+export type website_block_process = {
     id: string;
     status: string;
     sort?: number;
@@ -944,7 +941,7 @@ export type Website_block_process = {
     image_top?: string;
     image_right?: string;
 };
-export type Website_block_richtext = {
+export type website_block_richtext = {
     id: string;
     sort?: number;
     user_created?: string;
@@ -955,7 +952,7 @@ export type Website_block_richtext = {
     title?: string;
     status: string;
 };
-export type Website_block_showcase = {
+export type website_block_showcase = {
     id: string;
     status: string;
     sort?: number;
@@ -972,14 +969,14 @@ export type Website_block_showcase = {
     content: any;
     title_display?: boolean;
 };
-export type Website_block_showcase_content = {
+export type website_block_showcase_content = {
     id: number;
     website_block_showcase_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_block_showcase_items = {
+export type website_block_showcase_items = {
     id: string;
     status: string;
     sort?: number;
@@ -992,7 +989,7 @@ export type Website_block_showcase_items = {
     title?: string;
     media_embed_code?: string;
 };
-export type Website_block_teaser = {
+export type website_block_teaser = {
     id: string;
     status: string;
     sort?: number;
@@ -1007,7 +1004,7 @@ export type Website_block_teaser = {
     image_mask?: string;
     image_mask_mobile?: string;
 };
-export type Website_block_testimonials = {
+export type website_block_testimonials = {
     id: string;
     status: string;
     sort?: number;
@@ -1020,12 +1017,12 @@ export type Website_block_testimonials = {
     icon_quote?: string;
     testimonials: any;
 };
-export type Website_block_testimonials_testimonials = {
+export type website_block_testimonials_testimonials = {
     id: number;
     website_block_testimonials_id?: string;
     testimonials_id?: string;
 };
-export type Website_component_clinically_reviewed = {
+export type website_component_clinically_reviewed = {
     id: string;
     status: string;
     user_created?: string;
@@ -1038,7 +1035,7 @@ export type Website_component_clinically_reviewed = {
     icon_close?: string;
     image_background?: string;
 };
-export type Website_component_delete_account = {
+export type website_component_delete_account = {
     id: string;
     status: string;
     user_created?: string;
@@ -1062,7 +1059,7 @@ export type Website_component_delete_account = {
     icon_success?: string;
     cta_button_success?: string;
 };
-export type Website_component_early_access = {
+export type website_component_early_access = {
     id: string;
     status: string;
     user_created?: string;
@@ -1085,7 +1082,7 @@ export type Website_component_early_access = {
     image_background_left?: string;
     image_background_right?: string;
 };
-export type Website_component_footer = {
+export type website_component_footer = {
     id: string;
     status: string;
     user_created?: string;
@@ -1106,27 +1103,27 @@ export type Website_component_footer = {
     cta_image_android?: string;
     cta_image_android_link?: string;
 };
-export type Website_component_footer_menu_left = {
+export type website_component_footer_menu_left = {
     id: number;
     website_component_footer_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_component_footer_menu_right = {
+export type website_component_footer_menu_right = {
     id: number;
     website_component_footer_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_component_footer_socialmedia_links = {
+export type website_component_footer_socialmedia_links = {
     id: number;
     website_component_footer_id?: string;
     socialmedia_links_id?: string;
     sort?: number;
 };
-export type Website_component_menu = {
+export type website_component_menu = {
     id: string;
     status: string;
     user_created?: string;
@@ -1147,21 +1144,21 @@ export type Website_component_menu = {
     cta_1_target?: string;
     menu_items: any;
 };
-export type Website_component_menu_menu_items = {
+export type website_component_menu_menu_items = {
     id: number;
     website_component_menu_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_component_menu_socialmedia = {
+export type website_component_menu_socialmedia = {
     id: number;
     website_component_menu_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_component_prefooter = {
+export type website_component_prefooter = {
     id: string;
     status: string;
     sort?: number;
@@ -1179,26 +1176,26 @@ export type Website_component_prefooter = {
     image_background_left?: string;
     image_background_right?: string;
 };
-export type Website_page_about_us = {
+export type website_page_about_us = {
     id: string;
     status: string;
     user_created?: string;
     date_created?: Date;
     user_updated?: string;
     date_updated?: Date;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     content: any;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
     title?: string;
     slug?: string;
 };
-export type Website_page_about_us_content = {
+export type website_page_about_us_content = {
     id: number;
     website_page_about_us_id?: string;
     item?: string;
     collection?: string;
 };
-export type Website_page_author = {
+export type website_page_author = {
     id: string;
     status: string;
     user_created?: string;
@@ -1206,12 +1203,12 @@ export type Website_page_author = {
     user_updated?: string;
     date_updated?: Date;
     slug?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     title?: string;
     title_articles?: string;
     cta_button_label?: string;
 };
-export type Website_page_blog = {
+export type website_page_blog = {
     id: string;
     status: string;
     sort?: number;
@@ -1227,7 +1224,7 @@ export type Website_page_blog = {
     view_tooltip_list_inactive?: string;
     filter_topics_note?: string;
     cta_button_label?: string;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
     blog_article_static_text: any;
     static_author?: string;
     static_reviewer?: string;
@@ -1238,7 +1235,7 @@ export type Website_page_blog = {
     static_title_related_articles?: string;
     static_cta_button_articles_label?: string;
     cta_button_articles_url?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     filter_topics_title?: string;
     filter_types_title?: string;
     filter_types_note?: string;
@@ -1260,7 +1257,7 @@ export type Website_page_blog = {
     static_cta_button_label_sources_less?: string;
     static_title_sources?: string;
 };
-export type Website_page_careers = {
+export type website_page_careers = {
     id: string;
     status: string;
     user_created?: string;
@@ -1268,14 +1265,14 @@ export type Website_page_careers = {
     user_updated?: string;
     date_updated?: Date;
     slug?: string;
-    page_metadata?: Website_page_metadata;
-    page_hero?: Website_block_hero;
+    page_metadata?: website_page_metadata;
+    page_hero?: website_block_hero;
     title?: string;
     title_listing?: string;
     field_input_search_placeholder?: string;
     field_input_search_icon?: string;
     job_description_static_text: any;
-    static_job_description_hero?: Website_block_hero;
+    static_job_description_hero?: website_block_hero;
     static_title_application_form?: string;
     static_field_input_error?: string;
     static_field_input_firstname_required?: boolean;
@@ -1295,15 +1292,15 @@ export type Website_page_careers = {
     static_cta_success?: string;
     static_cta_error?: string;
 };
-export type Website_page_contact_us = {
+export type website_page_contact_us = {
     id: string;
     status: string;
     user_created?: string;
     date_created?: Date;
     user_updated?: string;
     date_updated?: Date;
-    page_metadata?: Website_page_metadata;
-    prefooter?: Website_component_prefooter;
+    page_metadata?: website_page_metadata;
+    prefooter?: website_component_prefooter;
     contact_form: any;
     title?: string;
     addresses?: string;
@@ -1326,7 +1323,7 @@ export type Website_page_contact_us = {
     slug?: string;
     static_cta_success?: string;
 };
-export type Website_page_doctor_login = {
+export type website_page_doctor_login = {
     id: string;
     status: string;
     user_created?: string;
@@ -1334,7 +1331,7 @@ export type Website_page_doctor_login = {
     user_updated?: string;
     date_updated?: Date;
     slug?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     field_label?: string;
     field_placeholder?: string;
     field_icon?: string;
@@ -1346,7 +1343,7 @@ export type Website_page_doctor_login = {
     image_background?: string;
     image_mask?: string;
 };
-export type Website_page_faqs = {
+export type website_page_faqs = {
     id: string;
     status: string;
     user_created?: string;
@@ -1354,38 +1351,38 @@ export type Website_page_faqs = {
     user_updated?: string;
     date_updated?: Date;
     title?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     content: any;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
 };
-export type Website_page_faqs_content = {
+export type website_page_faqs_content = {
     id: number;
     website_page_faqs_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_page_home = {
+export type website_page_home = {
     id: string;
     status: string;
     user_created?: string;
     date_created?: Date;
     user_updated?: string;
     date_updated?: Date;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     slug?: string;
     title?: string;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
     content: any;
 };
-export type Website_page_home_content = {
+export type website_page_home_content = {
     id: number;
     website_page_home_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_page_legal = {
+export type website_page_legal = {
     id: string;
     status: string;
     user_created?: string;
@@ -1395,15 +1392,15 @@ export type Website_page_legal = {
     slug?: string;
     content: any;
     title?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
 };
-export type Website_page_legal_content = {
+export type website_page_legal_content = {
     id: number;
     website_page_legal_id?: string;
     item?: string;
     collection?: string;
 };
-export type Website_page_medical_reviewer = {
+export type website_page_medical_reviewer = {
     id: string;
     status: string;
     user_created?: string;
@@ -1414,9 +1411,9 @@ export type Website_page_medical_reviewer = {
     title_articles?: string;
     cta_button_label?: string;
     slug?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
 };
-export type Website_page_metadata = {
+export type website_page_metadata = {
     id: string;
     user_created?: string;
     date_created?: Date;
@@ -1457,11 +1454,11 @@ export type Website_page_metadata = {
     prismic_id?: string;
     og_image?: string;
 };
-export type Website_page_metadata_website_socialmedia_links = {
+export type website_page_metadata_website_socialmedia_links = {
     id: number;
     website_page_metadata_id?: string;
 };
-export type Website_page_our_process = {
+export type website_page_our_process = {
     id: string;
     status: string;
     user_created?: string;
@@ -1469,31 +1466,31 @@ export type Website_page_our_process = {
     user_updated?: string;
     date_updated?: Date;
     slug?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     title?: string;
     content: any;
     images_parallax_left: any;
     images_parallax_right: any;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
 };
-export type Website_page_our_process_content = {
+export type website_page_our_process_content = {
     id: number;
     website_page_our_process_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_page_our_process_files_1 = {
+export type website_page_our_process_files_1 = {
     id: number;
     website_page_our_process_id?: string;
     directus_files_id?: string;
 };
-export type Website_page_our_process_files_2 = {
+export type website_page_our_process_files_2 = {
     id: number;
     website_page_our_process_id?: string;
     directus_files_id?: string;
 };
-export type Website_page_press = {
+export type website_page_press = {
     id: string;
     status: string;
     user_created?: string;
@@ -1502,35 +1499,35 @@ export type Website_page_press = {
     date_updated?: Date;
     title?: string;
     content: any;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
     slug?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
 };
-export type Website_page_press_content = {
+export type website_page_press_content = {
     id: number;
     website_page_press_id?: string;
     item?: string;
     collection?: string;
 };
-export type Website_page_privacy_matters = {
+export type website_page_privacy_matters = {
     id: string;
     status: string;
     user_created?: string;
     date_created?: Date;
     user_updated?: string;
     date_updated?: Date;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     title?: string;
     content: any;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
 };
-export type Website_page_privacy_matters_content = {
+export type website_page_privacy_matters_content = {
     id: number;
     website_page_privacy_matters_id?: string;
     item?: string;
     collection?: string;
 };
-export type Website_page_sandbox = {
+export type website_page_sandbox = {
     id: string;
     status: string;
     user_created?: string;
@@ -1538,18 +1535,18 @@ export type Website_page_sandbox = {
     user_updated?: string;
     date_updated?: Date;
     title?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     page_content: any;
-    page_prefooter?: Website_component_prefooter;
+    page_prefooter?: website_component_prefooter;
 };
-export type Website_page_sandbox_page_content = {
+export type website_page_sandbox_page_content = {
     id: number;
     website_page_sandbox_id?: string;
     item?: string;
     collection?: string;
     sort?: number;
 };
-export type Website_page_why_we_care = {
+export type website_page_why_we_care = {
     id: string;
     status: string;
     user_created?: string;
@@ -1558,11 +1555,11 @@ export type Website_page_why_we_care = {
     date_updated?: Date;
     slug?: string;
     title?: string;
-    page_metadata?: Website_page_metadata;
+    page_metadata?: website_page_metadata;
     content: any;
-    prefooter?: Website_component_prefooter;
+    prefooter?: website_component_prefooter;
 };
-export type Website_page_why_we_care_content = {
+export type website_page_why_we_care_content = {
     id: number;
     website_page_why_we_care_id?: string;
     item?: string;
@@ -1570,128 +1567,128 @@ export type Website_page_why_we_care_content = {
     sort?: number;
 };
 export interface Schema {
-    app_block_richtext: App_block_richtext;
-    app_static_settings: App_static_settings;
-    app_static_settings_socialmedia_links: App_static_settings_socialmedia_links;
-    article_sources: Article_sources;
-    articles: Articles;
-    articles_article_blocks: Articles_article_blocks;
-    articles_article_blocks_blog: Articles_article_blocks_blog;
-    articles_article_sources: Articles_article_sources;
-    articles_article_sources_1: Articles_article_sources_1;
-    articles_articles_cards_dashboard: Articles_articles_cards_dashboard;
-    articles_articles_cards_story: Articles_articles_cards_story;
-    articles_articles_cards_web: Articles_articles_cards_web;
-    articles_block_breaker_text: Articles_block_breaker_text;
-    articles_cards_dashboard: Articles_cards_dashboard;
-    articles_cards_story: Articles_cards_story;
-    articles_cards_web: Articles_cards_web;
-    articles_stories: Articles_stories;
-    articles_topics: Articles_topics;
-    articles_topics_1: Articles_topics_1;
-    authors: Authors;
-    block_breaker_image: Block_breaker_image;
-    block_breaker_list: Block_breaker_list;
-    block_breaker_quicktip: Block_breaker_quicktip;
-    block_breaker_quote: Block_breaker_quote;
-    block_breaker_stats: Block_breaker_stats;
-    block_breaker_text: Block_breaker_text;
-    block_inline_image: Block_inline_image;
-    block_richtext: Block_richtext;
-    block_richtext_blog: Block_richtext_blog;
-    care_story_card_dashboard: Care_story_card_dashboard;
-    care_story_card_endslate: Care_story_card_endslate;
-    care_story_card_openslate: Care_story_card_openslate;
-    care_story_card_questionnaire: Care_story_card_questionnaire;
-    consultation_specialty_areas: Consultation_specialty_areas;
-    docapp_settings: Docapp_settings;
-    fact: Fact;
-    faq_groups: Faq_groups;
-    faq_groups_faqs: Faq_groups_faqs;
-    faqs: Faqs;
-    fluent_team: Fluent_team;
-    language: Language;
-    medical_reviewer: Medical_reviewer;
-    medical_reviewer_medical_reviewer_qualification: Medical_reviewer_medical_reviewer_qualification;
-    medical_reviewer_qualification: Medical_reviewer_qualification;
-    open_positions: Open_positions;
-    press_articles: Press_articles;
-    profile_completion_reference: Profile_completion_reference;
-    record_story_card_dashboard: Record_story_card_dashboard;
-    record_story_card_prompt: Record_story_card_prompt;
-    record_stroy_card_dyk: Record_stroy_card_dyk;
-    socialmedia_links: Socialmedia_links;
-    stories: Stories;
-    stories_care_story_card_dashboard: Stories_care_story_card_dashboard;
-    stories_care_story_story_cards: Stories_care_story_story_cards;
-    stories_record_story_card_dashboard: Stories_record_story_card_dashboard;
-    stories_record_story_story_cards: Stories_record_story_story_cards;
-    testimonials: Testimonials;
-    topics: Topics;
-    topics_topics: Topics_topics;
-    torchbearer: Torchbearer;
-    website_block_carousel: Website_block_carousel;
-    website_block_carousel_slides: Website_block_carousel_slides;
-    website_block_carousel_website_block_carousel_slides: Website_block_carousel_website_block_carousel_slides;
-    website_block_faq: Website_block_faq;
-    website_block_faq_faq_groups: Website_block_faq_faq_groups;
-    website_block_hero: Website_block_hero;
-    website_block_menuitem: Website_block_menuitem;
-    website_block_portfolio: Website_block_portfolio;
-    website_block_prallax: Website_block_prallax;
-    website_block_process: Website_block_process;
-    website_block_richtext: Website_block_richtext;
-    website_block_showcase: Website_block_showcase;
-    website_block_showcase_content: Website_block_showcase_content;
-    website_block_showcase_items: Website_block_showcase_items;
-    website_block_teaser: Website_block_teaser;
-    website_block_testimonials: Website_block_testimonials;
-    website_block_testimonials_testimonials: Website_block_testimonials_testimonials;
-    website_component_clinically_reviewed: Website_component_clinically_reviewed;
-    website_component_delete_account: Website_component_delete_account;
-    website_component_early_access: Website_component_early_access;
-    website_component_footer: Website_component_footer;
-    website_component_footer_menu_left: Website_component_footer_menu_left;
-    website_component_footer_menu_right: Website_component_footer_menu_right;
-    website_component_footer_socialmedia_links: Website_component_footer_socialmedia_links;
-    website_component_menu: Website_component_menu;
-    website_component_menu_menu_items: Website_component_menu_menu_items;
-    website_component_menu_socialmedia: Website_component_menu_socialmedia;
-    website_component_prefooter: Website_component_prefooter;
-    website_page_about_us: Website_page_about_us;
-    website_page_about_us_content: Website_page_about_us_content;
-    website_page_author: Website_page_author;
-    website_page_blog: Website_page_blog;
-    website_page_careers: Website_page_careers;
-    website_page_contact_us: Website_page_contact_us;
-    website_page_doctor_login: Website_page_doctor_login;
-    website_page_faqs: Website_page_faqs;
-    website_page_faqs_content: Website_page_faqs_content;
-    website_page_home: Website_page_home;
-    website_page_home_content: Website_page_home_content;
-    website_page_legal: Website_page_legal;
-    website_page_legal_content: Website_page_legal_content;
-    website_page_medical_reviewer: Website_page_medical_reviewer;
-    website_page_metadata: Website_page_metadata;
-    website_page_metadata_website_socialmedia_links: Website_page_metadata_website_socialmedia_links;
-    website_page_our_process: Website_page_our_process;
-    website_page_our_process_content: Website_page_our_process_content;
-    website_page_our_process_files_1: Website_page_our_process_files_1;
-    website_page_our_process_files_2: Website_page_our_process_files_2;
-    website_page_press: Website_page_press;
-    website_page_press_content: Website_page_press_content;
-    website_page_privacy_matters: Website_page_privacy_matters;
-    website_page_privacy_matters_content: Website_page_privacy_matters_content;
-    website_page_sandbox: Website_page_sandbox;
-    website_page_sandbox_page_content: Website_page_sandbox_page_content;
-    website_page_why_we_care: Website_page_why_we_care;
-    website_page_why_we_care_content: Website_page_why_we_care_content;
+    app_block_richtext: app_block_richtext[];
+    app_static_settings: app_static_settings[];
+    app_static_settings_socialmedia_links: app_static_settings_socialmedia_links[];
+    article_sources: article_sources[];
+    articles: articles[];
+    articles_article_blocks: articles_article_blocks[];
+    articles_article_blocks_blog: articles_article_blocks_blog[];
+    articles_article_sources: articles_article_sources[];
+    articles_article_sources_1: articles_article_sources_1[];
+    articles_articles_cards_dashboard: articles_articles_cards_dashboard[];
+    articles_articles_cards_story: articles_articles_cards_story[];
+    articles_articles_cards_web: articles_articles_cards_web[];
+    articles_block_breaker_text: articles_block_breaker_text[];
+    articles_cards_dashboard: articles_cards_dashboard[];
+    articles_cards_story: articles_cards_story[];
+    articles_cards_web: articles_cards_web[];
+    articles_stories: articles_stories[];
+    articles_topics: articles_topics[];
+    articles_topics_1: articles_topics_1[];
+    authors: authors[];
+    block_breaker_image: block_breaker_image[];
+    block_breaker_list: block_breaker_list[];
+    block_breaker_quicktip: block_breaker_quicktip[];
+    block_breaker_quote: block_breaker_quote[];
+    block_breaker_stats: block_breaker_stats[];
+    block_breaker_text: block_breaker_text[];
+    block_inline_image: block_inline_image[];
+    block_richtext: block_richtext[];
+    block_richtext_blog: block_richtext_blog[];
+    care_story_card_dashboard: care_story_card_dashboard[];
+    care_story_card_endslate: care_story_card_endslate[];
+    care_story_card_openslate: care_story_card_openslate[];
+    care_story_card_questionnaire: care_story_card_questionnaire[];
+    consultation_specialty_areas: consultation_specialty_areas[];
+    docapp_settings: docapp_settings[];
+    fact: fact[];
+    faq_groups: faq_groups[];
+    faq_groups_faqs: faq_groups_faqs[];
+    faqs: faqs[];
+    fluent_team: fluent_team[];
+    language: language[];
+    medical_reviewer: medical_reviewer[];
+    medical_reviewer_medical_reviewer_qualification: medical_reviewer_medical_reviewer_qualification[];
+    medical_reviewer_qualification: medical_reviewer_qualification[];
+    open_positions: open_positions[];
+    press_articles: press_articles[];
+    profile_completion_reference: profile_completion_reference[];
+    record_story_card_dashboard: record_story_card_dashboard[];
+    record_story_card_prompt: record_story_card_prompt[];
+    record_stroy_card_dyk: record_stroy_card_dyk[];
+    socialmedia_links: socialmedia_links[];
+    stories: stories[];
+    stories_care_story_card_dashboard: stories_care_story_card_dashboard[];
+    stories_care_story_story_cards: stories_care_story_story_cards[];
+    stories_record_story_card_dashboard: stories_record_story_card_dashboard[];
+    stories_record_story_story_cards: stories_record_story_story_cards[];
+    testimonials: testimonials[];
+    topics: topics[];
+    topics_topics: topics_topics[];
+    torchbearer: torchbearer[];
+    website_block_carousel: website_block_carousel[];
+    website_block_carousel_slides: website_block_carousel_slides[];
+    website_block_carousel_website_block_carousel_slides: website_block_carousel_website_block_carousel_slides[];
+    website_block_faq: website_block_faq[];
+    website_block_faq_faq_groups: website_block_faq_faq_groups[];
+    website_block_hero: website_block_hero[];
+    website_block_menuitem: website_block_menuitem[];
+    website_block_portfolio: website_block_portfolio[];
+    website_block_prallax: website_block_prallax[];
+    website_block_process: website_block_process[];
+    website_block_richtext: website_block_richtext[];
+    website_block_showcase: website_block_showcase[];
+    website_block_showcase_content: website_block_showcase_content[];
+    website_block_showcase_items: website_block_showcase_items[];
+    website_block_teaser: website_block_teaser[];
+    website_block_testimonials: website_block_testimonials[];
+    website_block_testimonials_testimonials: website_block_testimonials_testimonials[];
+    website_component_clinically_reviewed: website_component_clinically_reviewed[];
+    website_component_delete_account: website_component_delete_account[];
+    website_component_early_access: website_component_early_access[];
+    website_component_footer: website_component_footer[];
+    website_component_footer_menu_left: website_component_footer_menu_left[];
+    website_component_footer_menu_right: website_component_footer_menu_right[];
+    website_component_footer_socialmedia_links: website_component_footer_socialmedia_links[];
+    website_component_menu: website_component_menu[];
+    website_component_menu_menu_items: website_component_menu_menu_items[];
+    website_component_menu_socialmedia: website_component_menu_socialmedia[];
+    website_component_prefooter: website_component_prefooter[];
+    website_page_about_us: website_page_about_us[];
+    website_page_about_us_content: website_page_about_us_content[];
+    website_page_author: website_page_author[];
+    website_page_blog: website_page_blog[];
+    website_page_careers: website_page_careers[];
+    website_page_contact_us: website_page_contact_us[];
+    website_page_doctor_login: website_page_doctor_login[];
+    website_page_faqs: website_page_faqs[];
+    website_page_faqs_content: website_page_faqs_content[];
+    website_page_home: website_page_home[];
+    website_page_home_content: website_page_home_content[];
+    website_page_legal: website_page_legal[];
+    website_page_legal_content: website_page_legal_content[];
+    website_page_medical_reviewer: website_page_medical_reviewer[];
+    website_page_metadata: website_page_metadata[];
+    website_page_metadata_website_socialmedia_links: website_page_metadata_website_socialmedia_links[];
+    website_page_our_process: website_page_our_process[];
+    website_page_our_process_content: website_page_our_process_content[];
+    website_page_our_process_files_1: website_page_our_process_files_1[];
+    website_page_our_process_files_2: website_page_our_process_files_2[];
+    website_page_press: website_page_press[];
+    website_page_press_content: website_page_press_content[];
+    website_page_privacy_matters: website_page_privacy_matters[];
+    website_page_privacy_matters_content: website_page_privacy_matters_content[];
+    website_page_sandbox: website_page_sandbox[];
+    website_page_sandbox_page_content: website_page_sandbox_page_content[];
+    website_page_why_we_care: website_page_why_we_care[];
+    website_page_why_we_care_content: website_page_why_we_care_content[];
 }
 "
 `;
 
 exports[`generateTypesFromSnapshot generates correct types for users.yaml 1`] = `
-"export type Users = {
+"export type users = {
     id: number;
     email: string;
     first_name?: string;
@@ -1701,7 +1698,7 @@ exports[`generateTypesFromSnapshot generates correct types for users.yaml 1`] = 
     preferences?: Record<string, any>;
 };
 export interface Schema {
-    users: Users;
+    users: users[];
 }
 "
 `;
