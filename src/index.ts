@@ -98,11 +98,64 @@ function mapDirectusTypeToTypeScript(
       (r) => r.collection === field.collection && r.field === field.field
     );
     if (relation?.related_collection) {
-      return factory.createTypeReferenceNode(
-        factory.createIdentifier(relation.related_collection),
-        undefined
-      );
+      return factory.createUnionTypeNode([
+        factory.createTypeReferenceNode(
+          factory.createIdentifier(relation.related_collection),
+          undefined
+        ),
+        factory.createKeywordTypeNode(SyntaxKind.StringKeyword),
+      ]);
     }
+  }
+
+  if (field.meta?.special?.includes("m2m")) {
+    const relations = schema.relations.filter(
+      (r) => r.collection === field.collection && r.field === field.field
+    );
+    const relatedTypes = relations
+      .filter(
+        (
+          relation
+        ): relation is typeof relation & { related_collection: string } =>
+          Boolean(relation.related_collection)
+      )
+      .map((relation) =>
+        factory.createTypeReferenceNode(
+          factory.createIdentifier(relation.related_collection),
+          undefined
+        )
+      );
+    return factory.createUnionTypeNode([
+      ...relatedTypes,
+      factory.createArrayTypeNode(
+        factory.createKeywordTypeNode(SyntaxKind.StringKeyword)
+      ),
+    ]);
+  }
+
+  if (field.meta?.special?.includes("m2a")) {
+    const relations = schema.relations.filter(
+      (r) => r.one_field === field.field || r.meta?.one_field === field.field
+    );
+    const relatedTypes = relations
+      .filter(
+        (relation): relation is typeof relation & { one_collection: string } =>
+          Boolean(relation.one_collection || relation.meta?.one_collection)
+      )
+      .map((relation) =>
+        factory.createTypeReferenceNode(
+          factory.createIdentifier(
+            relation.one_collection || relation.meta?.one_collection!
+          ),
+          undefined
+        )
+      );
+    return factory.createUnionTypeNode([
+      ...relatedTypes,
+      factory.createArrayTypeNode(
+        factory.createKeywordTypeNode(SyntaxKind.StringKeyword)
+      ),
+    ]);
   }
 
   if (field.meta?.special?.includes("json")) {

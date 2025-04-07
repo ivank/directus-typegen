@@ -29,6 +29,16 @@ export type Snapshot = {
 };
 
 export type SnapshotField = Field & { meta: Omit<FieldMeta, "id"> };
-export type SnapshotRelation = Relation & { meta: Omit<RelationMeta, "id"> };
+export interface SnapshotRelation {
+  collection: string;
+  field: string;
+  related_collection: string | null;
+  one_field?: string;
+  one_collection?: string;
+  meta?: {
+    one_field?: string;
+    one_collection?: string;
+  };
+}
 
 export type SnapshotWithHash = Snapshot & { hash: string };
