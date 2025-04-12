@@ -320,7 +320,9 @@ export function generateTypesFromSnapshot(schema: Snapshot): string {
           factory.createPropertySignature(
             undefined,
             field.field,
-            undefined,
+            field.schema?.is_nullable
+              ? factory.createToken(SyntaxKind.QuestionToken)
+              : undefined,
             toCollectionFieldType({ schema }, field)
           )
         )
@@ -352,7 +354,9 @@ export function generateTypesFromSnapshot(schema: Snapshot): string {
         factory.createPropertySignature(
           undefined,
           field.field,
-          undefined,
+          field.schema?.is_nullable
+            ? factory.createToken(SyntaxKind.QuestionToken)
+            : undefined,
           toCollectionFieldType({ schema }, field)
         )
       )
