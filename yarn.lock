@@ -292,6 +292,11 @@
   dependencies:
     knex "3.1.0"
 
+"@directus/sdk@^19.1.0":
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/@directus/sdk/-/sdk-19.1.0.tgz#aea42c191b40be8806c97ef0420d71b700f1a076"
+  integrity sha512-Nqem9BsvvGyVtAa69mGPtoMoMVkZxdIREdsWvvTzNF4/1XqaFfEiFL7PhtUNfc46/Nufus2+QUKYQbNiAWe3ZA==
+
 "@directus/system-data@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@directus/system-data/-/system-data-3.1.0.tgz#6697a3f5c50b6e75398fdf98a49a8a60beef1ec6"
@@ -2376,3 +2381,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^3.24.2:
+  version "3.24.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.24.2.tgz#8efa74126287c675e92f46871cfc8d15c34372b3"
+  integrity sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==

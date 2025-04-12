@@ -1,59 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generateTypesFromSnapshot generates correct types for blog.json 1`] = `
-"export interface posts {
-    id: number;
-    title: string;
-    content?: string;
-    author: number | users;
-    category?: number | categories;
-    published_at?: "datetime";
-    tags?: "json";
+exports[`generateTypesFromSnapshot generates correct types for image_custom.yaml 1`] = `
+"export interface article {
+    id: string;
+    hero_image: string | directus_files;
 }
-export interface categories {
-    id: number;
-    name: string;
-    description?: string;
+export interface directus_files {
+    copyright?: string;
 }
 export interface Schema {
-    posts: posts[];
-    categories: categories[];
+    article: article[];
 }
 "
 `;
 
-exports[`generateTypesFromSnapshot generates correct types for complex.yaml 1`] = `
-"export interface products {
+exports[`generateTypesFromSnapshot generates correct types for many_to_any.yaml 1`] = `
+"export interface article {
     id: string;
-    name: string;
-    description?: string;
-    price: number;
-    stock: number;
-    image?: Buffer;
-    metadata?: "json";
-    created_at: "datetime";
-    updated_at: "datetime";
+    blocks?: string[] | article_blocks[];
 }
-export interface orders {
-    id: string;
-    customer: string | customers;
-    status: "pending" | "processing" | "shipped" | "delivered";
-    items: "json";
-    total: number;
-    created_at: "datetime";
+export type article_blocks = {
+    id: number;
+    article_id: string | article;
+    item: source;
+    collection: "source";
+} | {
+    id: number;
+    article_id: string | article;
+    item: hero;
+    collection: "hero";
+};
+export interface hero {
+    id: number;
+    image?: string | directus_files;
 }
-export interface customers {
-    id: string;
-    name: string;
-    email: string;
-    phone?: string;
-    address?: "json";
-    created_at: "datetime";
+export interface source {
+    id: number;
+    text: string;
+}
+export interface directus_files {
 }
 export interface Schema {
-    products: products[];
-    orders: orders[];
-    customers: customers[];
+    article: article[];
+    article_blocks: article_blocks[];
+    hero: hero[];
+    source: source[];
+}
+"
+`;
+
+exports[`generateTypesFromSnapshot generates correct types for many_to_many.yaml 1`] = `
+"export interface article {
+    id: string;
+    sources?: string[] | article_source[];
+}
+export interface article_source {
+    id: number;
+    article_id?: string | article;
+    source_id?: number | source;
+}
+export interface source {
+    id: number;
+    text: string;
+}
+export interface Schema {
+    article: article[];
+    article_source: article_source[];
+    source: source[];
+}
+"
+`;
+
+exports[`generateTypesFromSnapshot generates correct types for many_to_one.yaml 1`] = `
+"export interface article {
+    id: string;
+    article_hero?: number | hero;
+}
+export interface hero {
+    id: number;
+    image?: string | directus_files;
+}
+export interface directus_files {
+}
+export interface Schema {
+    article: article[];
+    hero: hero[];
+}
+"
+`;
+
+exports[`generateTypesFromSnapshot generates correct types for one_to_many.yaml 1`] = `
+"export interface article {
+    id: string;
+    sources?: string[] | source[];
+}
+export interface source {
+    id: number;
+    text: string;
+    article_id: string | article;
+}
+export interface Schema {
+    article: article[];
+    source: source[];
 }
 "
 `;
@@ -62,9 +110,9 @@ exports[`generateTypesFromSnapshot generates correct types for schema.yaml 1`] =
 "export interface app_block_richtext {
     id: string;
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     content?: string;
@@ -76,9 +124,9 @@ export interface app_content {
 }
 export interface app_static_settings {
     id: string;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     section_legal_title?: string;
     section_third_party_consent_content?: string | app_block_richtext;
@@ -93,7 +141,7 @@ export interface app_static_settings {
     section_faqs_title?: string;
     section_fluent_support_title?: string;
     section_fluent_support_content?: string | app_block_richtext;
-    section_socialmedia_links: string[] | app_static_settings[];
+    section_socialmedia_links?: string[] | app_static_settings_socialmedia_links[];
     account_settings_title?: string;
     account_settings_browser_notification_title?: string;
     section_measurement_preferences_title?: string;
@@ -112,15 +160,15 @@ export interface app_static_settings {
 }
 export interface app_static_settings_socialmedia_links {
     id: number;
-    app_static_settings_id?: string;
-    socialmedia_links_id?: string;
+    app_static_settings_id?: string | app_static_settings;
+    socialmedia_links_id?: string | socialmedia_links;
     sort?: number;
 }
 export interface article_sources {
     id: string;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     article_source_title?: string;
     article_source_link?: string;
@@ -131,25 +179,25 @@ export interface articles {
     id: string;
     status: "published" | "scheduled" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     article_title?: string;
     article_hero_image?: string | directus_files;
-    article_blocks: any;
+    article_blocks?: string[] | articles_article_blocks[];
     article_reviewer?: number | medical_reviewer;
     article_tags?: "json";
-    dashboard_cards: string[] | articles[];
-    web_cards: string[] | articles[];
-    story_cards: string[] | articles[];
+    dashboard_cards?: string[] | articles_articles_cards_dashboard[];
+    web_cards?: string[] | articles_articles_cards_web[];
+    story_cards?: string[] | articles_articles_cards_story[];
     primary_topic?: string | topics;
-    secondary_topics: string[] | articles[];
-    article_type?: "app" | "blog" | "app_blog";
+    secondary_topics?: string[] | articles_topics[];
+    article_type: "app" | "blog" | "app_blog";
     article_reading_time?: string;
     slug?: string;
     article_teaser?: string;
-    article_blocks_blog: any;
+    article_blocks_blog?: string[] | articles_article_blocks_blog[];
     article_publish_date?: "datetime";
     article_author?: string | authors;
     page_metadata?: string | website_page_metadata;
@@ -158,8 +206,8 @@ export interface articles {
     prismic_id?: string;
     article_sources?: "json";
     article_views?: number;
-    other_topics: string[] | articles[];
-    article_stories: any;
+    other_topics?: string[] | articles_topics_1[];
+    article_stories?: string[] | articles_stories[];
     article_deeplink?: string;
 }
 export type articles_article_blocks = {
@@ -250,36 +298,36 @@ export type articles_article_blocks_blog = {
 };
 export interface articles_article_sources {
     id: number;
-    articles_id?: string;
-    article_sources_id?: string;
+    articles_id?: string | articles;
+    article_sources_id?: string | article_sources;
 }
 export interface articles_article_sources_1 {
     id: number;
-    articles_id?: string;
-    article_sources_id?: string;
+    articles_id?: string | articles;
+    article_sources_id?: string | article_sources;
 }
 export interface articles_articles_cards_dashboard {
     id: number;
-    articles_id?: string;
-    articles_cards_dashboard_id?: number;
+    articles_id?: string | articles;
+    articles_cards_dashboard_id?: number | articles_cards_dashboard;
     sort?: number;
 }
 export interface articles_articles_cards_story {
     id: number;
-    articles_id?: string;
-    articles_cards_story_id?: number;
+    articles_id?: string | articles;
+    articles_cards_story_id?: number | articles_cards_story;
     sort?: number;
 }
 export interface articles_articles_cards_web {
     id: number;
-    articles_id?: string;
-    articles_cards_web_id?: number;
+    articles_id?: string | articles;
+    articles_cards_web_id?: number | articles_cards_web;
     sort?: number;
 }
 export interface articles_block_breaker_text {
     id: number;
-    articles_id?: string;
-    block_breaker_text_id?: number;
+    articles_id?: string | articles;
+    block_breaker_text_id?: number | block_breaker_text;
 }
 export interface articles_blocks {
 }
@@ -288,22 +336,22 @@ export interface articles_cards {
 export interface articles_cards_dashboard {
     id: number;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
-    design?: "t" | "it";
+    design: "t" | "it";
     title?: string;
     image?: string | directus_files;
 }
 export interface articles_cards_story {
     id: number;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
-    design?: "itp" | "q" | "tp" | "tpc" | "tisp";
+    design: "itp" | "q" | "tp" | "tpc" | "tisp";
     title?: string;
     subtitle?: string;
     paragraph?: string;
@@ -314,11 +362,11 @@ export interface articles_cards_story {
 export interface articles_cards_web {
     id: number;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
-    design?: "t" | "tp" | "tpc" | "tpi" | "tspi";
+    design: "t" | "tp" | "tpc" | "tpi" | "tspi";
     title?: string;
     paragraph?: string;
     subtitle?: string;
@@ -330,43 +378,43 @@ export interface articles_stories {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
-    dashboard_card_design?: "t" | "it";
+    dashboard_card_design: "t" | "it";
     dashboard_card_title?: string;
     dashboard_card_image?: string | directus_files;
-    story_card_design?: "itp" | "tp" | "tpc" | "tisp" | "q";
+    story_card_design: "itp" | "tp" | "tpc" | "tisp" | "q";
     story_card_title?: string;
     story_card_subtitle?: string;
     story_card_paragraph?: string;
     story_card_quote_author?: string;
     story_card_quote_author_title?: string;
     story_card_image?: string | directus_files;
-    web_card_design?: "t" | "tp" | "tpc" | "tpi" | "tspi";
+    web_card_design: "t" | "tp" | "tpc" | "tpi" | "tspi";
     web_card_title?: string;
     web_card_subtitle?: string;
     web_card_paragraph?: string;
     web_card_image?: string | directus_files;
-    fk_articles?: string;
+    fk_articles?: string | articles;
 }
 export interface articles_topics {
     id: number;
-    articles_id?: string;
-    topics_id?: string;
+    articles_id?: string | articles;
+    topics_id?: string | topics;
 }
 export interface articles_topics_1 {
     id: number;
-    articles_id?: string;
-    topics_id?: string;
+    articles_id?: string | articles;
+    topics_id?: string | topics;
 }
 export interface authors {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     author_name?: string;
     author_title?: string;
@@ -380,37 +428,37 @@ export interface authors {
 }
 export interface block_breaker_image {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     image?: string | directus_files;
 }
 export interface block_breaker_list {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     content?: string;
     list_items?: "json";
-    list_type?: "ol" | "ul";
+    list_type: "ol" | "ul";
 }
 export interface block_breaker_quicktip {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     paragraph?: string;
 }
 export interface block_breaker_quote {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     name?: string;
     content?: string;
@@ -418,9 +466,9 @@ export interface block_breaker_quote {
 }
 export interface block_breaker_stats {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     statistic?: string;
     content?: string;
@@ -428,33 +476,33 @@ export interface block_breaker_stats {
 }
 export interface block_breaker_text {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     content?: string;
 }
 export interface block_inline_image {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     image?: string | directus_files;
 }
 export interface block_richtext {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     content?: string;
 }
 export interface block_richtext_blog {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     content?: string;
     anchor_title?: string;
@@ -464,9 +512,9 @@ export interface care_story_card_dashboard {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     design?: "t" | "it";
@@ -475,9 +523,9 @@ export interface care_story_card_endslate {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     paragraph?: string;
@@ -488,9 +536,9 @@ export interface care_story_card_openslate {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     paragraph?: string;
@@ -504,20 +552,20 @@ export interface care_story_card_questionnaire {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     emr_questionnaire_identifier?: string;
 }
 export interface consultation_specialty_areas {
     id: number;
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
-    tile_icon?: string | directus_files;
+    tile_icon: string | directus_files;
     tile_color?: string;
     tile_description?: string;
     fact_code?: string | fact;
@@ -527,9 +575,9 @@ export interface docapp_content {
 export interface docapp_settings {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     legal_title?: string;
     billing_invoice_title?: string;
@@ -560,9 +608,9 @@ export interface fact {
     fact_code: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     fact_display?: string;
     fact_system: string;
@@ -570,34 +618,34 @@ export interface fact {
     emr_display?: string;
     emr_system?: string;
     fact_code_hashed?: string;
-    fact_id?: string;
-    fmh_fact_id?: string;
+    fact_id?: string | stories;
+    fmh_fact_id?: string | stories;
 }
 export interface faq_groups {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     faq_group_title?: string;
-    faqs: string[] | faq_groups[];
+    faqs?: string[] | faq_groups_faqs[];
     faq_group_type?: "app" | "web" | "app_web";
 }
 export interface faq_groups_faqs {
     id: number;
-    faq_groups_id?: string;
-    faqs_id?: string;
+    faq_groups_id?: string | faq_groups;
+    faqs_id?: string | faqs;
     sort?: number;
 }
 export interface faqs {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     question?: string;
     answer?: string;
@@ -608,9 +656,9 @@ export interface fluent_team {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     first_name?: string;
     last_name?: string;
@@ -626,18 +674,18 @@ export interface global_content {
 }
 export interface language {
     code: string;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     display_value?: string;
-    language_code?: number;
+    language_code?: number | medical_reviewer;
 }
 export interface medical_reviewer {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     reviewer_name?: string;
     reviewer_qualification?: string;
@@ -649,20 +697,20 @@ export interface medical_reviewer {
     yoe_since?: "datetime";
     status: "published" | "scheduled" | "draft" | "archived";
     practitioner_role?: "json";
-    qualifications: number[] | medical_reviewer[];
-    languages: any;
+    qualifications?: number[] | medical_reviewer_medical_reviewer_qualification[];
+    languages?: number[] | language[];
     slug?: string;
 }
 export interface medical_reviewer_medical_reviewer_qualification {
     id: number;
-    medical_reviewer_id?: number;
-    medical_reviewer_qualification_id?: number;
+    medical_reviewer_id?: number | medical_reviewer;
+    medical_reviewer_qualification_id?: number | medical_reviewer_qualification;
 }
 export interface medical_reviewer_qualification {
     id: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     qualification_date?: "datetime";
     qualification_title?: string;
@@ -672,9 +720,9 @@ export interface open_positions {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     job_title?: string;
     job_location?: string;
@@ -685,9 +733,9 @@ export interface press_articles {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     cta_button_icon?: string;
     cta_button_label?: string;
@@ -700,12 +748,12 @@ export interface profile_completion_reference {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     fhir_resource?: string;
-    percentage?: number;
+    percentage: number;
     fhir_resource_id?: string;
     description?: string;
     patient_confirm_na?: boolean;
@@ -714,9 +762,9 @@ export interface record_story_card_dashboard {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     design?: "t" | "ict" | "it";
     title?: string;
@@ -726,9 +774,9 @@ export interface record_story_card_openslate {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     paragraph?: string;
@@ -743,9 +791,9 @@ export interface record_story_card_prompt {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     eyebrow?: string;
     prompt?: string;
@@ -768,9 +816,9 @@ export interface record_stroy_card_dyk {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     design?: "tip" | "tp";
     eyebrow?: string;
@@ -785,9 +833,9 @@ export interface socialmedia_links {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     link?: string;
@@ -801,30 +849,30 @@ export interface stories {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     story_type?: "care" | "record";
-    care_story_dashboard_cards: string[] | stories[];
-    care_story_story_cards: any;
+    care_story_dashboard_cards?: string[] | stories_care_story_card_dashboard[];
+    care_story_story_cards?: string[] | stories_care_story_story_cards[];
     story_title?: string;
-    record_story_dashboard_cards: string[] | stories[];
-    record_story_story_cards: any;
+    record_story_dashboard_cards?: string[] | stories_record_story_card_dashboard[];
+    record_story_story_cards?: string[] | stories_record_story_story_cards[];
     story_tag_line?: string;
     min_age?: number;
     max_age?: number;
     frequency?: number;
     period_start?: "datetime";
     period_end?: "datetime";
-    fact_codes: string[] | stories[];
-    fmh_fact_codes: string[] | stories[];
+    fact_codes?: string[] | stories_fact[];
+    fmh_fact_codes?: string[] | stories_fact_1[];
     care_story_classification?: "CareStoryReproductiveHealth" | "CareStoryConditions" | "CareStoryReproductiveHealthMale" | "CareStoryPreventativeScreenings" | "CareStoryMedications" | "CareStoryFamilyMedicalHistory" | "CareStorySupplements" | "CareStoryAllergiesIntolerances" | "CareStorySymptoms" | "CareStorySurgeriesProcedures" | "CareStoryExercise" | "CareStoryDiet" | "CareStoryAlcoholTobaccoCaffeine" | "CareStoryMentalHealthAndStress" | "CareStoryOccupation" | "default";
 }
 export interface stories_care_story_card_dashboard {
     id: number;
-    stories_id?: string;
-    care_story_card_dashboard_id?: string;
+    stories_id?: string | stories;
+    care_story_card_dashboard_id?: string | care_story_card_dashboard;
 }
 export type stories_care_story_story_cards = {
     id: number;
@@ -847,18 +895,18 @@ export type stories_care_story_story_cards = {
 };
 export interface stories_fact {
     id: number;
-    stories_id?: string;
-    fact_fact_code?: string;
+    stories_id?: string | stories;
+    fact_fact_code?: string | fact;
 }
 export interface stories_fact_1 {
     id: number;
-    stories_id?: string;
-    fact_fact_code?: string;
+    stories_id?: string | stories;
+    fact_fact_code?: string | fact;
 }
 export interface stories_record_story_card_dashboard {
     id: number;
-    stories_id?: string;
-    record_story_card_dashboard_id?: string;
+    stories_id?: string | stories;
+    record_story_card_dashboard_id?: string | record_story_card_dashboard;
 }
 export type stories_record_story_story_cards = {
     id: number;
@@ -877,9 +925,9 @@ export interface testimonials {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     content?: string;
     name?: string;
@@ -887,30 +935,30 @@ export interface testimonials {
 export interface topics {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     topic_class?: "primary" | "secondary" | "other";
     image?: string | directus_files;
     teaser?: string;
     description?: string;
-    fact_code?: string | fact;
+    fact_code: string | fact;
     slug?: string;
-    subtopics: string[] | topics[];
+    subtopics?: string[] | topics_topics[];
 }
 export interface topics_topics {
     id: number;
-    topics_id?: string;
-    related_topics_id?: string;
+    topics_id?: string | topics;
+    related_topics_id?: string | topics;
 }
 export interface torchbearer {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     path: string;
     target_android?: string;
@@ -924,13 +972,13 @@ export interface website_block_carousel {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     description?: string;
     title?: string;
-    slides: string[] | website_block_carousel[];
+    slides?: string[] | website_block_carousel_website_block_carousel_slides[];
     image_background?: string | directus_files;
     icon_slide_left?: string | directus_files;
     icon_slide_right?: string | directus_files;
@@ -939,13 +987,13 @@ export interface website_block_carousel_slides {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     image?: string | directus_files;
     paragraph?: string;
-    slide_type?: "image" | "itp_teaser" | "hulahoop";
+    slide_type: "image" | "itp_teaser" | "hulahoop";
     title?: string;
     cta_button_link?: string;
     image_mobile?: string | directus_files;
@@ -953,37 +1001,37 @@ export interface website_block_carousel_slides {
 }
 export interface website_block_carousel_website_block_carousel_slides {
     id: number;
-    website_block_carousel_id?: string;
-    website_block_carousel_slides_id?: string;
+    website_block_carousel_id?: string | website_block_carousel;
+    website_block_carousel_slides_id?: string | website_block_carousel_slides;
     sort?: number;
 }
 export interface website_block_faq {
     id: string;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     status: "published" | "draft" | "archived";
     icon_expand?: string | directus_files;
     icon_collapse?: string | directus_files;
-    faq_groups: string[] | website_block_faq[];
+    faq_groups?: string[] | website_block_faq_faq_groups[];
     image_parallax_left?: string | directus_files;
     image_parallax_right?: string | directus_files;
     icon_menu_selector?: string | directus_files;
 }
 export interface website_block_faq_faq_groups {
     id: number;
-    website_block_faq_id?: string;
-    faq_groups_id?: string;
+    website_block_faq_id?: string | website_block_faq;
+    faq_groups_id?: string | faq_groups;
 }
 export interface website_block_hero {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     hero_type?: "t" | "ti" | "tiv" | "tpi" | "tpci" | "tpcci" | "tci" | "tcci" | "about-us";
     title?: string;
@@ -1000,9 +1048,9 @@ export interface website_block_menuitem {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     cta_title?: string;
     cta_target?: string;
@@ -1011,9 +1059,9 @@ export interface website_block_portfolio {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     portfolio_type?: "featured articles" | "featured_press" | "team" | "advisory-board" | "press";
     title?: string;
@@ -1033,9 +1081,9 @@ export interface website_block_prallax {
     id: number;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     image_top_row?: string | directus_files;
@@ -1047,9 +1095,9 @@ export interface website_block_process {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     design?: "iris-100" | "springgreen-100";
     title?: string;
@@ -1061,9 +1109,9 @@ export interface website_block_process {
 export interface website_block_richtext {
     id: string;
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     richtext?: string;
     title?: string;
@@ -1073,9 +1121,9 @@ export interface website_block_showcase {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     image_background?: string | directus_files;
@@ -1083,7 +1131,7 @@ export interface website_block_showcase {
     image_background_mobile?: string | directus_files;
     cta_button_label?: string;
     cta_button_link?: string;
-    content: any;
+    content?: string[] | website_block_showcase_content[];
     title_display?: boolean;
 }
 export type website_block_showcase_content = {
@@ -1097,9 +1145,9 @@ export interface website_block_showcase_items {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     content?: string;
     image?: string | directus_files;
@@ -1110,9 +1158,9 @@ export interface website_block_teaser {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     content?: string;
     cta_button_label?: string;
@@ -1125,28 +1173,28 @@ export interface website_block_testimonials {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     image_background?: string | directus_files;
     icon_quote?: string | directus_files;
-    testimonials: string[] | website_block_testimonials[];
+    testimonials?: string[] | website_block_testimonials_testimonials[];
 }
 export interface website_block_testimonials_testimonials {
     id: number;
-    website_block_testimonials_id?: string;
-    testimonials_id?: string;
+    website_block_testimonials_id?: string | website_block_testimonials;
+    testimonials_id?: string | testimonials;
 }
 export interface website_blocks {
 }
 export interface website_component_clinically_reviewed {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     content?: string;
@@ -1157,9 +1205,9 @@ export interface website_component_clinically_reviewed {
 export interface website_component_delete_account {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     title?: string;
@@ -1181,9 +1229,9 @@ export interface website_component_delete_account {
 export interface website_component_early_access {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     paragraph?: string;
@@ -1204,16 +1252,16 @@ export interface website_component_early_access {
 export interface website_component_footer {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     logo?: string | directus_files;
     tag_line: string;
     copyright_line: string;
-    socialmedia: string[] | website_component_footer[];
-    menu_left: any;
-    menu_right: any;
+    socialmedia?: string[] | website_component_footer_socialmedia_links[];
+    menu_left?: string[] | website_component_footer_menu_left[];
+    menu_right?: string[] | website_component_footer_menu_right[];
     tag_line_newsletter?: string;
     field_input_email_placeholder?: string;
     cta_button_label_newsletter?: string;
@@ -1238,20 +1286,20 @@ export type website_component_footer_menu_right = {
 };
 export interface website_component_footer_socialmedia_links {
     id: number;
-    website_component_footer_id?: string;
-    socialmedia_links_id?: string;
+    website_component_footer_id?: string | website_component_footer;
+    socialmedia_links_id?: string | socialmedia_links;
     sort?: number;
 }
 export interface website_component_menu {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     image_logo?: string | directus_files;
     image_background?: string | directus_files;
-    socialmedia: any;
+    socialmedia?: string[] | website_component_menu_socialmedia[];
     icon_expand?: string | directus_files;
     icon_collapse?: string | directus_files;
     image_logo_plain?: string | directus_files;
@@ -1261,7 +1309,7 @@ export interface website_component_menu {
     cta_2_button_label?: string;
     cta_2_target?: string;
     cta_1_target?: string;
-    menu_items: any;
+    menu_items?: string[] | website_component_menu_menu_items[];
 }
 export type website_component_menu_menu_items = {
     id: number;
@@ -1281,9 +1329,9 @@ export interface website_component_prefooter {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     paragraph?: string;
@@ -1300,11 +1348,11 @@ export interface website_components {
 export interface website_page_about_us {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
-    content: any;
+    content?: string[] | website_page_about_us_content[];
     prefooter: string | website_component_prefooter;
     title?: string;
     slug?: string;
@@ -1324,9 +1372,9 @@ export type website_page_about_us_content = {
 export interface website_page_author {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     page_metadata?: string | website_page_metadata;
@@ -1338,9 +1386,9 @@ export interface website_page_blog {
     id: string;
     status: "published" | "draft" | "archived";
     sort?: number;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     title?: string;
@@ -1382,9 +1430,9 @@ export interface website_page_blog {
 export interface website_page_careers {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     page_metadata?: string | website_page_metadata;
@@ -1416,9 +1464,9 @@ export interface website_page_careers {
 export interface website_page_contact_us {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     page_metadata?: string | website_page_metadata;
     prefooter?: string | website_component_prefooter;
@@ -1446,9 +1494,9 @@ export interface website_page_contact_us {
 export interface website_page_doctor_login {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     page_metadata?: string | website_page_metadata;
@@ -1466,13 +1514,13 @@ export interface website_page_doctor_login {
 export interface website_page_faqs {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     page_metadata?: string | website_page_metadata;
-    content: any;
+    content?: string[] | website_page_faqs_content[];
     prefooter?: string | website_component_prefooter;
 }
 export type website_page_faqs_content = {
@@ -1491,15 +1539,15 @@ export type website_page_faqs_content = {
 export interface website_page_home {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     page_metadata?: string | website_page_metadata;
     slug?: string;
     title?: string;
     prefooter?: string | website_component_prefooter;
-    content: any;
+    content?: string[] | website_page_home_content[];
 }
 export type website_page_home_content = {
     id: number;
@@ -1553,12 +1601,12 @@ export type website_page_home_content = {
 export interface website_page_legal {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
-    content: any;
+    content?: string[] | website_page_legal_content[];
     title?: string;
     page_metadata?: string | website_page_metadata;
 }
@@ -1571,9 +1619,9 @@ export type website_page_legal_content = {
 export interface website_page_medical_reviewer {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     title_articles?: string;
@@ -1583,9 +1631,9 @@ export interface website_page_medical_reviewer {
 }
 export interface website_page_metadata {
     id: string;
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     xml_sitemap_relevant?: boolean;
     sitemap_navigation_element?: boolean;
@@ -1610,7 +1658,7 @@ export interface website_page_metadata {
     schemaorg_contact_point_email?: string;
     schemaorg_headline?: string;
     schemaorg_author_name?: string;
-    schemaorg_socialmedia_links: string[] | website_page_metadata[];
+    schemaorg_socialmedia_links?: string[] | website_page_metadata_website_socialmedia_links[];
     nav_footer_left?: boolean;
     nav_footer_right?: boolean;
     nav_main?: boolean;
@@ -1619,21 +1667,21 @@ export interface website_page_metadata {
 }
 export interface website_page_metadata_website_socialmedia_links {
     id: number;
-    website_page_metadata_id?: string;
+    website_page_metadata_id?: string | website_page_metadata;
 }
 export interface website_page_our_process {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     page_metadata?: string | website_page_metadata;
     title?: string;
-    content: any;
-    images_parallax_left: any;
-    images_parallax_right: any;
+    content?: string[] | website_page_our_process_content[];
+    images_parallax_left?: string[] | website_page_our_process_files_1[];
+    images_parallax_right?: string[] | website_page_our_process_files_2[];
     prefooter?: string | website_component_prefooter;
 }
 export type website_page_our_process_content = {
@@ -1651,23 +1699,23 @@ export type website_page_our_process_content = {
 };
 export interface website_page_our_process_files_1 {
     id: number;
-    website_page_our_process_id?: string;
-    directus_files_id?: string;
+    website_page_our_process_id?: string | website_page_our_process;
+    directus_files_id?: string | directus_files;
 }
 export interface website_page_our_process_files_2 {
     id: number;
-    website_page_our_process_id?: string;
-    directus_files_id?: string;
+    website_page_our_process_id?: string | website_page_our_process;
+    directus_files_id?: string | directus_files;
 }
 export interface website_page_press {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
-    content: any;
+    content?: string[] | website_page_press_content[];
     prefooter?: string | website_component_prefooter;
     slug?: string;
     page_metadata?: string | website_page_metadata;
@@ -1681,13 +1729,13 @@ export type website_page_press_content = {
 export interface website_page_privacy_matters {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     page_metadata?: string | website_page_metadata;
     title?: string;
-    content: any;
+    content?: string[] | website_page_privacy_matters_content[];
     prefooter?: string | website_component_prefooter;
 }
 export type website_page_privacy_matters_content = {
@@ -1704,13 +1752,13 @@ export type website_page_privacy_matters_content = {
 export interface website_page_sandbox {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     title?: string;
     page_metadata?: string | website_page_metadata;
-    page_content: any;
+    page_content?: string[] | website_page_sandbox_page_content[];
     page_prefooter?: string | website_component_prefooter;
 }
 export type website_page_sandbox_page_content = {
@@ -1777,14 +1825,14 @@ export type website_page_sandbox_page_content = {
 export interface website_page_why_we_care {
     id: string;
     status: "published" | "draft" | "archived";
-    user_created?: string;
+    user_created?: string | directus_users;
     date_created?: "datetime";
-    user_updated?: string;
+    user_updated?: string | directus_users;
     date_updated?: "datetime";
     slug?: string;
     title?: string;
     page_metadata?: string | website_page_metadata;
-    content: any;
+    content?: string[] | website_page_why_we_care_content[];
     prefooter?: string | website_component_prefooter;
 }
 export type website_page_why_we_care_content = {
@@ -1838,16 +1886,19 @@ export type website_page_why_we_care_content = {
 };
 export interface website_pages {
 }
+export interface directus_users {
+}
 export interface directus_files {
     copyright?: string;
     notes?: string;
+    sync?: any;
     prismic_id?: string;
 }
 export interface Schema {
     app_block_richtext: app_block_richtext[];
     app_blocks: app_blocks[];
     app_content: app_content[];
-    app_static_settings: app_static_settings[];
+    app_static_settings: app_static_settings;
     app_static_settings_socialmedia_links: app_static_settings_socialmedia_links[];
     article_sources: article_sources[];
     articles: articles[];
@@ -1884,7 +1935,7 @@ export interface Schema {
     care_story_card_questionnaire: care_story_card_questionnaire[];
     consultation_specialty_areas: consultation_specialty_areas[];
     docapp_content: docapp_content[];
-    docapp_settings: docapp_settings[];
+    docapp_settings: docapp_settings;
     fact: fact[];
     faq_groups: faq_groups[];
     faq_groups_faqs: faq_groups_faqs[];
@@ -1934,63 +1985,59 @@ export interface Schema {
     website_block_testimonials: website_block_testimonials[];
     website_block_testimonials_testimonials: website_block_testimonials_testimonials[];
     website_blocks: website_blocks[];
-    website_component_clinically_reviewed: website_component_clinically_reviewed[];
-    website_component_delete_account: website_component_delete_account[];
-    website_component_early_access: website_component_early_access[];
-    website_component_footer: website_component_footer[];
+    website_component_clinically_reviewed: website_component_clinically_reviewed;
+    website_component_delete_account: website_component_delete_account;
+    website_component_early_access: website_component_early_access;
+    website_component_footer: website_component_footer;
     website_component_footer_menu_left: website_component_footer_menu_left[];
     website_component_footer_menu_right: website_component_footer_menu_right[];
     website_component_footer_socialmedia_links: website_component_footer_socialmedia_links[];
-    website_component_menu: website_component_menu[];
+    website_component_menu: website_component_menu;
     website_component_menu_menu_items: website_component_menu_menu_items[];
     website_component_menu_socialmedia: website_component_menu_socialmedia[];
     website_component_prefooter: website_component_prefooter[];
     website_components: website_components[];
-    website_page_about_us: website_page_about_us[];
+    website_page_about_us: website_page_about_us;
     website_page_about_us_content: website_page_about_us_content[];
-    website_page_author: website_page_author[];
-    website_page_blog: website_page_blog[];
-    website_page_careers: website_page_careers[];
-    website_page_contact_us: website_page_contact_us[];
-    website_page_doctor_login: website_page_doctor_login[];
-    website_page_faqs: website_page_faqs[];
+    website_page_author: website_page_author;
+    website_page_blog: website_page_blog;
+    website_page_careers: website_page_careers;
+    website_page_contact_us: website_page_contact_us;
+    website_page_doctor_login: website_page_doctor_login;
+    website_page_faqs: website_page_faqs;
     website_page_faqs_content: website_page_faqs_content[];
-    website_page_home: website_page_home[];
+    website_page_home: website_page_home;
     website_page_home_content: website_page_home_content[];
-    website_page_legal: website_page_legal[];
+    website_page_legal: website_page_legal;
     website_page_legal_content: website_page_legal_content[];
-    website_page_medical_reviewer: website_page_medical_reviewer[];
+    website_page_medical_reviewer: website_page_medical_reviewer;
     website_page_metadata: website_page_metadata[];
     website_page_metadata_website_socialmedia_links: website_page_metadata_website_socialmedia_links[];
-    website_page_our_process: website_page_our_process[];
+    website_page_our_process: website_page_our_process;
     website_page_our_process_content: website_page_our_process_content[];
     website_page_our_process_files_1: website_page_our_process_files_1[];
     website_page_our_process_files_2: website_page_our_process_files_2[];
-    website_page_press: website_page_press[];
+    website_page_press: website_page_press;
     website_page_press_content: website_page_press_content[];
-    website_page_privacy_matters: website_page_privacy_matters[];
+    website_page_privacy_matters: website_page_privacy_matters;
     website_page_privacy_matters_content: website_page_privacy_matters_content[];
-    website_page_sandbox: website_page_sandbox[];
+    website_page_sandbox: website_page_sandbox;
     website_page_sandbox_page_content: website_page_sandbox_page_content[];
-    website_page_why_we_care: website_page_why_we_care[];
+    website_page_why_we_care: website_page_why_we_care;
     website_page_why_we_care_content: website_page_why_we_care_content[];
     website_pages: website_pages[];
 }
 "
 `;
 
-exports[`generateTypesFromSnapshot generates correct types for users.yaml 1`] = `
-"export interface users {
-    id: number;
-    email: string;
-    first_name?: string;
-    last_name?: string;
-    role: string;
-    created_at: "datetime";
-    preferences?: "json";
+exports[`generateTypesFromSnapshot generates correct types for singleton.yaml 1`] = `
+"export interface website {
+    id: string;
+    title: string;
+    content?: string;
 }
 export interface Schema {
-    users: users[];
+    website: website;
 }
 "
 `;

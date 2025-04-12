@@ -1,0 +1,22 @@
+services:
+  directus:
+    image: directus/directus:11.5.1
+    container_name: directus
+    ports:
+      - 8055:8055
+    volumes:
+      - ./example/database:/directus/database
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://directus:8055/server/health || exit 1
+      interval: 5s
+      retries: 10
+      start_period: 5s
+    environment:
+      SECRET: 'test'
+      ADMIN_EMAIL: 'admin@example.com'
+      ADMIN_PASSWORD: 'test'
+      DB_CLIENT: 'sqlite3'
+      DB_FILENAME: '/directus/database/data.db'
+      WEBSOCKETS_ENABLED: 'true'
+      PUBLIC_URL: http://localhost:8055
+      EXTENSIONS_AUTO_RELOAD: true

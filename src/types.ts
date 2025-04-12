@@ -1,49 +1,34 @@
-import type { Field, FieldMeta } from "@directus/types";
-import type { BaseCollectionMeta } from "@directus/system-data";
+export type TypeSchema =
+  | { type: 'literal'; value: 'csv' | 'json' | 'datetime' }
+  | { type: 'enum'; options: string[] }
+  | { type: 'alias' }
+  | { type: 'primitive'; value: 'string' | 'number' | 'boolean' | 'binary' | 'alias' | 'unknown' }
+  | { type: 'array'; items: TypeSchema };
 
-export type Collection = {
+export interface RelationSchema {
+  type: 'Many' | 'One' | 'File';
   collection: string;
-  fields?: Field[];
-  meta: BaseCollectionMeta | null;
-};
-
-export const DatabaseClients = [
-  "mysql",
-  "postgres",
-  "cockroachdb",
-  "sqlite",
-  "oracle",
-  "mssql",
-  "redshift",
-] as const;
-
-export type DatabaseClient = (typeof DatabaseClients)[number];
-
-export type Snapshot = {
-  version: number;
-  directus: string;
-  vendor?: DatabaseClient;
-  collections: Collection[];
-  fields: SnapshotField[];
-  relations: SnapshotRelation[];
-};
-
-export type SnapshotField = Field & { meta: Omit<FieldMeta, "id"> };
-export interface SnapshotRelation {
-  collection: string;
-  field: string;
-  related_collection: string | null;
-  one_field?: string;
-  one_collection?: string;
-  meta?: {
-    junction_field?: string;
-    one_field?: string;
-    many_field?: string;
-    one_collection?: string;
-    one_allowed_collections?: string[];
-    one_collection_field?: string;
-    many_collection?: string;
-  };
 }
 
-export type SnapshotWithHash = Snapshot & { hash: string };
+export interface FieldSchema {
+  type: TypeSchema;
+  required?: boolean;
+  relation?: RelationSchema;
+}
+
+export type CollectionSchema = {
+  isSingleton?: boolean;
+  fields: Map<string, FieldSchema>;
+};
+
+export type JunctionSchema = {
+  itemField: string;
+  collectionField: string;
+  allowedCollections: string[];
+};
+
+export type Schema = {
+  collections: Map<string, CollectionSchema>;
+  builtInCollections: Map<string, CollectionSchema>;
+  junctions: Map<string, JunctionSchema>;
+};
