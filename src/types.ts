@@ -1,4 +1,4 @@
-import type { Field, FieldMeta, Relation, RelationMeta } from "@directus/types";
+import type { Field, FieldMeta } from "@directus/types";
 import type { BaseCollectionMeta } from "@directus/system-data";
 
 export type Collection = {
@@ -36,8 +36,13 @@ export interface SnapshotRelation {
   one_field?: string;
   one_collection?: string;
   meta?: {
+    junction_field?: string;
     one_field?: string;
+    many_field?: string;
     one_collection?: string;
+    one_allowed_collections?: string[];
+    one_collection_field?: string;
+    many_collection?: string;
   };
 }
 

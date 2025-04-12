@@ -705,7 +705,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 2
+      sort: 1
       sort_field: null
       translations: null
       unarchive_value: null
@@ -723,13 +723,13 @@ collections:
       color: null
       display_template: '{{content}}'
       group: articles_blocks
-      hidden: false
+      hidden: true
       icon: code_blocks
       item_duplication_fields: null
       note: null
       preview_url: null
       singleton: false
-      sort: 1
+      sort: 2
       sort_field: null
       translations: null
       unarchive_value: null
@@ -746,14 +746,14 @@ collections:
       collection: block_inline_image
       color: null
       display_template: '{{image.$thumbnail}}'
-      group: articles_blocks
+      group: null
       hidden: true
       icon: code_blocks
       item_duplication_fields: null
       note: null
       preview_url: null
       singleton: false
-      sort: 7
+      sort: 6
       sort_field: null
       translations: null
       unarchive_value: null
@@ -777,7 +777,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 8
+      sort: 7
       sort_field: null
       translations: null
       unarchive_value: null
@@ -801,7 +801,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 9
+      sort: 8
       sort_field: null
       translations: null
       unarchive_value: null
@@ -1155,7 +1155,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 7
+      sort: 8
       sort_field: null
       translations: null
       unarchive_value: null
@@ -1330,6 +1330,30 @@ collections:
       versioning: false
     schema:
       name: record_story_card_dashboard
+  - collection: record_story_card_openslate
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: status
+      archive_value: archived
+      collapse: open
+      collection: record_story_card_openslate
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: sort
+      translations: null
+      unarchive_value: draft
+      versioning: false
+    schema:
+      name: record_story_card_openslate
   - collection: record_story_card_prompt
     meta:
       accountability: all
@@ -1518,6 +1542,54 @@ collections:
       versioning: false
     schema:
       name: stories_care_story_story_cards
+  - collection: stories_fact
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: stories_fact
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: story to fact link table
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: stories_fact
+  - collection: stories_fact_1
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: stories_fact_1
+      color: null
+      display_template: null
+      group: null
+      hidden: true
+      icon: import_export
+      item_duplication_fields: null
+      note: story to fact link table (FMH)
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: stories_fact_1
   - collection: stories_record_story_card_dashboard
     meta:
       accountability: all
@@ -1647,7 +1719,7 @@ collections:
       collapse: open
       collection: torchbearer
       color: null
-      display_template: null
+      display_template: '{{path}}'
       group: global_content
       hidden: false
       icon: flashlight_on
@@ -2323,7 +2395,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 6
+      sort: 7
       sort_field: null
       translations: null
       unarchive_value: null
@@ -2513,7 +2585,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 5
+      sort: 6
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2537,7 +2609,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 6
+      sort: 7
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2561,7 +2633,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 7
+      sort: 8
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2585,7 +2657,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 8
+      sort: 9
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2657,7 +2729,7 @@ collections:
       note: null
       preview_url: null
       singleton: false
-      sort: 1
+      sort: 2
       sort_field: null
       translations: null
       unarchive_value: null
@@ -2681,7 +2753,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 9
+      sort: 10
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2729,7 +2801,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 10
+      sort: 11
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2801,7 +2873,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 11
+      sort: 12
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2897,7 +2969,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 12
+      sort: 13
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2945,7 +3017,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 13
+      sort: 14
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -2993,7 +3065,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 15
+      sort: 16
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -3041,7 +3113,7 @@ collections:
       note: null
       preview_url: null
       singleton: true
-      sort: 14
+      sort: 15
       sort_field: null
       translations: null
       unarchive_value: draft
@@ -12220,7 +12292,7 @@ fields:
       interface: input
       note: null
       options: null
-      readonly: false
+      readonly: true
       required: false
       sort: 14
       special: null
@@ -12237,7 +12309,7 @@ fields:
       numeric_precision: null
       numeric_scale: null
       is_nullable: true
-      is_unique: false
+      is_unique: true
       is_indexed: false
       is_primary_key: false
       is_generated: false
@@ -12556,84 +12628,6 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_files
       foreign_key_column: id
-  - collection: block_breaker_image
-    field: image_caption
-    type: string
-    meta:
-      collection: block_breaker_image
-      conditions: null
-      display: null
-      display_options: null
-      field: image_caption
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 7
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: image_caption
-      table: block_breaker_image
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_indexed: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: block_breaker_image
-    field: image_alt
-    type: string
-    meta:
-      collection: block_breaker_image
-      conditions: null
-      display: null
-      display_options: null
-      field: image_alt
-      group: null
-      hidden: false
-      interface: input
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 8
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: image_alt
-      table: block_breaker_image
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_indexed: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
   - collection: block_breaker_list
     field: id
     type: integer
@@ -13566,7 +13560,7 @@ fields:
       field: content
       group: null
       hidden: false
-      interface: input-rich-text-md
+      interface: input-multiline
       note: null
       options:
         softLength: 1500
@@ -14696,6 +14690,7 @@ fields:
           - remove
           - selectall
           - customMedia
+          - table
           - fullscreen
       readonly: false
       required: false
@@ -14989,7 +14984,7 @@ fields:
       numeric_scale: null
       is_nullable: true
       is_unique: false
-      is_indexed: true
+      is_indexed: false
       is_primary_key: false
       is_generated: false
       generation_expression: null
@@ -16459,59 +16454,6 @@ fields:
       foreign_key_table: null
       foreign_key_column: null
   - collection: care_story_card_openslate
-    field: cta_button_target
-    type: string
-    meta:
-      collection: care_story_card_openslate
-      conditions:
-        - hidden: false
-          name: enable (type = path)
-          options:
-            clear: false
-            font: sans-serif
-            masked: false
-            slug: false
-            trim: false
-          readonly: false
-          required: true
-          rule:
-            _and:
-              - cta_button_type:
-                  _eq: path
-      display: null
-      display_options: null
-      field: cta_button_target
-      group: null
-      hidden: true
-      interface: input
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: 12
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: cta_button_target
-      table: care_story_card_openslate
-      data_type: character varying
-      default_value: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_indexed: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: null
-      foreign_key_column: null
-  - collection: care_story_card_openslate
     field: cta_button_type
     type: string
     meta:
@@ -16557,6 +16499,66 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
+  - collection: care_story_card_openslate
+    field: cta_button_target
+    type: uuid
+    meta:
+      collection: care_story_card_openslate
+      conditions:
+        - hidden: false
+          name: enable (cta_button_type = path)
+          options:
+            enableCreate: false
+            enableLink: false
+            enableSelect: true
+          rule:
+            _and:
+              - cta_button_type:
+                  _eq: path
+      display: null
+      display_options: null
+      field: cta_button_target
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        filter:
+          _and:
+            - _and:
+                - target_android:
+                    _nempty: true
+                - target_ios:
+                    _nempty: true
+                - target_webapp:
+                    _nempty: true
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: cta_button_target
+      table: care_story_card_openslate
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: torchbearer
+      foreign_key_column: id
   - collection: care_story_card_questionnaire
     field: id
     type: uuid
@@ -22159,6 +22161,45 @@ fields:
       validation: null
       validation_message: null
       width: full
+  - collection: medical_reviewer
+    field: slug
+    type: string
+    meta:
+      collection: medical_reviewer
+      conditions: null
+      display: null
+      display_options: null
+      field: slug
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 19
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: slug
+      table: medical_reviewer
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
   - collection: medical_reviewer_medical_reviewer_qualification
     field: id
     type: integer
@@ -24584,6 +24625,685 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_files
       foreign_key_column: id
+  - collection: record_story_card_openslate
+    field: id
+    type: uuid
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 1
+      special:
+        - uuid
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: record_story_card_openslate
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: status
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: labels
+      display_options:
+        choices:
+          - background: var(--theme--primary-background)
+            color: var(--theme--primary)
+            foreground: var(--theme--primary)
+            text: $t:published
+            value: published
+          - background: var(--theme--background-normal)
+            color: var(--theme--foreground)
+            foreground: var(--theme--foreground)
+            text: $t:draft
+            value: draft
+          - background: var(--theme--warning-background)
+            color: var(--theme--warning)
+            foreground: var(--theme--warning)
+            text: $t:archived
+            value: archived
+        showAsDot: true
+      field: status
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - color: var(--theme--primary)
+            text: $t:published
+            value: published
+          - color: var(--theme--foreground)
+            text: $t:draft
+            value: draft
+          - color: var(--theme--warning)
+            text: $t:archived
+            value: archived
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: status
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: draft
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: sort
+    type: integer
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: sort
+      group: null
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: sort
+      table: record_story_card_openslate
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: user_created
+    type: uuid
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: user
+      display_options: null
+      field: user_created
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 4
+      special:
+        - user-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_created
+      table: record_story_card_openslate
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: record_story_card_openslate
+    field: date_created
+    type: timestamp
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_created
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 5
+      special:
+        - date-created
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_created
+      table: record_story_card_openslate
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: user_updated
+    type: uuid
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: user
+      display_options: null
+      field: user_updated
+      group: null
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{avatar}} {{first_name}} {{last_name}}'
+      readonly: true
+      required: false
+      sort: 6
+      special:
+        - user-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: user_updated
+      table: record_story_card_openslate
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_users
+      foreign_key_column: id
+  - collection: record_story_card_openslate
+    field: date_updated
+    type: timestamp
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: datetime
+      display_options:
+        relative: true
+      field: date_updated
+      group: null
+      hidden: true
+      interface: datetime
+      note: null
+      options: null
+      readonly: true
+      required: false
+      sort: 7
+      special:
+        - date-updated
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: date_updated
+      table: record_story_card_openslate
+      data_type: timestamp with time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: title
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 9
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: paragraph
+    type: text
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: paragraph
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: paragraph
+      table: record_story_card_openslate
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: cta_button_label
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button_label
+      group: cta_button
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_button_label
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: cta_button_type
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button_type
+      group: cta_button
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - icon: skip_next
+            text: Next
+            value: next
+          - icon: conversion_path
+            text: Path
+            value: path
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_button_type
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: next
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: cta_button_target
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions:
+        - hidden: false
+          name: enable (type = path)
+          options:
+            clear: false
+            font: sans-serif
+            masked: false
+            slug: false
+            trim: false
+          readonly: false
+          required: false
+          rule:
+            _and:
+              - cta_button_type:
+                  _eq: path
+      display: null
+      display_options: null
+      field: cta_button_target
+      group: cta_button
+      hidden: true
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: cta_button_target
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: cta_label
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_label
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_label
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: cta_type
+    type: string
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_type
+      group: null
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - icon: skip_next
+            text: Skip
+            value: skip
+          - icon: snooze
+            text: Snooze
+            value: snooze
+          - icon: nest_clock_farsight_analog
+            text: Remind
+            value: reminder
+      readonly: false
+      required: false
+      sort: 13
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_type
+      table: record_story_card_openslate
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_openslate
+    field: image
+    type: uuid
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: image
+      group: null
+      hidden: false
+      interface: file-image
+      note: null
+      options:
+        crop: false
+      readonly: false
+      required: false
+      sort: 8
+      special:
+        - file
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: image
+      table: record_story_card_openslate
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: record_story_card_openslate
+    field: cta_button
+    type: alias
+    meta:
+      collection: record_story_card_openslate
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button
+      group: null
+      hidden: false
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
   - collection: record_story_card_prompt
     field: id
     type: uuid
@@ -24651,7 +25371,7 @@ fields:
         showAsDot: true
       field: status
       group: null
-      hidden: false
+      hidden: true
       interface: select-dropdown
       note: null
       options:
@@ -24942,7 +25662,7 @@ fields:
       display_options: null
       field: prompt
       group: null
-      hidden: false
+      hidden: true
       interface: input
       note: null
       options: null
@@ -24980,14 +25700,14 @@ fields:
       display: null
       display_options: null
       field: cta_button_label
-      group: null
+      group: cta_button
       hidden: false
       interface: input
       note: null
       options: null
       readonly: false
       required: false
-      sort: 10
+      sort: 1
       special: null
       translations: null
       validation: null
@@ -25015,23 +25735,35 @@ fields:
     type: string
     meta:
       collection: record_story_card_prompt
-      conditions: null
+      conditions:
+        - hidden: false
+          name: enable (cta button type = path)
+          options:
+            clear: false
+            font: sans-serif
+            masked: false
+            slug: false
+            trim: false
+          rule:
+            _and:
+              - cta_button_type:
+                  _eq: path
       display: null
       display_options: null
       field: cta_button_target
-      group: null
-      hidden: false
+      group: cta_button
+      hidden: true
       interface: input
       note: disabled as it needs further clarification
       options: null
       readonly: false
       required: false
-      sort: 11
+      sort: 3
       special: null
       translations: null
       validation: null
       validation_message: null
-      width: half
+      width: full
     schema:
       name: cta_button_target
       table: record_story_card_prompt
@@ -25058,14 +25790,14 @@ fields:
       display: null
       display_options: null
       field: cta_label
-      group: null
+      group: cta
       hidden: false
       interface: input
       note: null
       options: null
       readonly: false
       required: false
-      sort: 12
+      sort: 1
       special: null
       translations: null
       validation: null
@@ -25097,7 +25829,7 @@ fields:
       display: null
       display_options: null
       field: cta_type
-      group: null
+      group: cta
       hidden: false
       interface: select-dropdown
       note: null
@@ -25114,7 +25846,7 @@ fields:
             value: reminder
       readonly: false
       required: false
-      sort: 13
+      sort: 2
       special: null
       translations: null
       validation: null
@@ -25142,18 +25874,31 @@ fields:
     type: string
     meta:
       collection: record_story_card_prompt
-      conditions: null
+      conditions:
+        - hidden: false
+          name: enable (cta type = path)
+          options:
+            clear: false
+            font: sans-serif
+            masked: false
+            slug: false
+            trim: false
+          readonly: false
+          rule:
+            _and:
+              - cta_type:
+                  _eq: Path
       display: null
       display_options: null
       field: cta_target
-      group: null
-      hidden: false
+      group: cta
+      hidden: true
       interface: input
       note: disabled as it needs further clarification
       options: null
       readonly: true
       required: false
-      sort: 14
+      sort: 3
       special: null
       translations: null
       validation: null
@@ -25176,6 +25921,516 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: cta_button
+    type: alias
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button
+      group: null
+      hidden: true
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: record_story_card_prompt
+    field: cta
+    type: alias
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta
+      group: null
+      hidden: true
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 13
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: record_story_card_prompt
+    field: cta_button_type
+    type: string
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button_type
+      group: cta_button
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - icon: fast_forward
+            text: Continue
+            value: continue
+          - icon: conversion_path
+            text: Path
+            value: path
+          - icon: nest_clock_farsight_analog
+            text: Remind
+            value: reminder
+          - icon: skip_next
+            text: Skip
+            value: skip
+          - icon: snooze
+            text: Snooze
+            value: snooze
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_button_type
+      table: record_story_card_prompt
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: title
+    type: string
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: title
+      group: null
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 10
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: title
+      table: record_story_card_prompt
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: paragraph
+    type: text
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: paragraph
+      group: null
+      hidden: false
+      interface: input-multiline
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 11
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: paragraph
+      table: record_story_card_prompt
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: cta_1_label
+    type: string
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_1_label
+      group: cta_1
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_1_label
+      table: record_story_card_prompt
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: cta_1_type
+    type: string
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_1_type
+      group: cta_1
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - icon: conversion_path
+            text: Path
+            value: path
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_1_type
+      table: record_story_card_prompt
+      data_type: character varying
+      default_value: path
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: cta_1
+    type: alias
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_1
+      group: null
+      hidden: false
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 14
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: record_story_card_prompt
+    field: cta_2
+    type: alias
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_2
+      group: null
+      hidden: false
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 15
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: record_story_card_prompt
+    field: cta_2_label
+    type: string
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_2_label
+      group: cta_2
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_2_label
+      table: record_story_card_prompt
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: cta_2_type
+    type: string
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_2_type
+      group: cta_2
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - icon: conversion_path
+            text: Path
+            value: path
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_2_type
+      table: record_story_card_prompt
+      data_type: character varying
+      default_value: path
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_story_card_prompt
+    field: cta_1_target
+    type: uuid
+    meta:
+      collection: record_story_card_prompt
+      conditions:
+        - hidden: false
+          name: enable (cta_1_type = path)
+          options:
+            enableCreate: false
+            enableLink: false
+            enableSelect: true
+          readonly: false
+          rule:
+            _and:
+              - cta_1_type:
+                  _eq: path
+      display: null
+      display_options: null
+      field: cta_1_target
+      group: cta_1
+      hidden: true
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        filter:
+          _and:
+            - _and:
+                - target_android:
+                    _nempty: true
+                - target_ios:
+                    _nempty: true
+                - target_webapp:
+                    _nempty: true
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: cta_1_target
+      table: record_story_card_prompt
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: torchbearer
+      foreign_key_column: id
+  - collection: record_story_card_prompt
+    field: cta_2_target
+    type: uuid
+    meta:
+      collection: record_story_card_prompt
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_2_target
+      group: cta_2
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableCreate: false
+        filter:
+          _and:
+            - _and:
+                - target_android:
+                    _nempty: true
+                - target_ios:
+                    _nempty: true
+                - target_webapp:
+                    _nempty: true
+      readonly: false
+      required: false
+      sort: 3
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: cta_2_target
+      table: record_story_card_prompt
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: torchbearer
+      foreign_key_column: id
   - collection: record_stroy_card_dyk
     field: id
     type: uuid
@@ -25711,6 +26966,176 @@ fields:
       has_auto_increment: false
       foreign_key_table: directus_files
       foreign_key_column: id
+  - collection: record_stroy_card_dyk
+    field: cta_button
+    type: alias
+    meta:
+      collection: record_stroy_card_dyk
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button
+      group: null
+      hidden: false
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 13
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: record_stroy_card_dyk
+    field: cta_button_label
+    type: string
+    meta:
+      collection: record_stroy_card_dyk
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button_label
+      group: cta_button
+      hidden: false
+      interface: input
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_button_label
+      table: record_stroy_card_dyk
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_stroy_card_dyk
+    field: cta_button_type
+    type: string
+    meta:
+      collection: record_stroy_card_dyk
+      conditions: null
+      display: null
+      display_options: null
+      field: cta_button_type
+      group: cta_button
+      hidden: false
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - icon: fast_forward
+            text: Continue
+            value: continue
+          - icon: conversion_path
+            text: Path
+            value: path
+          - icon: nest_clock_farsight_analog
+            text: Remind
+            value: reminder
+          - icon: skip_next
+            text: Skip
+            value: skip
+          - icon: snooze
+            text: Snooze
+            value: snooze
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+    schema:
+      name: cta_button_type
+      table: record_stroy_card_dyk
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: record_stroy_card_dyk
+    field: cta_button_target
+    type: string
+    meta:
+      collection: record_stroy_card_dyk
+      conditions:
+        - hidden: false
+          name: enable (cta button type = path)
+          options:
+            clear: false
+            font: sans-serif
+            masked: false
+            slug: false
+            trim: false
+          rule:
+            _and:
+              - cta_button_type:
+                  _eq: path
+      display: null
+      display_options: null
+      field: cta_button_target
+      group: cta_button
+      hidden: true
+      interface: input
+      note: disabled as it needs further clarification
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: cta_button_target
+      table: record_stroy_card_dyk
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
   - collection: socialmedia_links
     field: id
     type: uuid
@@ -26603,7 +28028,7 @@ fields:
           ({{care_story_card_dashboard_id.design}})
       readonly: false
       required: false
-      sort: 1
+      sort: 2
       special:
         - m2m
       translations: null
@@ -26660,7 +28085,7 @@ fields:
         enableSelect: false
       readonly: false
       required: false
-      sort: 2
+      sort: 3
       special:
         - m2a
       translations: null
@@ -26831,30 +28256,6 @@ fields:
       foreign_key_table: null
       foreign_key_column: null
   - collection: stories
-    field: fact_codes
-    type: alias
-    meta:
-      collection: stories
-      conditions: null
-      display: null
-      display_options: null
-      field: fact_codes
-      group: null
-      hidden: false
-      interface: list-o2m
-      note: null
-      options:
-        enableCreate: false
-      readonly: false
-      required: false
-      sort: 13
-      special:
-        - o2m
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-  - collection: stories
     field: min_age
     type: integer
     meta:
@@ -26863,7 +28264,7 @@ fields:
       display: null
       display_options: null
       field: min_age
-      group: null
+      group: record_story
       hidden: false
       interface: input
       note: null
@@ -26871,7 +28272,7 @@ fields:
         min: 0
       readonly: false
       required: false
-      sort: 15
+      sort: 3
       special: null
       translations: null
       validation: null
@@ -26903,7 +28304,7 @@ fields:
       display: null
       display_options: null
       field: max_age
-      group: null
+      group: record_story
       hidden: false
       interface: input
       note: null
@@ -26912,7 +28313,7 @@ fields:
         min: 0
       readonly: false
       required: false
-      sort: 16
+      sort: 4
       special: null
       translations: null
       validation: null
@@ -26944,14 +28345,14 @@ fields:
       display: null
       display_options: null
       field: frequency
-      group: null
+      group: record_story
       hidden: false
       interface: input
       note: in months
       options: null
       readonly: false
       required: false
-      sort: 17
+      sort: 5
       special: null
       translations: null
       validation: null
@@ -27056,34 +28457,6 @@ fields:
       foreign_key_table: null
       foreign_key_column: null
   - collection: stories
-    field: fmh_fact_codes
-    type: alias
-    meta:
-      collection: stories
-      conditions: null
-      display: null
-      display_options: null
-      field: fmh_fact_codes
-      group: null
-      hidden: false
-      interface: list-o2m
-      note: null
-      options:
-        enableCreate: false
-        filter:
-          _and:
-            - fact_code:
-                _starts_with: 'cn:'
-      readonly: false
-      required: false
-      sort: 14
-      special:
-        - o2m
-      translations: null
-      validation: null
-      validation_message: null
-      width: half
-  - collection: stories
     field: period
     type: alias
     meta:
@@ -27092,6 +28465,161 @@ fields:
       display: null
       display_options: null
       field: period
+      group: record_story
+      hidden: false
+      interface: group-raw
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 6
+      special:
+        - alias
+        - no-data
+        - group
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+  - collection: stories
+    field: fact_codes
+    type: alias
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: fact_codes
+      group: fact
+      hidden: false
+      interface: list-m2m
+      note: null
+      options:
+        enableCreate: false
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - m2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+  - collection: stories
+    field: fmh_fact_codes
+    type: alias
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: fmh_fact_codes
+      group: fact
+      hidden: false
+      interface: list-m2m
+      note: null
+      options:
+        enableCreate: false
+      readonly: false
+      required: false
+      sort: 2
+      special:
+        - m2m
+      translations: null
+      validation: null
+      validation_message: null
+      width: half
+  - collection: stories
+    field: care_story_classification
+    type: string
+    meta:
+      collection: stories
+      conditions:
+        - hidden: false
+          name: enable (story_type = care)
+          options:
+            allowNone: false
+            allowOther: false
+          readonly: false
+          rule:
+            _and:
+              - story_type:
+                  _eq: care
+      display: null
+      display_options: null
+      field: care_story_classification
+      group: care_story
+      hidden: true
+      interface: select-dropdown
+      note: null
+      options:
+        choices:
+          - text: CareStoryReproductiveHealth
+            value: CareStoryReproductiveHealth
+          - text: CareStoryConditions
+            value: CareStoryConditions
+          - text: CareStoryReproductiveHealthMale
+            value: CareStoryReproductiveHealthMale
+          - text: CareStoryPreventativeScreenings
+            value: CareStoryPreventativeScreenings
+          - text: CareStoryMedications
+            value: CareStoryMedications
+          - text: CareStoryFamilyMedicalHistory
+            value: CareStoryFamilyMedicalHistory
+          - text: CareStorySupplements
+            value: CareStorySupplements
+          - text: CareStoryAllergiesIntolerances
+            value: CareStoryAllergiesIntolerances
+          - text: CareStorySymptoms
+            value: CareStorySymptoms
+          - text: CareStorySurgeriesProcedures
+            value: CareStorySurgeriesProcedures
+          - text: CareStoryExercise
+            value: CareStoryExercise
+          - text: CareStoryDiet
+            value: CareStoryDiet
+          - text: CareStoryAlcoholTobaccoCaffeine
+            value: CareStoryAlcoholTobaccoCaffeine
+          - text: CareStoryMentalHealthAndStress
+            value: CareStoryMentalHealthAndStress
+          - text: CareStoryOccupation
+            value: CareStoryOccupation
+          - text: Default (if no other story applies)
+            value: default
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: care_story_classification
+      table: stories
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories
+    field: fact
+    type: alias
+    meta:
+      collection: stories
+      conditions: null
+      display: null
+      display_options: null
+      field: fact
       group: null
       hidden: false
       interface: group-raw
@@ -27099,7 +28627,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 18
+      sort: 13
       special:
         - alias
         - no-data
@@ -27420,6 +28948,240 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
+  - collection: stories_fact
+    field: id
+    type: integer
+    meta:
+      collection: stories_fact
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: stories_fact
+      data_type: integer
+      default_value: nextval('stories_fact_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories_fact
+    field: stories_id
+    type: uuid
+    meta:
+      collection: stories_fact
+      conditions: null
+      display: null
+      display_options: null
+      field: stories_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: stories_id
+      table: stories_fact
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: stories_fact
+    field: fact_fact_code
+    type: string
+    meta:
+      collection: stories_fact
+      conditions: null
+      display: null
+      display_options: null
+      field: fact_fact_code
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: fact_fact_code
+      table: stories_fact
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: fact
+      foreign_key_column: fact_code
+  - collection: stories_fact_1
+    field: id
+    type: integer
+    meta:
+      collection: stories_fact_1
+      conditions: null
+      display: null
+      display_options: null
+      field: id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: id
+      table: stories_fact_1
+      data_type: integer
+      default_value: nextval('stories_fact_1_id_seq'::regclass)
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: true
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: stories_fact_1
+    field: stories_id
+    type: uuid
+    meta:
+      collection: stories_fact_1
+      conditions: null
+      display: null
+      display_options: null
+      field: stories_id
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 2
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: stories_id
+      table: stories_fact_1
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: stories
+      foreign_key_column: id
+  - collection: stories_fact_1
+    field: fact_fact_code
+    type: string
+    meta:
+      collection: stories_fact_1
+      conditions: null
+      display: null
+      display_options: null
+      field: fact_fact_code
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 3
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: fact_fact_code
+      table: stories_fact_1
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: fact
+      foreign_key_column: fact_code
   - collection: stories_record_story_card_dashboard
     field: id
     type: integer
@@ -43551,47 +45313,6 @@ fields:
       foreign_key_table: null
       foreign_key_column: null
   - collection: website_page_about_us
-    field: page_metadata
-    type: uuid
-    meta:
-      collection: website_page_about_us
-      conditions: null
-      display: null
-      display_options: null
-      field: page_metadata
-      group: null
-      hidden: false
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        enableSelect: false
-      readonly: false
-      required: false
-      sort: 9
-      special:
-        - m2o
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: page_metadata
-      table: website_page_about_us
-      data_type: uuid
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: false
-      is_indexed: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: website_page_metadata
-      foreign_key_column: id
-  - collection: website_page_about_us
     field: content
     type: alias
     meta:
@@ -43647,8 +45368,8 @@ fields:
       max_length: null
       numeric_precision: null
       numeric_scale: null
-      is_nullable: true
-      is_unique: false
+      is_nullable: false
+      is_unique: true
       is_indexed: false
       is_primary_key: false
       is_generated: false
@@ -43736,6 +45457,47 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
+  - collection: website_page_about_us
+    field: metadata
+    type: uuid
+    meta:
+      collection: website_page_about_us
+      conditions: null
+      display: null
+      display_options: null
+      field: metadata
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableSelect: false
+      readonly: false
+      required: false
+      sort: 12
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: metadata
+      table: website_page_about_us
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: website_page_metadata
+      foreign_key_column: id
   - collection: website_page_about_us_content
     field: id
     type: integer
@@ -44723,7 +46485,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 10
+      sort: 11
       special: null
       translations: null
       validation: null
@@ -44762,7 +46524,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 12
+      sort: 13
       special: null
       translations: null
       validation: null
@@ -44801,7 +46563,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 13
+      sort: 14
       special: null
       translations: null
       validation: null
@@ -44840,7 +46602,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 14
+      sort: 15
       special: null
       translations: null
       validation: null
@@ -44879,7 +46641,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 15
+      sort: 16
       special: null
       translations: null
       validation: null
@@ -44957,7 +46719,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 17
+      sort: 18
       special: null
       translations: null
       validation: null
@@ -45037,7 +46799,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 19
+      sort: 20
       special:
         - alias
         - no-data
@@ -45398,47 +47160,6 @@ fields:
       foreign_key_table: null
       foreign_key_column: null
   - collection: website_page_blog
-    field: page_metadata
-    type: uuid
-    meta:
-      collection: website_page_blog
-      conditions: null
-      display: null
-      display_options: null
-      field: page_metadata
-      group: null
-      hidden: false
-      interface: select-dropdown-m2o
-      note: null
-      options:
-        enableSelect: false
-      readonly: false
-      required: false
-      sort: 9
-      special:
-        - m2o
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      name: page_metadata
-      table: website_page_blog
-      data_type: uuid
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_nullable: true
-      is_unique: true
-      is_indexed: false
-      is_primary_key: false
-      is_generated: false
-      generation_expression: null
-      has_auto_increment: false
-      foreign_key_table: website_page_metadata
-      foreign_key_column: id
-  - collection: website_page_blog
     field: filter_topics_title
     type: string
     meta:
@@ -45612,7 +47333,7 @@ fields:
         placeholder: null
       readonly: false
       required: false
-      sort: 18
+      sort: 19
       special: null
       translations: null
       validation: null
@@ -45735,7 +47456,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 11
+      sort: 12
       special:
         - alias
         - no-data
@@ -45799,7 +47520,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 16
+      sort: 17
       special:
         - alias
         - no-data
@@ -46031,7 +47752,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 20
+      sort: 21
       special:
         - alias
         - no-data
@@ -46199,6 +47920,47 @@ fields:
       has_auto_increment: false
       foreign_key_table: null
       foreign_key_column: null
+  - collection: website_page_blog
+    field: page_metadata
+    type: uuid
+    meta:
+      collection: website_page_blog
+      conditions: null
+      display: null
+      display_options: null
+      field: page_metadata
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        enableSelect: false
+      readonly: false
+      required: false
+      sort: 9
+      special:
+        - m2o
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: page_metadata
+      table: website_page_blog
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: website_page_metadata
+      foreign_key_column: id
   - collection: website_page_careers
     field: id
     type: uuid
@@ -50469,7 +52231,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 9
+      sort: 10
       special: null
       translations: null
       validation: null
@@ -50509,7 +52271,7 @@ fields:
         template: '{{title}}'
       readonly: false
       required: false
-      sort: 11
+      sort: 12
       special:
         - m2o
       translations: null
@@ -50551,7 +52313,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: 10
+      sort: 11
       special:
         - m2a
       translations: null
@@ -56451,7 +58213,7 @@ fields:
       numeric_precision: null
       numeric_scale: null
       is_nullable: true
-      is_unique: false
+      is_unique: true
       is_indexed: false
       is_primary_key: false
       is_generated: false
@@ -57106,12 +58868,12 @@ relations:
       many_field: item
       one_allowed_collections:
         - block_richtext
-        - block_inline_image
         - block_breaker_image
         - block_breaker_list
         - block_breaker_quote
-        - block_breaker_text
         - block_breaker_stats
+        - block_breaker_text
+        - block_inline_image
       one_collection: null
       one_collection_field: collection
       one_deselect_action: nullify
@@ -57151,6 +58913,8 @@ relations:
         - block_breaker_image
         - block_breaker_quicktip
         - block_richtext_blog
+        - block_breaker_list
+        - block_breaker_text
       one_collection: null
       one_collection_field: collection
       one_deselect_action: nullify
@@ -58458,6 +60222,27 @@ relations:
       constraint_name: care_story_card_openslate_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+  - collection: care_story_card_openslate
+    field: cta_button_target
+    related_collection: torchbearer
+    meta:
+      junction_field: null
+      many_collection: care_story_card_openslate
+      many_field: cta_button_target
+      one_allowed_collections: null
+      one_collection: torchbearer
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: care_story_card_openslate
+      column: cta_button_target
+      foreign_key_table: torchbearer
+      foreign_key_column: id
+      constraint_name: care_story_card_openslate_cta_button_target_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
   - collection: care_story_card_questionnaire
     field: user_updated
     related_collection: directus_users
@@ -58679,7 +60464,7 @@ relations:
       one_collection: stories
       one_collection_field: null
       one_deselect_action: nullify
-      one_field: fact_codes
+      one_field: null
       sort_field: null
     schema:
       table: fact
@@ -58700,7 +60485,7 @@ relations:
       one_collection: stories
       one_collection_field: null
       one_deselect_action: nullify
-      one_field: fmh_fact_codes
+      one_field: null
       sort_field: null
     schema:
       table: fact
@@ -59382,6 +61167,69 @@ relations:
       constraint_name: record_story_card_dashboard_image_foreign
       on_update: NO ACTION
       on_delete: SET NULL
+  - collection: record_story_card_openslate
+    field: user_updated
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: record_story_card_openslate
+      many_field: user_updated
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: record_story_card_openslate
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: record_story_card_openslate_user_updated_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: record_story_card_openslate
+    field: user_created
+    related_collection: directus_users
+    meta:
+      junction_field: null
+      many_collection: record_story_card_openslate
+      many_field: user_created
+      one_allowed_collections: null
+      one_collection: directus_users
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: record_story_card_openslate
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: record_story_card_openslate_user_created_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: record_story_card_openslate
+    field: image
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: record_story_card_openslate
+      many_field: image
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: record_story_card_openslate
+      column: image
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: record_story_card_openslate_image_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
   - collection: record_story_card_prompt
     field: user_updated
     related_collection: directus_users
@@ -59424,6 +61272,48 @@ relations:
       constraint_name: record_story_card_prompt_user_created_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+  - collection: record_story_card_prompt
+    field: cta_1_target
+    related_collection: torchbearer
+    meta:
+      junction_field: null
+      many_collection: record_story_card_prompt
+      many_field: cta_1_target
+      one_allowed_collections: null
+      one_collection: torchbearer
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: record_story_card_prompt
+      column: cta_1_target
+      foreign_key_table: torchbearer
+      foreign_key_column: id
+      constraint_name: record_story_card_prompt_cta_1_target_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: record_story_card_prompt
+    field: cta_2_target
+    related_collection: torchbearer
+    meta:
+      junction_field: null
+      many_collection: record_story_card_prompt
+      many_field: cta_2_target
+      one_allowed_collections: null
+      one_collection: torchbearer
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: record_story_card_prompt
+      column: cta_2_target
+      foreign_key_table: torchbearer
+      foreign_key_column: id
+      constraint_name: record_story_card_prompt_cta_2_target_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
   - collection: record_stroy_card_dyk
     field: user_created
     related_collection: directus_users
@@ -59690,6 +61580,90 @@ relations:
       foreign_key_table: stories
       foreign_key_column: id
       constraint_name: stories_care_story_story_cards_stories_id_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories_fact
+    field: fact_fact_code
+    related_collection: fact
+    meta:
+      junction_field: stories_id
+      many_collection: stories_fact
+      many_field: fact_fact_code
+      one_allowed_collections: null
+      one_collection: fact
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: stories_fact
+      column: fact_fact_code
+      foreign_key_table: fact
+      foreign_key_column: fact_code
+      constraint_name: stories_fact_fact_fact_code_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories_fact
+    field: stories_id
+    related_collection: stories
+    meta:
+      junction_field: fact_fact_code
+      many_collection: stories_fact
+      many_field: stories_id
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: fact_codes
+      sort_field: null
+    schema:
+      table: stories_fact
+      column: stories_id
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: stories_fact_stories_id_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories_fact_1
+    field: fact_fact_code
+    related_collection: fact
+    meta:
+      junction_field: stories_id
+      many_collection: stories_fact_1
+      many_field: fact_fact_code
+      one_allowed_collections: null
+      one_collection: fact
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: stories_fact_1
+      column: fact_fact_code
+      foreign_key_table: fact
+      foreign_key_column: fact_code
+      constraint_name: stories_fact_1_fact_fact_code_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: stories_fact_1
+    field: stories_id
+    related_collection: stories
+    meta:
+      junction_field: fact_fact_code
+      many_collection: stories_fact_1
+      many_field: stories_id
+      one_allowed_collections: null
+      one_collection: stories
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: fmh_fact_codes
+      sort_field: null
+    schema:
+      table: stories_fact_1
+      column: stories_id
+      foreign_key_table: stories
+      foreign_key_column: id
+      constraint_name: stories_fact_1_stories_id_foreign
       on_update: NO ACTION
       on_delete: SET NULL
   - collection: stories_record_story_card_dashboard
@@ -62151,27 +64125,6 @@ relations:
       on_update: NO ACTION
       on_delete: NO ACTION
   - collection: website_page_about_us
-    field: page_metadata
-    related_collection: website_page_metadata
-    meta:
-      junction_field: null
-      many_collection: website_page_about_us
-      many_field: page_metadata
-      one_allowed_collections: null
-      one_collection: website_page_metadata
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    schema:
-      table: website_page_about_us
-      column: page_metadata
-      foreign_key_table: website_page_metadata
-      foreign_key_column: id
-      constraint_name: website_page_about_us_page_metadata_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-  - collection: website_page_about_us
     field: prefooter
     related_collection: website_component_prefooter
     meta:
@@ -62190,6 +64143,27 @@ relations:
       foreign_key_table: website_component_prefooter
       foreign_key_column: id
       constraint_name: website_page_about_us_prefooter_foreign
+      on_update: NO ACTION
+      on_delete: NO ACTION
+  - collection: website_page_about_us
+    field: metadata
+    related_collection: website_page_metadata
+    meta:
+      junction_field: null
+      many_collection: website_page_about_us
+      many_field: metadata
+      one_allowed_collections: null
+      one_collection: website_page_metadata
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: website_page_about_us
+      column: metadata
+      foreign_key_table: website_page_metadata
+      foreign_key_column: id
+      constraint_name: website_page_about_us_metadata_foreign
       on_update: NO ACTION
       on_delete: SET NULL
   - collection: website_page_about_us_content
@@ -62355,27 +64329,6 @@ relations:
       on_update: NO ACTION
       on_delete: SET NULL
   - collection: website_page_blog
-    field: page_metadata
-    related_collection: website_page_metadata
-    meta:
-      junction_field: null
-      many_collection: website_page_blog
-      many_field: page_metadata
-      one_allowed_collections: null
-      one_collection: website_page_metadata
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    schema:
-      table: website_page_blog
-      column: page_metadata
-      foreign_key_table: website_page_metadata
-      foreign_key_column: id
-      constraint_name: website_page_blog_page_metadata_foreign
-      on_update: NO ACTION
-      on_delete: SET NULL
-  - collection: website_page_blog
     field: hero_featured_articles_image_left
     related_collection: directus_files
     meta:
@@ -62520,6 +64473,27 @@ relations:
       foreign_key_table: directus_files
       foreign_key_column: id
       constraint_name: website_page_blog_static_icon_share_article_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: website_page_blog
+    field: page_metadata
+    related_collection: website_page_metadata
+    meta:
+      junction_field: null
+      many_collection: website_page_blog
+      many_field: page_metadata
+      one_allowed_collections: null
+      one_collection: website_page_metadata
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: website_page_blog
+      column: page_metadata
+      foreign_key_table: website_page_metadata
+      foreign_key_column: id
+      constraint_name: website_page_blog_page_metadata_foreign
       on_update: NO ACTION
       on_delete: SET NULL
   - collection: website_page_careers
