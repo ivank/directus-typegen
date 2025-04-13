@@ -25,7 +25,7 @@ jobs:
         run: bun format
 
       - name: Format code
-        run: bun build
+        run: bun run build
 
       - name: Run tests
         run: bun test
