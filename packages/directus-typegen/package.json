@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "description": "Generate Directus SDK TypeScript types from a schema snapshots",
   "repository": {
-    "url": "https://github.com/ikerin/directus-typegen",
+    "type": "git",
+    "url": "git+https://github.com/ikerin/directus-typegen.git",
     "directory": "packages/directus-typegen"
   },
   "type": "module",
