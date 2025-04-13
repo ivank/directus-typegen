@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "CLI tool for generating Directus SDK TypeScript types",
   "repository": {
-    "url": "https://github.com/ikerin/directus-typegen",
+    "url": "https://github.com/ivank/directus-typegen",
     "directory": "packages/directus-typegen-cli"
   },
   "main": "dist/index.js",
