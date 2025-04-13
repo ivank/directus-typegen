@@ -1,6 +1,6 @@
-import { createSourceFile, ScriptTarget, SyntaxKind, TypeNode, factory } from 'typescript';
-import { Schema, TypeSchema, FieldSchema } from './types.js';
-import { DirectusSnapshot, toDirectusSnapshot } from './snapshot.js';
+import { createSourceFile, ScriptTarget, SyntaxKind, type TypeNode, factory } from 'typescript';
+import type { Schema, TypeSchema, FieldSchema } from './types.js';
+import { type DirectusSnapshot, toDirectusSnapshot } from './snapshot.js';
 import { toSchema } from './schema.js';
 
 const toType = (field: TypeSchema): TypeNode => {
@@ -87,8 +87,8 @@ export function generateTypesFromSchema(schema: Schema): string {
                   fieldName == junction.collectionField
                     ? factory.createLiteralTypeNode(factory.createStringLiteral(allowedCollection))
                     : fieldName == junction.itemField
-                    ? factory.createTypeReferenceNode(factory.createIdentifier(allowedCollection))
-                    : toField(field),
+                      ? factory.createTypeReferenceNode(factory.createIdentifier(allowedCollection))
+                      : toField(field),
                 ),
               ),
             ),

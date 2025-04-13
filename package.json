@@ -1,18 +1,18 @@
 {
-  "name": "directus-sdk-typegen-main",
+  "name": "directus-typegen-monorepo",
   "private": true,
-  "bin": {
-    "directus-typegen": "./bin/generate-types.js"
-  },
   "type": "module",
   "scripts": {
-    "test": "bun --filter '*' test"
+    "build": "bun --filter '*' build",
+    "test": "bun --filter '*' test",
+    "format": "bun --filter '*' format"
   },
   "dependencies": {},
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
   }
 }

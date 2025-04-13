@@ -1,7 +1,7 @@
 import {
   toAllCollectionSnapshots,
-  DirectusSnapshot,
-  FieldSnapshot,
+  type DirectusSnapshot,
+  type FieldSnapshot,
   toCollectionFieldSnapshots,
   toBuiltInFieldSnapshots,
   toAllRelationJunctionSnapshots,
@@ -14,7 +14,7 @@ import {
   toRelationFieldSnapshot,
   isFieldAlias,
 } from './snapshot.js';
-import { Schema, TypeSchema, RelationSchema, CollectionSchema, FieldSchema, JunctionSchema } from './types.js';
+import type { Schema, TypeSchema, RelationSchema, CollectionSchema, FieldSchema, JunctionSchema } from './types.js';
 
 const toTypeSchema = (field: FieldSnapshot): TypeSchema => {
   switch (field.type) {
