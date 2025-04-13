@@ -1,6 +1,6 @@
 {
   "name": "@ikerin/directus-typegen-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI tool for generating Directus SDK TypeScript types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,10 +8,17 @@
   "bin": {
     "directus-typegen": "./bin/directus-typegen"
   },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "bun build --compile --minify --sourcemap --bytecode ./src/index.ts --outfile=bin/directus-typegen",
+    "build": "tsc",
     "test": "bun test",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "publish": "npm publish --access public --provenance"
   },
   "dependencies": {
     "commander": "^11.1.0",

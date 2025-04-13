@@ -1,14 +1,20 @@
 {
   "name": "@ikerin/directus-typegen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate Directus SDK TypeScript types from a schema snapshots",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "bun test",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "publish": "npm publish --access public --provenance"
   },
   "dependencies": {
     "typescript": "^5.8.3",
