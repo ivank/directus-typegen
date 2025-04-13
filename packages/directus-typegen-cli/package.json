@@ -23,7 +23,8 @@
     "build": "tsc",
     "test": "bun test",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
-    "publish": "npm publish --access public --provenance"
+    "is-already-published": "npm view @ikerin/directus-typegen-cli versions --json | jq --exit-status 'any(. == $current)' --arg current $(cat package.json | jq -r '.version')",
+    "publish": "if [ $(bun run is-already-published) == true ]; then echo 'Already published'; else npm publish --access public --provenance; fi"
   },
   "dependencies": {
     "commander": "^11.1.0",
