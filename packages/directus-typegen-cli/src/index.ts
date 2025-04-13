@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync, unlinkSync } from 'fs';
 import { generateTypesFromSnapshot } from '@ikerin/directus-typegen';
 import { stdin, stdout } from 'process';
 import { createInterface } from 'readline';
-import { parse } from 'path';
+import { parse } from 'yaml';
 
 async function readStdin(): Promise<string> {
   const rl = createInterface({ input: stdin });
