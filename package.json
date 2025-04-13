@@ -3,11 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun --filter '*' build",
+    "build": "bun --filter '@ikerin/directus-typegen' build && bun --filter '@ikerin/directus-typegen-cli' build",
     "test": "bun --filter '*' test",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "version": "changeset version",
-    "release": "bun run build && changeset publish"
+    "format": "bun --filter '*' format",
+    "publish": "bun --filter '*' publish"
   },
   "dependencies": {},
   "workspaces": [
