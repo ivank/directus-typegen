@@ -2,9 +2,11 @@
 
 exports[`toSchema generates correct types for image_custom.yaml 1`] = `
 {
-  "builtInCollections": Map {
+  "builtInCollections": 
+Map {
     "directus_files" => {
-      "fields": Map {
+      "fields": 
+Map {
         "copyright" => {
           "relation": undefined,
           "required": false,
@@ -13,12 +15,16 @@ exports[`toSchema generates correct types for image_custom.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
     },
-  },
-  "collections": Map {
+  }
+,
+  "collections": 
+Map {
     "article" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -38,24 +44,30 @@ exports[`toSchema generates correct types for image_custom.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
-  },
+  }
+,
   "junctions": Map {},
 }
 `;
 
 exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
 {
-  "builtInCollections": Map {
+  "builtInCollections": 
+Map {
     "directus_files" => {
       "fields": Map {},
     },
-  },
-  "collections": Map {
+  }
+,
+  "collections": 
+Map {
     "article" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -78,11 +90,13 @@ exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "article_blocks" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -118,11 +132,13 @@ exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "hero" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -142,11 +158,13 @@ exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "source" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -163,11 +181,14 @@ exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
-  },
-  "junctions": Map {
+  }
+,
+  "junctions": 
+Map {
     "article_blocks" => {
       "allowedCollections": [
         "source",
@@ -176,16 +197,19 @@ exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
       "collectionField": "collection",
       "itemField": "item",
     },
-  },
+  }
+,
 }
 `;
 
 exports[`toSchema generates correct types for many_to_many.yaml 1`] = `
 {
   "builtInCollections": Map {},
-  "collections": Map {
+  "collections": 
+Map {
     "article" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -208,11 +232,13 @@ exports[`toSchema generates correct types for many_to_many.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "article_source" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -243,11 +269,13 @@ exports[`toSchema generates correct types for many_to_many.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "source" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -264,24 +292,30 @@ exports[`toSchema generates correct types for many_to_many.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
-  },
+  }
+,
   "junctions": Map {},
 }
 `;
 
 exports[`toSchema generates correct types for many_to_one.yaml 1`] = `
 {
-  "builtInCollections": Map {
+  "builtInCollections": 
+Map {
     "directus_files" => {
       "fields": Map {},
     },
-  },
-  "collections": Map {
+  }
+,
+  "collections": 
+Map {
     "article" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -301,11 +335,13 @@ exports[`toSchema generates correct types for many_to_one.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "hero" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -325,10 +361,12 @@ exports[`toSchema generates correct types for many_to_one.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
-  },
+  }
+,
   "junctions": Map {},
 }
 `;
@@ -336,9 +374,11 @@ exports[`toSchema generates correct types for many_to_one.yaml 1`] = `
 exports[`toSchema generates correct types for one_to_many.yaml 1`] = `
 {
   "builtInCollections": Map {},
-  "collections": Map {
+  "collections": 
+Map {
     "article" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -361,11 +401,13 @@ exports[`toSchema generates correct types for one_to_many.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "source" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -393,22 +435,26 @@ exports[`toSchema generates correct types for one_to_many.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
-  },
+  }
+,
   "junctions": Map {},
 }
 `;
 
 exports[`toSchema generates correct types for schema.yaml 1`] = `
 {
-  "builtInCollections": Map {
+  "builtInCollections": 
+Map {
     "directus_users" => {
       "fields": Map {},
     },
     "directus_files" => {
-      "fields": Map {
+      "fields": 
+Map {
         "copyright" => {
           "relation": undefined,
           "required": false,
@@ -440,12 +486,16 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
     },
-  },
-  "collections": Map {
+  }
+,
+  "collections": 
+Map {
     "app_block_richtext" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -528,7 +578,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "enum",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "app_blocks" => {
@@ -540,7 +591,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "app_static_settings" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -834,11 +886,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "app_static_settings_socialmedia_links" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -877,11 +931,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "article_sources" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -960,11 +1016,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "boolean",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1307,11 +1365,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_article_blocks" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1355,11 +1415,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_article_blocks_blog" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1403,11 +1465,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_article_sources" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1438,11 +1502,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_article_sources_1" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1473,11 +1539,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_articles_cards_dashboard" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1516,11 +1584,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_articles_cards_story" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1559,11 +1629,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_articles_cards_web" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1602,11 +1674,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_block_breaker_text" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1637,7 +1711,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_blocks" => {
@@ -1649,7 +1724,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "articles_cards_dashboard" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1738,11 +1814,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_cards_story" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1866,11 +1944,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_cards_web" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -1978,7 +2058,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_link_tables" => {
@@ -1986,7 +2067,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "articles_stories" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2208,11 +2290,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_topics" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2243,11 +2327,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "articles_topics_1" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2278,11 +2364,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "authors" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2416,11 +2504,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_breaker_image" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2478,11 +2568,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_breaker_list" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2564,11 +2656,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "enum",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_breaker_quicktip" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2631,11 +2725,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_breaker_quote" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2706,11 +2802,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_breaker_stats" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2784,11 +2882,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_breaker_text" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2843,11 +2943,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_inline_image" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2905,11 +3007,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_richtext" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -2964,11 +3068,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "block_richtext_blog" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3039,11 +3145,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "boolean",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "care_story_card_dashboard" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3129,11 +3237,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "enum",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "care_story_card_endslate" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3232,11 +3342,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "care_story_card_openslate" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3369,11 +3481,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "care_story_card_questionnaire" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3448,11 +3562,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "consultation_specialty_areas" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3545,7 +3661,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "docapp_content" => {
@@ -3553,7 +3670,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "docapp_settings" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -3804,11 +3922,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "fact" => {
-      "fields": Map {
+      "fields": 
+Map {
         "fact_code" => {
           "relation": undefined,
           "required": true,
@@ -3945,11 +4065,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "faq_groups" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4050,11 +4172,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "enum",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "faq_groups_faqs" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4093,11 +4217,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "faqs" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4202,11 +4328,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "fluent_team" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4358,7 +4486,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "global_content" => {
@@ -4366,7 +4495,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "language" => {
-      "fields": Map {
+      "fields": 
+Map {
         "code" => {
           "relation": undefined,
           "required": true,
@@ -4432,11 +4562,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "medical_reviewer" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4610,11 +4742,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "medical_reviewer_medical_reviewer_qualification" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4645,11 +4779,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "medical_reviewer_qualification" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4720,11 +4856,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "open_positions" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4823,11 +4961,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "press_articles" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -4945,11 +5085,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "profile_completion_reference" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -5056,11 +5198,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "boolean",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "record_story_card_dashboard" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -5158,11 +5302,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "record_story_card_openslate" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -5303,11 +5449,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "record_story_card_prompt" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -5522,11 +5670,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "record_stroy_card_dyk" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -5669,11 +5819,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "socialmedia_links" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -5786,7 +5938,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "json",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "sories_link_tables" => {
@@ -5794,7 +5947,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "stories" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6037,11 +6191,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "enum",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "stories_care_story_card_dashboard" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6072,11 +6228,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "stories_care_story_story_cards" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6120,11 +6278,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "stories_fact" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6155,11 +6315,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "stories_fact_1" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6190,11 +6352,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "stories_record_story_card_dashboard" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6225,11 +6389,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "stories_record_story_story_cards" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6273,11 +6439,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "testimonials" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6360,11 +6528,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "topics" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6495,11 +6665,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "topics_topics" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6530,11 +6702,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "torchbearer" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6641,7 +6815,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website" => {
@@ -6649,7 +6824,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "website_block_carousel" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6779,11 +6955,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_carousel_slides" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6916,11 +7094,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_carousel_website_block_carousel_slides" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -6959,11 +7139,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_faq" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7099,11 +7281,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_faq_faq_groups" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7134,11 +7318,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_hero" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7301,11 +7487,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_menuitem" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7388,11 +7576,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_portfolio" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7575,11 +7765,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_prallax" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7692,11 +7884,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_process" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7820,11 +8014,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_richtext" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -7907,11 +8103,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "enum",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_showcase" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8058,11 +8256,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "boolean",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_showcase_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8106,11 +8306,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_showcase_items" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8212,11 +8414,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_teaser" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8340,11 +8544,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_testimonials" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8455,11 +8661,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_block_testimonials_testimonials" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8490,7 +8698,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_blocks" => {
@@ -8498,7 +8707,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "website_component_clinically_reviewed" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8606,11 +8816,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_component_delete_account" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -8809,11 +9021,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_component_early_access" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9001,11 +9215,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_component_footer" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9195,11 +9411,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_component_footer_menu_left" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9243,11 +9461,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_component_footer_menu_right" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9291,11 +9511,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_component_footer_socialmedia_links" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9334,11 +9556,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_component_menu" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9531,11 +9755,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_component_menu_menu_items" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9579,11 +9805,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_component_menu_socialmedia" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9627,11 +9855,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_component_prefooter" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9780,7 +10010,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_components" => {
@@ -9788,7 +10019,8 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "isSingleton": false,
     },
     "website_page_about_us" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9899,11 +10131,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_about_us_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -9939,11 +10173,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_author" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -10045,11 +10281,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_blog" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -10431,11 +10669,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_careers" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -10711,11 +10951,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_contact_us" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -10956,11 +11198,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_doctor_login" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11127,11 +11371,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_faqs" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11234,11 +11480,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_faqs_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11282,11 +11530,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_home" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11397,11 +11647,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "type": "array",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_home_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11445,11 +11697,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_legal" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11549,11 +11803,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_legal_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11589,11 +11845,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_medical_reviewer" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11695,11 +11953,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_metadata" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -11994,11 +12254,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_metadata_website_socialmedia_links" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12018,11 +12280,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_our_process" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12161,11 +12425,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_our_process_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12209,11 +12475,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_our_process_files_1" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12244,11 +12512,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_our_process_files_2" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12279,11 +12549,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_press" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12394,11 +12666,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_press_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12434,11 +12708,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_privacy_matters" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12541,11 +12817,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_privacy_matters_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12581,11 +12859,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_sandbox" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12688,11 +12968,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_sandbox_page_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12736,11 +13018,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_page_why_we_care" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12851,11 +13135,13 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
     "website_page_why_we_care_content" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -12899,15 +13185,18 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
             "value": "number",
           },
         },
-      },
+      }
+,
       "isSingleton": false,
     },
     "website_pages" => {
       "fields": Map {},
       "isSingleton": false,
     },
-  },
-  "junctions": Map {
+  }
+,
+  "junctions": 
+Map {
     "articles_article_blocks" => {
       "allowedCollections": [
         "block_richtext",
@@ -13076,16 +13365,19 @@ exports[`toSchema generates correct types for schema.yaml 1`] = `
       "collectionField": "collection",
       "itemField": "item",
     },
-  },
+  }
+,
 }
 `;
 
 exports[`toSchema generates correct types for singleton.yaml 1`] = `
 {
   "builtInCollections": Map {},
-  "collections": Map {
+  "collections": 
+Map {
     "website" => {
-      "fields": Map {
+      "fields": 
+Map {
         "id" => {
           "relation": undefined,
           "required": true,
@@ -13110,10 +13402,12 @@ exports[`toSchema generates correct types for singleton.yaml 1`] = `
             "value": "string",
           },
         },
-      },
+      }
+,
       "isSingleton": true,
     },
-  },
+  }
+,
   "junctions": Map {},
 }
 `;

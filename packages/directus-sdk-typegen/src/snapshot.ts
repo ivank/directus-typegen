@@ -160,7 +160,7 @@ export type RelationManySnapshot = z.infer<typeof relationManySnapshot>;
 
 export type RelationOneSnapshot = z.infer<typeof relationOneSnapshot>;
 
-export const toDirectusSnapshot = (value: any) => directusSnapshot.parse(value);
+export const toDirectusSnapshot = (value: Record<string, unknown>) => directusSnapshot.parse(value);
 
 export const toFieldSnapshotChoices = (field: FieldSnapshot): string[] | undefined =>
   field.meta?.options?.choices?.map((choice) => choice.value);

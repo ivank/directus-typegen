@@ -1,5 +1,7 @@
 import { createSourceFile, ScriptTarget, SyntaxKind, TypeNode, factory } from 'typescript';
-import { Schema, TypeSchema, FieldSchema } from './types';
+import { Schema, TypeSchema, FieldSchema } from './types.js';
+import { DirectusSnapshot, toDirectusSnapshot } from './snapshot.js';
+import { toSchema } from './schema.js';
 
 const toType = (field: TypeSchema): TypeNode => {
   switch (field.type) {
@@ -57,6 +59,11 @@ const toField = (field: FieldSchema): TypeNode => {
   return type;
 };
 
+/**
+ * Generate TypeScript types from a Directus schema
+ * @param schema - The Directus schema
+ * @returns The generated TypeScript types
+ */
 export function generateTypesFromSchema(schema: Schema): string {
   // Create a virtual source file
   const sourceFile = createSourceFile('schema.ts', '', ScriptTarget.Latest);
@@ -153,4 +160,22 @@ export function generateTypesFromSchema(schema: Schema): string {
     factory.createNodeArray(typeDeclarations),
     sourceFile,
   );
+}
+
+/**
+ * Generate TypeScript types from a Directus snapshot
+ * @param snapshot - The Directus snapshot
+ * @returns The generated TypeScript types
+ */
+export function generateTypesFromSnapshot(snapshot: Record<string, unknown>): string {
+  return generateTypesFromSnapshotParsed(toDirectusSnapshot(snapshot));
+}
+
+/**
+ * Generate TypeScript types from a Directus snapshot
+ * @param snapshot - The Directus snapshot
+ * @returns The generated TypeScript types
+ */
+export function generateTypesFromSnapshotParsed(snapshot: DirectusSnapshot): string {
+  return generateTypesFromSchema(toSchema(snapshot));
 }

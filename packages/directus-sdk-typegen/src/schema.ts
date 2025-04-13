@@ -13,8 +13,8 @@ import {
   isFieldRequired,
   toRelationFieldSnapshot,
   isFieldAlias,
-} from './snapshot';
-import { Schema, TypeSchema, RelationSchema, CollectionSchema, FieldSchema, JunctionSchema } from './types';
+} from './snapshot.js';
+import { Schema, TypeSchema, RelationSchema, CollectionSchema, FieldSchema, JunctionSchema } from './types.js';
 
 const toTypeSchema = (field: FieldSnapshot): TypeSchema => {
   switch (field.type) {

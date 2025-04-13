@@ -1,0 +1,31 @@
+{
+  "name": "directus-sdk-typegen",
+  "version": "1.0.0",
+  "description": "Generate Directus SDK TypeScript types from a schema snapshots",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "directus-typegen": "./bin/generate-types.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "bun test",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "yaml": "^2.3.4",
+    "@types/node": "^20.11.19",
+    "@types/bun": "latest"
+  }
+}
