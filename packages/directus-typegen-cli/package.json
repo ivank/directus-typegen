@@ -2,14 +2,14 @@
   "name": "@ikerin/directus-typegen-cli",
   "version": "0.1.0",
   "description": "CLI tool for generating Directus SDK TypeScript types",
-  "main": "dist/cli.js",
-  "types": "dist/cli.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
     "directus-typegen": "./bin/directus-typegen"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "bun build --compile --minify --sourcemap --bytecode ./src/index.ts --outfile=bin/directus-typegen",
     "test": "bun test",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\""
   },

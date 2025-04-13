@@ -3,7 +3,7 @@ import { spawn } from 'bun';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-const schemasDir = join(import.meta.dir, 'test/schemas');
+const schemasDir = join(import.meta.dir, 'schemas');
 const cliPath = join(import.meta.dir, '../dist/cli.js');
 
 describe('CLI', () => {
