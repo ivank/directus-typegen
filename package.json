@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun --filter '*' build",
+    "build": "bun --filter '@ikerin/directus-typegen' build && bun --filter '@ikerin/directus-typegen-cli' build",
     "test": "bun --filter '*' test",
     "format": "bun --filter '*' format"
   },
