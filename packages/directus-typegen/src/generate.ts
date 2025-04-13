@@ -1,4 +1,12 @@
-import { createSourceFile, ScriptTarget, SyntaxKind, type TypeNode, factory } from 'typescript';
+import {
+  type TypeNode,
+  createSourceFile,
+  ScriptTarget,
+  SyntaxKind,
+  factory,
+  createPrinter,
+  ListFormat,
+} from 'typescript';
 import type { Schema, TypeSchema, FieldSchema } from './types.js';
 import { type DirectusSnapshot, toDirectusSnapshot } from './snapshot.js';
 import { toSchema } from './schema.js';
@@ -154,12 +162,8 @@ export function generateTypesFromSchema(schema: Schema): string {
   const typeDeclarations = [...collectionInterfaces, ...customCollectionInterfaces, schemaInterface];
 
   // Generate the TypeScript code
-  const printer = require('typescript').createPrinter();
-  return printer.printList(
-    require('typescript').ListFormat.MultiLine,
-    factory.createNodeArray(typeDeclarations),
-    sourceFile,
-  );
+  const printer = createPrinter();
+  return printer.printList(ListFormat.MultiLine, factory.createNodeArray(typeDeclarations), sourceFile);
 }
 
 /**

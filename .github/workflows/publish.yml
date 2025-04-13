@@ -1,12 +1,15 @@
-name: Tests
+name: Publish Package
 
 on:
-  pull_request:
+  push:
     branches: [main]
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -19,11 +22,13 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Format code
-        run: bun format
-
-      - name: Build
+      - name: Build packages
         run: bun run build
 
       - name: Run tests
         run: bun test
+
+      - name: Publish
+        run: bun run publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

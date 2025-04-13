@@ -10,9 +10,9 @@
 
     // Bundler mode
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "declaration": true,
+    "outDir": "dist",
 
     // Best practices
     "strict": true,

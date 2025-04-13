@@ -3,8 +3,8 @@ import { spawn } from 'bun';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-const schemasDir = join(import.meta.dir, 'test/schemas');
-const cliPath = join(import.meta.dir, '../dist/cli.js');
+const schemasDir = join(import.meta.dir, 'schemas');
+const cliPath = join(import.meta.dir, '../bin/directus-typegen');
 
 describe('CLI', () => {
   const schemaFiles = readdirSync(schemasDir).filter((file) => file.endsWith('.yaml'));
