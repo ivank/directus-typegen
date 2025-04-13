@@ -30,6 +30,7 @@ jobs:
         run: bun test
 
       - name: Publish
-        run: bun run publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm config set provenance true
+          bun run publish
