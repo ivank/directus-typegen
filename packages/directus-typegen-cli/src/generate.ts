@@ -9,7 +9,7 @@ const generateCommand = new Command();
 generateCommand
   .name('directus-typegen')
   .description('Generate TypeScript types from Directus schema snapshots')
-  .version('0.1.5');
+  .version('0.1.6');
 
 generateCommand
   .command('generate')
