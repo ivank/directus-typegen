@@ -1,0 +1,26 @@
+<svg width="683px" height="168px" viewBox="0 0 683 168" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+    <style>
+        * {
+            font-family: Courier, monospace;
+            font-size: 14px;
+        }
+        tspan, text {
+            font-variant-ligatures: none;
+            dominant-baseline: central;
+            white-space: pre;
+            fill: #ffffff;
+        }
+        .bg {
+            stroke-width: "0.5px";
+        }
+    </style>
+    <rect width="100%" height="100%" x="0" y="0" style="fill: #1e1e1e"/>
+<text x="4px" y="12px"><tspan>Usage: generate generate [options]</tspan></text>
+<text x="4px" y="44px"><tspan>Generate TypeScript types from a schema snapshot</tspan></text>
+<text x="4px" y="76px"><tspan>Options:</tspan></text>
+<text x="4px" y="92px"><tspan>  -i, --input &lt;file&gt;   Input schema file. If not provided, reads from stdin</tspan></text>
+<text x="4px" y="108px"><tspan>  -o, --output &lt;file&gt;  Output TypeScript file. If not provided, writes to</tspan></text>
+<text x="4px" y="124px"><tspan>                       stdout</tspan></text>
+<text x="4px" y="140px"><tspan>  -j, --json           Treat input as JSON (default: YAML)</tspan></text>
+<text x="4px" y="156px"><tspan>  -h, --help           display help for command</tspan></text>
+</svg>

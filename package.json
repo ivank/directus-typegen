@@ -13,6 +13,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@ikerin/build-readme": "^1.1.1",
     "@types/bun": "latest",
     "typescript": "^5.0.0"
   }

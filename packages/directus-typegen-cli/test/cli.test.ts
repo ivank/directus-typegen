@@ -1,59 +1,48 @@
 import { describe, test, expect } from 'bun:test';
-import { readFileSync, readdirSync, writeFileSync } from 'fs';
+import { spawn, stderr, stdout } from 'bun';
+import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
-import generateCommand from '../src/generate.js';
 
 const schemasDir = join(import.meta.dir, 'schemas');
+const cliPath = join(import.meta.dir, '../bin/directus-typegen');
+const packageJsonPath = join(import.meta.dir, '../package.json');
+const version = JSON.parse(readFileSync(packageJsonPath, 'utf-8')).version;
+
+async function execute(args: string[], stdin?: Uint8Array) {
+  const process = spawn([cliPath, ...args], { stdin, stdout: 'pipe', stderr: 'pipe' });
+
+  const [stdout, stderr, exitCode] = await Promise.all([
+    new Response(process.stdout).text(),
+    new Response(process.stderr).text(),
+    process.exited,
+  ]);
+
+  return { stdout, stderr, exitCode };
+}
 
 describe('CLI', () => {
+  test(`should have the right version`, async () => {
+    const result = await execute(['--version']);
+
+    expect(result).toMatchSnapshot({ stdout: `${version}\n` });
+  });
+
   const schemaFiles = readdirSync(schemasDir).filter((file) => file.endsWith('.yaml'));
 
   for (const schemaFile of schemaFiles) {
     test(`generates types for ${schemaFile}`, async () => {
       const schemaPath = join(schemasDir, schemaFile);
-      let output = '';
+      const result = await execute(['generate', '-i', schemaPath]);
 
-      // Mock stdout.write to capture output
-      const mockWrite = (data: string) => {
-        output += data;
-        return true;
-      };
-      const originalWrite = process.stdout.write;
-      process.stdout.write = mockWrite as any;
-
-      try {
-        await generateCommand.parseAsync(['node', 'test', 'generate', '-i', schemaPath]);
-      } finally {
-        process.stdout.write = originalWrite;
-      }
-
-      expect(output).toMatchSnapshot();
+      expect(result).toMatchSnapshot();
     });
 
     test(`generates types for ${schemaFile} from stdin`, async () => {
       const schemaPath = join(schemasDir, schemaFile);
       const schemaContent = readFileSync(schemaPath, 'utf-8');
-      let output = '';
+      const result = await execute(['generate'], new TextEncoder().encode(schemaContent));
 
-      // Mock stdout.write to capture output
-      const mockWrite = (data: string) => {
-        output += data;
-        return true;
-      };
-      const originalWrite = process.stdout.write;
-      process.stdout.write = mockWrite as any;
-
-      // Write content to temp file that will be read as stdin
-      const tempFile = 'temp-schema.yaml';
-      writeFileSync(tempFile, schemaContent, 'utf-8');
-
-      try {
-        await generateCommand.parseAsync(['node', 'test', 'generate']);
-      } finally {
-        process.stdout.write = originalWrite;
-      }
-
-      expect(output).toMatchSnapshot();
+      expect(result).toMatchSnapshot();
     });
   }
 });
