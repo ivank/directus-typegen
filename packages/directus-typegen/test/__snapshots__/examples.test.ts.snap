@@ -1,0 +1,84 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example Should successfully run schema.ts 1`] = `
+{
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": 
+"{
+  collections: Map(1) {
+    "website": {
+      isSingleton: true,
+      fields: Map(3) {
+        "id": [Object ...],
+        "title": [Object ...],
+        "content": [Object ...],
+      },
+    },
+  },
+  builtInCollections: Map {},
+  junctions: Map {},
+}
+"
+,
+}
+`;
+
+exports[`Example Should successfully run simple.ts 1`] = `
+{
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": 
+"export interface website {
+    id: string;
+    title: string;
+    content?: string;
+}
+export interface DirectusSchema {
+    website: website;
+}
+
+"
+,
+}
+`;
+
+exports[`Example Should successfully run validate.ts 1`] = `
+{
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": 
+"{
+  collections: [
+    {
+      collection: "website",
+      meta: [Object ...],
+    }
+  ],
+  fields: [
+    {
+      field: "id",
+      type: "uuid",
+      collection: "website",
+      schema: [Object ...],
+      meta: [Object ...],
+    }, {
+      field: "title",
+      type: "string",
+      collection: "website",
+      schema: [Object ...],
+      meta: [Object ...],
+    }, {
+      field: "content",
+      type: "text",
+      collection: "website",
+      schema: [Object ...],
+      meta: [Object ...],
+    }
+  ],
+  relations: [],
+}
+"
+,
+}
+`;

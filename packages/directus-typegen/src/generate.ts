@@ -141,7 +141,7 @@ export function generateTypesFromSchema(schema: Schema): string {
   // Create the Schema interface that combines all collections
   const schemaInterface = factory.createInterfaceDeclaration(
     [factory.createModifier(SyntaxKind.ExportKeyword)],
-    factory.createIdentifier('Schema'),
+    factory.createIdentifier('DirectusSchema'),
     undefined,
     undefined,
     Array.from(schema.collections).map(([collectionName, collection]) => {
@@ -168,7 +168,8 @@ export function generateTypesFromSchema(schema: Schema): string {
 
 /**
  * Generate TypeScript types from a Directus snapshot
- * @param snapshot - The Directus snapshot
+ *
+ * @param snapshot - The Directus snapshot object
  * @returns The generated TypeScript types
  */
 export function generateTypesFromSnapshot(snapshot: Record<string, unknown>): string {
