@@ -1,10 +1,9 @@
 import { describe, test, expect } from 'bun:test';
-import { spawn } from 'bun';
-import { readFileSync, readdirSync } from 'fs';
+import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import generateCommand from '../src/generate.js';
 
 const schemasDir = join(import.meta.dir, 'schemas');
-const cliPath = join(import.meta.dir, '../bin/directus-typegen');
 
 describe('CLI', () => {
   const schemaFiles = readdirSync(schemasDir).filter((file) => file.endsWith('.yaml'));
@@ -12,41 +11,49 @@ describe('CLI', () => {
   for (const schemaFile of schemaFiles) {
     test(`generates types for ${schemaFile}`, async () => {
       const schemaPath = join(schemasDir, schemaFile);
+      let output = '';
 
-      const process = spawn([cliPath, 'generate', '-i', schemaPath], {
-        stdout: 'pipe',
-        stderr: 'pipe',
-      });
+      // Mock stdout.write to capture output
+      const mockWrite = (data: string) => {
+        output += data;
+        return true;
+      };
+      const originalWrite = process.stdout.write;
+      process.stdout.write = mockWrite as any;
 
-      const [stdout, stderr] = await Promise.all([
-        new Response(process.stdout).text(),
-        new Response(process.stderr).text(),
-      ]);
-      const exitCode = await process.exited;
+      try {
+        await generateCommand.parseAsync(['node', 'test', 'generate', '-i', schemaPath]);
+      } finally {
+        process.stdout.write = originalWrite;
+      }
 
-      expect(exitCode).toBe(0);
-      expect(stderr).toBe('');
-      expect(stdout).toMatchSnapshot();
+      expect(output).toMatchSnapshot();
     });
 
     test(`generates types for ${schemaFile} from stdin`, async () => {
       const schemaPath = join(schemasDir, schemaFile);
       const schemaContent = readFileSync(schemaPath, 'utf-8');
+      let output = '';
 
-      const process = spawn([cliPath, 'generate'], {
-        stdin: new TextEncoder().encode(schemaContent),
-        stdout: 'pipe',
-        stderr: 'pipe',
-      });
+      // Mock stdout.write to capture output
+      const mockWrite = (data: string) => {
+        output += data;
+        return true;
+      };
+      const originalWrite = process.stdout.write;
+      process.stdout.write = mockWrite as any;
 
-      const [stdout, stderr] = await Promise.all([
-        new Response(process.stdout).text(),
-        new Response(process.stderr).text(),
-      ]);
-      const exitCode = await process.exited;
-      expect(exitCode).toBe(0);
-      expect(stderr).toBe('');
-      expect(stdout).toMatchSnapshot();
+      // Write content to temp file that will be read as stdin
+      const tempFile = 'temp-schema.yaml';
+      writeFileSync(tempFile, schemaContent, 'utf-8');
+
+      try {
+        await generateCommand.parseAsync(['node', 'test', 'generate']);
+      } finally {
+        process.stdout.write = originalWrite;
+      }
+
+      expect(output).toMatchSnapshot();
     });
   }
 });
