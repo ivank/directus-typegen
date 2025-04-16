@@ -5,7 +5,7 @@ exports[`CLI should have the right version 1`] = `
   "exitCode": 0,
   "stderr": "",
   "stdout": 
-"0.1.6
+"0.1.7
 "
 ,
 }

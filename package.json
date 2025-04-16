@@ -6,7 +6,7 @@
     "build": "bun --filter '@ikerin/directus-typegen' build && bun --filter '@ikerin/directus-typegen-cli' build",
     "test": "bun --filter '*' test",
     "format": "bun --filter '*' format",
-    "publish": "bun --filter '*' publish"
+    "release": "bun --filter '*' release"
   },
   "dependencies": {},
   "workspaces": [
