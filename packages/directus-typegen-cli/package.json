@@ -21,6 +21,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "build:readme": "directus-typegen generate --help | ansisvg --colorscheme 'Apple System Colors' --charboxsize 9x16 --marginsize=4x4 > docs/help.svg",
     "build": "tsc",
     "test": "bun test",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",

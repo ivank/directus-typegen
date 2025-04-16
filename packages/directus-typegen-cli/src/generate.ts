@@ -7,7 +7,7 @@ import YAML from 'yaml';
 const generateCommand = new Command();
 
 generateCommand
-  .name('generate')
+  .name('directus-typegen')
   .description('Generate TypeScript types from Directus schema snapshots')
   .version('0.1.5');
 
