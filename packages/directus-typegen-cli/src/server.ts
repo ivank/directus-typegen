@@ -32,16 +32,16 @@ const parseAuth = (auth: string): { user: string; password: string } => {
  */
 const cleanSnapshot = (snapshot: DirectusSnapshot): DirectusSnapshot => {
   const systemCollectionsWithCustomFields = snapshot.collections.filter((collection) =>
-    snapshot.fields.some((field) => field.collection === collection.collection && !field.meta.system),
+    snapshot.fields.some((field) => field.collection === collection.collection && !field.meta?.system),
   );
 
   const collections = snapshot.collections
-    .filter((collection) => !collection.meta.system)
+    .filter((collection) => !collection.meta?.system)
     .concat(systemCollectionsWithCustomFields);
 
   const fields = snapshot.fields.filter((field) => {
     const collection = collections.find((collection) => collection.collection === field.collection);
-    return collection ? (collection.meta.system ? !field.meta.system : true) : false;
+    return collection ? (collection.meta?.system ? !field.meta?.system : true) : false;
   });
 
   const relations = snapshot.relations.filter((relation) =>
