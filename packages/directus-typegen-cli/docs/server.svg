@@ -1,0 +1,32 @@
+<svg width="719px" height="264px" viewBox="0 0 719 264" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+    <style>
+        * {
+            font-family: Courier, monospace;
+            font-size: 14px;
+        }
+        tspan, text {
+            font-variant-ligatures: none;
+            dominant-baseline: central;
+            white-space: pre;
+            fill: #ffffff;
+        }
+        .bg {
+            stroke-width: "0.5px";
+        }
+    </style>
+    <rect width="100%" height="100%" x="0" y="0" style="fill: #1e1e1e"/>
+<text x="4px" y="12px"><tspan>Usage: directus-typegen server [options]</tspan></text>
+<text x="4px" y="44px"><tspan>Generate Directus SDK TypeScript types from a running directus instance</tspan></text>
+<text x="4px" y="76px"><tspan>Options:</tspan></text>
+<text x="4px" y="92px"><tspan>  -l, --url &lt;url&gt;             The URL of the directus instance</tspan></text>
+<text x="4px" y="108px"><tspan>  -h, --header &lt;header&gt;       The header to use to authenticate with the</tspan></text>
+<text x="4px" y="124px"><tspan>                              directus instance (default: {})</tspan></text>
+<text x="4px" y="140px"><tspan>  -u, --user &lt;user:password&gt;  The user and password to use to authenticate with</tspan></text>
+<text x="4px" y="156px"><tspan>                              the directus instance (mimics curl basic auth)</tspan></text>
+<text x="4px" y="172px"><tspan>                              (env: DIRECTUS_AUTH)</tspan></text>
+<text x="4px" y="188px"><tspan>  -t, --token &lt;token&gt;         The token to use to authenticate with the</tspan></text>
+<text x="4px" y="204px"><tspan>                              directus instance (env: DIRECTUS_TOKEN)</tspan></text>
+<text x="4px" y="220px"><tspan>  -o, --output &lt;file&gt;         Output TypeScript file. If not provided, writes</tspan></text>
+<text x="4px" y="236px"><tspan>                              to stdout</tspan></text>
+<text x="4px" y="252px"><tspan>  --help                      display help for command</tspan></text>
+</svg>

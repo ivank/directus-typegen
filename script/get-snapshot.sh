@@ -14,7 +14,7 @@ else
   END=''
 fi
 
-SCHEMA_FILE=schema.yaml
+SNAPSHOT_FILE=snapshot.yaml
 
 # Declare required commands and the steps needed to install them
 declare -A REQUIRED_COMMANDS
@@ -22,17 +22,18 @@ declare -A REQUIRED_COMMANDS
 REQUIRED_COMMANDS["docker"]="https://docs.docker.com/engine/install/"
 
 USAGE="
-Usage: $(basename "$0") -p <FROM PROJECT> [OPTIONS]
+Usage: $0 -f <SNAPSHOT FILE> [OPTIONS]
 
 This script downloads the data model snapshot saves it in the example folder
 Following instructions from: https://www.restack.io/docs/directus-knowledge-directus-export-data-model
 
 Examples:
 
-    script/update-schema.sh
+    $0
+    $0 -f /tmp/snapshot.yaml
 
 Options:
-  -f ${CYAN}output-file${END}        the file output. Default \"$SCHEMA_FILE\"
+  -f ${CYAN}snapshot-file${END}      the snapshot file. Default \"$SNAPSHOT_FILE\"
   -h ${CYAN}${END}                   Show this message
 
 Required commands: ${!REQUIRED_COMMANDS[*]}
@@ -41,7 +42,7 @@ Required commands: ${!REQUIRED_COMMANDS[*]}
 while getopts ":p:f:hy" opt; do
   case ${opt} in
   f)
-    SCHEMA_FILE=$OPTARG
+    SNAPSHOT_FILE=$OPTARG
     ;;
   h)
     echo -e "$USAGE"
@@ -69,6 +70,6 @@ done
 
 docker exec "directus" npx directus schema snapshot ./snapshot.yaml --yes
 
-echo -e "Snapshot generated. Downloading to ${CYAN}$SCHEMA_FILE${END} ..."
+echo -e "Snapshot generated. Downloading to ${CYAN}$SNAPSHOT_FILE${END} ..."
 
-docker cp "directus":/directus/snapshot.yaml "$SCHEMA_FILE"
+docker cp "directus":/directus/snapshot.yaml "$SNAPSHOT_FILE"

@@ -119,9 +119,9 @@ export const toSchema = (snapshot: DirectusSnapshot): Schema => {
   const junctions = toAllRelationJunctionSnapshots(snapshot).reduce(
     (acc, relation) =>
       acc.set(relation.collection, {
-        itemField: relation.meta.many_field,
-        collectionField: relation.meta.one_collection_field,
-        allowedCollections: relation.meta.one_allowed_collections,
+        itemField: relation.meta?.many_field ?? '',
+        collectionField: relation.meta?.one_collection_field ?? '',
+        allowedCollections: relation.meta?.one_allowed_collections ?? [],
       }),
     new Map<string, JunctionSchema>(),
   );

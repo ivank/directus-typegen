@@ -1,3 +1,3 @@
-import generateCommand from './generate.js';
+import directusTypegen from './directus-typegen.js';
 
-generateCommand.parse();
+directusTypegen.parse(process.argv);

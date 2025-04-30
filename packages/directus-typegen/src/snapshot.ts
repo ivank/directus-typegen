@@ -73,67 +73,86 @@ const fieldSnapshot = z.object({
       is_primary_key: z.boolean().optional(),
       is_nullable: z.boolean().optional(),
     })
+    .nullable()
     .optional(),
-  meta: z.object({
-    special: z.array(z.string()).nullable(),
-    required: z.boolean(),
-    options: z
-      .object({
-        choices: z.array(z.object({ value: z.string() })).optional(),
-      })
-      .nullable(),
-  }),
+  meta: z
+    .object({
+      system: z.boolean().nullable().optional(),
+      special: z.array(z.string()).nullable(),
+      required: z.boolean(),
+      options: z
+        .object({
+          choices: z
+            .array(z.union([z.object({ value: z.string().nullable().optional() }), z.string()]))
+            .optional()
+            .nullable(),
+        })
+        .nullable(),
+    })
+    .nullable(),
+});
+
+const relationMetaSnapshot = z.object({
+  system: z.boolean().nullable().optional(),
+  junction_field: z.string().nullable(),
+  many_collection: z.string().nullable(),
+  many_field: z.string().nullable(),
+  one_allowed_collections: z.array(z.string()).nullable(),
+  one_collection: z.string().nullable(),
+  one_collection_field: z.string().nullable(),
+  one_field: z.string().nullable(),
 });
 
 const relationSnapshot = z.object({
   collection: z.string(),
   field: z.string(),
   related_collection: z.string().nullable(),
-  meta: z.object({
-    junction_field: z.string().nullable(),
-    many_collection: z.string().nullable(),
-    many_field: z.string().nullable(),
-    one_allowed_collections: z.array(z.string()).nullable(),
-    one_collection: z.string().nullable(),
-    one_collection_field: z.string().nullable(),
-    one_field: z.string().nullable(),
-  }),
+  meta: relationMetaSnapshot.nullable(),
 });
 
 const relationJunctionSnapshot = relationSnapshot.extend({
-  meta: relationSnapshot.shape.meta.extend({
-    junction_field: z.string(),
-    many_field: z.string(),
-    one_allowed_collections: z.array(z.string()).nonempty(),
-    one_collection_field: z.string(),
-    many_collection: z.string(),
-  }),
+  meta: relationMetaSnapshot
+    .extend({
+      junction_field: z.string(),
+      many_field: z.string(),
+      one_allowed_collections: z.array(z.string()).nonempty(),
+      one_collection_field: z.string(),
+      many_collection: z.string(),
+    })
+    .nullable(),
 });
 
 const relationManySnapshot = relationSnapshot.extend({
   related_collection: z.string(),
-  meta: relationSnapshot.shape.meta.extend({
-    many_collection: z.string(),
-    many_field: z.string(),
-    one_collection: z.string(),
-    one_field: z.string(),
-  }),
+  meta: relationMetaSnapshot
+    .extend({
+      many_collection: z.string(),
+      many_field: z.string(),
+      one_collection: z.string(),
+      one_field: z.string().nullable(),
+    })
+    .nullable(),
 });
 
 const relationOneSnapshot = relationSnapshot.extend({
   related_collection: z.string(),
-  meta: relationSnapshot.shape.meta.extend({
-    many_collection: z.string(),
-    many_field: z.string(),
-    one_collection: z.string(),
-  }),
+  meta: relationMetaSnapshot
+    .extend({
+      many_collection: z.string(),
+      many_field: z.string(),
+      one_collection: z.string(),
+    })
+    .nullable(),
 });
 
 const collectionSnapshot = z.object({
   collection: z.string(),
-  meta: z.object({
-    singleton: z.boolean().nullable(),
-  }),
+  meta: z
+    .object({
+      system: z.boolean().nullable().optional(),
+      singleton: z.boolean().nullable().optional(),
+    })
+    .nullable(),
 });
 
 // Main schema
@@ -163,7 +182,9 @@ export type RelationOneSnapshot = z.infer<typeof relationOneSnapshot>;
 export const toDirectusSnapshot = (value: Record<string, unknown>) => directusSnapshot.parse(value);
 
 export const toFieldSnapshotChoices = (field: FieldSnapshot): string[] | undefined =>
-  field.meta?.options?.choices?.map((choice) => choice.value);
+  field.meta?.options?.choices
+    ?.map((choice) => (typeof choice === 'string' ? choice : choice.value))
+    .filter((value): value is string => value !== null);
 
 export const toCollectionFieldSnapshots = (
   snapshot: DirectusSnapshot,
@@ -189,7 +210,7 @@ export const toRelationManySnapshot = (
 ): RelationManySnapshot | undefined =>
   relationManySnapshot.safeParse(
     snapshot.relations.find(
-      (relation) => relation.related_collection === field.collection && relation.meta.one_field === field.field,
+      (relation) => relation.related_collection === field.collection && relation.meta?.one_field === field.field,
     ),
   )?.data;
 
@@ -205,7 +226,7 @@ export const toRelationOneSnapshot = (
 ): RelationOneSnapshot | undefined =>
   relationOneSnapshot.safeParse(
     snapshot.relations.find(
-      (relation) => relation.collection === field.collection && relation.meta.many_field === field.field,
+      (relation) => relation.collection === field.collection && relation.meta?.many_field === field.field,
     ),
   )?.data;
 

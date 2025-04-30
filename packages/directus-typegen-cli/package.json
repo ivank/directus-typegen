@@ -29,12 +29,17 @@
     "release": "if [ $(bun run is-already-published) == true ]; then echo 'Already published'; else bun publish --access public; fi"
   },
   "dependencies": {
+    "@directus/sdk": "^19.1.0",
+    "@ikerin/directus-typegen": "workspace:*",
     "commander": "^11.1.0",
-    "@ikerin/directus-typegen": "workspace:0.1.7"
+    "graphql": "^16.10.0"
   },
   "devDependencies": {
+    "@commander-js/extra-typings": "^13.1.0",
+    "@mswjs/http-middleware": "^0.10.3",
     "@types/node": "^20.11.19",
-    "typescript": "^5.8.3",
-    "prettier": "^3.2.5"
+    "msw": "2.4.3",
+    "prettier": "^3.2.5",
+    "typescript": "^5.8.3"
   }
 }
