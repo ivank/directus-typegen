@@ -32,7 +32,8 @@
     "@directus/sdk": "^19.1.0",
     "@ikerin/directus-typegen": "workspace:*",
     "commander": "^11.1.0",
-    "graphql": "^16.10.0"
+    "graphql": "^16.10.0",
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
     "@commander-js/extra-typings": "^13.1.0",
@@ -40,6 +41,6 @@
     "@types/node": "^20.11.19",
     "msw": "2.4.3",
     "prettier": "^3.2.5",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   }
 }
