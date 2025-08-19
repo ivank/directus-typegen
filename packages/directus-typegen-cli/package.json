@@ -1,6 +1,6 @@
 {
   "name": "@ikerin/directus-typegen-cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "CLI tool for generating Directus SDK TypeScript types",
   "repository": {
     "type": "git",

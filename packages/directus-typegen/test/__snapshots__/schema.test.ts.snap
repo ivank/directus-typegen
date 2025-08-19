@@ -482,14 +482,6 @@ Map {
 ,
       "isSingleton": false,
     },
-    "app_blocks" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
-    "app_content" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
     "app_static_settings" => {
       "fields": 
 Map {
@@ -1615,14 +1607,6 @@ Map {
 ,
       "isSingleton": false,
     },
-    "articles_blocks" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
-    "articles_cards" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
     "articles_cards_dashboard" => {
       "fields": 
 Map {
@@ -1960,10 +1944,6 @@ Map {
         },
       }
 ,
-      "isSingleton": false,
-    },
-    "articles_link_tables" => {
-      "fields": Map {},
       "isSingleton": false,
     },
     "articles_stories" => {
@@ -3565,10 +3545,6 @@ Map {
 ,
       "isSingleton": false,
     },
-    "docapp_content" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
     "docapp_settings" => {
       "fields": 
 Map {
@@ -4388,10 +4364,6 @@ Map {
         },
       }
 ,
-      "isSingleton": false,
-    },
-    "global_content" => {
-      "fields": Map {},
       "isSingleton": false,
     },
     "language" => {
@@ -5842,10 +5814,6 @@ Map {
 ,
       "isSingleton": false,
     },
-    "sories_link_tables" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
     "stories" => {
       "fields": 
 Map {
@@ -6717,10 +6685,6 @@ Map {
         },
       }
 ,
-      "isSingleton": false,
-    },
-    "website" => {
-      "fields": Map {},
       "isSingleton": false,
     },
     "website_block_carousel" => {
@@ -8602,10 +8566,6 @@ Map {
 ,
       "isSingleton": false,
     },
-    "website_blocks" => {
-      "fields": Map {},
-      "isSingleton": false,
-    },
     "website_component_clinically_reviewed" => {
       "fields": 
 Map {
@@ -9912,10 +9872,6 @@ Map {
         },
       }
 ,
-      "isSingleton": false,
-    },
-    "website_components" => {
-      "fields": Map {},
       "isSingleton": false,
     },
     "website_page_about_us" => {
@@ -13087,10 +13043,6 @@ Map {
         },
       }
 ,
-      "isSingleton": false,
-    },
-    "website_pages" => {
-      "fields": Map {},
       "isSingleton": false,
     },
   }

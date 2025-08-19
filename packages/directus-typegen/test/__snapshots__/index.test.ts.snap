@@ -96,10 +96,6 @@ exports[`generateTypesFromSnapshot generates correct types for schema.yaml 1`] =
     content?: string;
     status: "published" | "draft" | "archived";
 }
-export interface app_blocks {
-}
-export interface app_content {
-}
 export interface app_static_settings {
     id: string;
     user_created?: string | directus_users;
@@ -307,10 +303,6 @@ export interface articles_block_breaker_text {
     articles_id?: string | articles;
     block_breaker_text_id?: number | block_breaker_text;
 }
-export interface articles_blocks {
-}
-export interface articles_cards {
-}
 export interface articles_cards_dashboard {
     id: number;
     status: "published" | "draft" | "archived";
@@ -349,8 +341,6 @@ export interface articles_cards_web {
     paragraph?: string;
     subtitle?: string;
     image?: string | directus_files;
-}
-export interface articles_link_tables {
 }
 export interface articles_stories {
     id: string;
@@ -548,8 +538,6 @@ export interface consultation_specialty_areas {
     tile_description?: string;
     fact_code?: string | fact;
 }
-export interface docapp_content {
-}
 export interface docapp_settings {
     id: string;
     status: "published" | "draft" | "archived";
@@ -647,8 +635,6 @@ export interface fluent_team {
     linkedin_icon?: string;
     background_color?: string;
     designation?: string;
-}
-export interface global_content {
 }
 export interface language {
     code: string;
@@ -821,8 +807,6 @@ export interface socialmedia_links {
     icon_patapp?: string | directus_files;
     application?: "json";
 }
-export interface sories_link_tables {
-}
 export interface stories {
     id: string;
     status: "published" | "draft" | "archived";
@@ -943,8 +927,6 @@ export interface torchbearer {
     target_ios?: string;
     target_webapp?: string;
     querystring_uuid_variable?: string;
-}
-export interface website {
 }
 export interface website_block_carousel {
     id: string;
@@ -1165,8 +1147,6 @@ export interface website_block_testimonials_testimonials {
     website_block_testimonials_id?: string | website_block_testimonials;
     testimonials_id?: string | testimonials;
 }
-export interface website_blocks {
-}
 export interface website_component_clinically_reviewed {
     id: string;
     status: "published" | "draft" | "archived";
@@ -1320,8 +1300,6 @@ export interface website_component_prefooter {
     legal_note?: string;
     image_background_left?: string | directus_files;
     image_background_right?: string | directus_files;
-}
-export interface website_components {
 }
 export interface website_page_about_us {
     id: string;
@@ -1862,8 +1840,6 @@ export type website_page_why_we_care_content = {
     collection: "website_block_showcase";
     sort: number;
 };
-export interface website_pages {
-}
 export interface directus_users {
 }
 export interface directus_files {
@@ -1874,8 +1850,6 @@ export interface directus_files {
 }
 export interface DirectusSchema {
     app_block_richtext: app_block_richtext[];
-    app_blocks: app_blocks[];
-    app_content: app_content[];
     app_static_settings: app_static_settings;
     app_static_settings_socialmedia_links: app_static_settings_socialmedia_links[];
     article_sources: article_sources[];
@@ -1888,12 +1862,9 @@ export interface DirectusSchema {
     articles_articles_cards_story: articles_articles_cards_story[];
     articles_articles_cards_web: articles_articles_cards_web[];
     articles_block_breaker_text: articles_block_breaker_text[];
-    articles_blocks: articles_blocks[];
-    articles_cards: articles_cards[];
     articles_cards_dashboard: articles_cards_dashboard[];
     articles_cards_story: articles_cards_story[];
     articles_cards_web: articles_cards_web[];
-    articles_link_tables: articles_link_tables[];
     articles_stories: articles_stories[];
     articles_topics: articles_topics[];
     articles_topics_1: articles_topics_1[];
@@ -1912,14 +1883,12 @@ export interface DirectusSchema {
     care_story_card_openslate: care_story_card_openslate[];
     care_story_card_questionnaire: care_story_card_questionnaire[];
     consultation_specialty_areas: consultation_specialty_areas[];
-    docapp_content: docapp_content[];
     docapp_settings: docapp_settings;
     fact: fact[];
     faq_groups: faq_groups[];
     faq_groups_faqs: faq_groups_faqs[];
     faqs: faqs[];
     fluent_team: fluent_team[];
-    global_content: global_content[];
     language: language[];
     medical_reviewer: medical_reviewer[];
     medical_reviewer_medical_reviewer_qualification: medical_reviewer_medical_reviewer_qualification[];
@@ -1932,7 +1901,6 @@ export interface DirectusSchema {
     record_story_card_prompt: record_story_card_prompt[];
     record_stroy_card_dyk: record_stroy_card_dyk[];
     socialmedia_links: socialmedia_links[];
-    sories_link_tables: sories_link_tables[];
     stories: stories[];
     stories_care_story_card_dashboard: stories_care_story_card_dashboard[];
     stories_care_story_story_cards: stories_care_story_story_cards[];
@@ -1944,7 +1912,6 @@ export interface DirectusSchema {
     topics: topics[];
     topics_topics: topics_topics[];
     torchbearer: torchbearer[];
-    website: website[];
     website_block_carousel: website_block_carousel[];
     website_block_carousel_slides: website_block_carousel_slides[];
     website_block_carousel_website_block_carousel_slides: website_block_carousel_website_block_carousel_slides[];
@@ -1962,7 +1929,6 @@ export interface DirectusSchema {
     website_block_teaser: website_block_teaser[];
     website_block_testimonials: website_block_testimonials[];
     website_block_testimonials_testimonials: website_block_testimonials_testimonials[];
-    website_blocks: website_blocks[];
     website_component_clinically_reviewed: website_component_clinically_reviewed;
     website_component_delete_account: website_component_delete_account;
     website_component_early_access: website_component_early_access;
@@ -1974,7 +1940,6 @@ export interface DirectusSchema {
     website_component_menu_menu_items: website_component_menu_menu_items[];
     website_component_menu_socialmedia: website_component_menu_socialmedia[];
     website_component_prefooter: website_component_prefooter[];
-    website_components: website_components[];
     website_page_about_us: website_page_about_us;
     website_page_about_us_content: website_page_about_us_content[];
     website_page_author: website_page_author;
@@ -2003,7 +1968,6 @@ export interface DirectusSchema {
     website_page_sandbox_page_content: website_page_sandbox_page_content[];
     website_page_why_we_care: website_page_why_we_care;
     website_page_why_we_care_content: website_page_why_we_care_content[];
-    website_pages: website_pages[];
 }
 "
 `;

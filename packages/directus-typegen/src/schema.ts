@@ -83,6 +83,11 @@ export const toSchema = (snapshot: DirectusSnapshot): Schema => {
   const collections = toAllCollectionSnapshots(snapshot).reduce((acc, collection) => {
     const fields = toCollectionFieldSnapshots(snapshot, collection).filter(isFieldData);
 
+    // Remove empty collections from the list as they cause the typescript sdk type inference to fail
+    if (fields.length === 0 && !collection.collection.startsWith('directus_')) {
+      return acc;
+    }
+
     return acc.set(collection.collection, {
       isSingleton: collection.meta?.singleton ?? false,
       fields: fields.reduce(
