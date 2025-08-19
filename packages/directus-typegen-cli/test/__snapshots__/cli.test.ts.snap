@@ -1,39 +1,11 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
 exports[`CLI should have the right version 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
   "stdout": 
-"0.2.0
-"
-,
-}
-`;
-
-exports[`CLI generates types for many_to_many.yaml 1`] = `
-{
-  "exitCode": 0,
-  "stderr": "",
-  "stdout": 
-"export interface article {
-    id: string;
-    sources?: string[] | article_source[];
-}
-export interface article_source {
-    id: number;
-    article_id?: string | article;
-    source_id?: number | source;
-}
-export interface source {
-    id: number;
-    text: string;
-}
-export interface DirectusSchema {
-    article: article[];
-    article_source: article_source[];
-    source: source[];
-}
+"0.2.1
 "
 ,
 }
@@ -63,6 +35,47 @@ export interface DirectusSchema {
 }
 `;
 
+exports[`CLI generates types for many_to_any.yaml 1`] = `
+{
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": 
+"export interface article {
+    id: string;
+    blocks?: string[] | article_blocks[];
+}
+export type article_blocks = {
+    id: number;
+    article_id: string | article;
+    item: source;
+    collection: "source";
+} | {
+    id: number;
+    article_id: string | article;
+    item: hero;
+    collection: "hero";
+};
+export interface hero {
+    id: number;
+    image?: string | directus_files;
+}
+export interface source {
+    id: number;
+    text: string;
+}
+export interface directus_files {
+}
+export interface DirectusSchema {
+    article: article[];
+    article_blocks: article_blocks[];
+    hero: hero[];
+    source: source[];
+}
+"
+,
+}
+`;
+
 exports[`CLI generates types for one_to_many.yaml 1`] = `
 {
   "exitCode": 0,
@@ -86,18 +99,20 @@ export interface DirectusSchema {
 }
 `;
 
-exports[`CLI generates types for singleton.yaml 1`] = `
+exports[`CLI generates types for image_custom.yaml 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
   "stdout": 
-"export interface website {
+"export interface article {
     id: string;
-    title: string;
-    content?: string;
+    hero_image: string | directus_files;
+}
+export interface directus_files {
+    copyright?: string;
 }
 export interface DirectusSchema {
-    website: website;
+    article: article[];
 }
 "
 ,
@@ -2034,68 +2049,25 @@ export interface DirectusSchema {
 }
 `;
 
-exports[`CLI generates types for many_to_any.yaml 1`] = `
+exports[`CLI generates types for singleton.yaml 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
   "stdout": 
-"export interface article {
+"export interface website {
     id: string;
-    blocks?: string[] | article_blocks[];
-}
-export type article_blocks = {
-    id: number;
-    article_id: string | article;
-    item: source;
-    collection: "source";
-} | {
-    id: number;
-    article_id: string | article;
-    item: hero;
-    collection: "hero";
-};
-export interface hero {
-    id: number;
-    image?: string | directus_files;
-}
-export interface source {
-    id: number;
-    text: string;
-}
-export interface directus_files {
+    title: string;
+    content?: string;
 }
 export interface DirectusSchema {
-    article: article[];
-    article_blocks: article_blocks[];
-    hero: hero[];
-    source: source[];
+    website: website;
 }
 "
 ,
 }
 `;
 
-exports[`CLI generates types for image_custom.yaml 1`] = `
-{
-  "exitCode": 0,
-  "stderr": "",
-  "stdout": 
-"export interface article {
-    id: string;
-    hero_image: string | directus_files;
-}
-export interface directus_files {
-    copyright?: string;
-}
-export interface DirectusSchema {
-    article: article[];
-}
-"
-,
-}
-`;
-
-exports[`CLI generate snapshot from stdin for many_to_many.yaml 1`] = `
+exports[`CLI generates types for many_to_many.yaml 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
@@ -2147,6 +2119,47 @@ export interface DirectusSchema {
 }
 `;
 
+exports[`CLI generate snapshot from stdin for many_to_any.yaml 1`] = `
+{
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": 
+"export interface article {
+    id: string;
+    blocks?: string[] | article_blocks[];
+}
+export type article_blocks = {
+    id: number;
+    article_id: string | article;
+    item: source;
+    collection: "source";
+} | {
+    id: number;
+    article_id: string | article;
+    item: hero;
+    collection: "hero";
+};
+export interface hero {
+    id: number;
+    image?: string | directus_files;
+}
+export interface source {
+    id: number;
+    text: string;
+}
+export interface directus_files {
+}
+export interface DirectusSchema {
+    article: article[];
+    article_blocks: article_blocks[];
+    hero: hero[];
+    source: source[];
+}
+"
+,
+}
+`;
+
 exports[`CLI generate snapshot from stdin for one_to_many.yaml 1`] = `
 {
   "exitCode": 0,
@@ -2170,18 +2183,20 @@ export interface DirectusSchema {
 }
 `;
 
-exports[`CLI generate snapshot from stdin for singleton.yaml 1`] = `
+exports[`CLI generate snapshot from stdin for image_custom.yaml 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
   "stdout": 
-"export interface website {
+"export interface article {
     id: string;
-    title: string;
-    content?: string;
+    hero_image: string | directus_files;
+}
+export interface directus_files {
+    copyright?: string;
 }
 export interface DirectusSchema {
-    website: website;
+    article: article[];
 }
 "
 ,
@@ -4118,61 +4133,46 @@ export interface DirectusSchema {
 }
 `;
 
-exports[`CLI generate snapshot from stdin for many_to_any.yaml 1`] = `
+exports[`CLI generate snapshot from stdin for singleton.yaml 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
   "stdout": 
-"export interface article {
+"export interface website {
     id: string;
-    blocks?: string[] | article_blocks[];
-}
-export type article_blocks = {
-    id: number;
-    article_id: string | article;
-    item: source;
-    collection: "source";
-} | {
-    id: number;
-    article_id: string | article;
-    item: hero;
-    collection: "hero";
-};
-export interface hero {
-    id: number;
-    image?: string | directus_files;
-}
-export interface source {
-    id: number;
-    text: string;
-}
-export interface directus_files {
+    title: string;
+    content?: string;
 }
 export interface DirectusSchema {
-    article: article[];
-    article_blocks: article_blocks[];
-    hero: hero[];
-    source: source[];
+    website: website;
 }
 "
 ,
 }
 `;
 
-exports[`CLI generate snapshot from stdin for image_custom.yaml 1`] = `
+exports[`CLI generate snapshot from stdin for many_to_many.yaml 1`] = `
 {
   "exitCode": 0,
   "stderr": "",
   "stdout": 
 "export interface article {
     id: string;
-    hero_image: string | directus_files;
+    sources?: string[] | article_source[];
 }
-export interface directus_files {
-    copyright?: string;
+export interface article_source {
+    id: number;
+    article_id?: string | article;
+    source_id?: number | source;
+}
+export interface source {
+    id: number;
+    text: string;
 }
 export interface DirectusSchema {
     article: article[];
+    article_source: article_source[];
+    source: source[];
 }
 "
 ,

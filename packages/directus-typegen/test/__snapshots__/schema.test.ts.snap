@@ -1,104 +1,4 @@
-// Bun Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`toSchema generates correct types for many_to_many.yaml 1`] = `
-{
-  "builtInCollections": Map {},
-  "collections": 
-Map {
-    "article" => {
-      "fields": 
-Map {
-        "id" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-        "sources" => {
-          "relation": {
-            "collection": "article_source",
-            "type": "Many",
-          },
-          "required": false,
-          "type": {
-            "items": {
-              "type": "primitive",
-              "value": "string",
-            },
-            "type": "array",
-          },
-        },
-      }
-,
-      "isSingleton": false,
-    },
-    "article_source" => {
-      "fields": 
-Map {
-        "id" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "number",
-          },
-        },
-        "article_id" => {
-          "relation": {
-            "collection": "article",
-            "type": "One",
-          },
-          "required": false,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-        "source_id" => {
-          "relation": {
-            "collection": "source",
-            "type": "One",
-          },
-          "required": false,
-          "type": {
-            "type": "primitive",
-            "value": "number",
-          },
-        },
-      }
-,
-      "isSingleton": false,
-    },
-    "source" => {
-      "fields": 
-Map {
-        "id" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "number",
-          },
-        },
-        "text" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-      }
-,
-      "isSingleton": false,
-    },
-  }
-,
-  "junctions": Map {},
-}
-`;
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
 
 exports[`toSchema generates correct types for many_to_one.yaml 1`] = `
 {
@@ -166,6 +66,154 @@ Map {
   }
 ,
   "junctions": Map {},
+}
+`;
+
+exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
+{
+  "builtInCollections": 
+Map {
+    "directus_files" => {
+      "fields": Map {},
+    },
+  }
+,
+  "collections": 
+Map {
+    "article" => {
+      "fields": 
+Map {
+        "id" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+        "blocks" => {
+          "relation": {
+            "collection": "article_blocks",
+            "type": "Many",
+          },
+          "required": false,
+          "type": {
+            "items": {
+              "type": "primitive",
+              "value": "string",
+            },
+            "type": "array",
+          },
+        },
+      }
+,
+      "isSingleton": false,
+    },
+    "article_blocks" => {
+      "fields": 
+Map {
+        "id" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "number",
+          },
+        },
+        "article_id" => {
+          "relation": {
+            "collection": "article",
+            "type": "One",
+          },
+          "required": false,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+        "item" => {
+          "relation": undefined,
+          "required": false,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+        "collection" => {
+          "relation": undefined,
+          "required": false,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+      }
+,
+      "isSingleton": false,
+    },
+    "hero" => {
+      "fields": 
+Map {
+        "id" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "number",
+          },
+        },
+        "image" => {
+          "relation": {
+            "collection": "directus_files",
+            "type": "One",
+          },
+          "required": false,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+      }
+,
+      "isSingleton": false,
+    },
+    "source" => {
+      "fields": 
+Map {
+        "id" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "number",
+          },
+        },
+        "text" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+      }
+,
+      "isSingleton": false,
+    },
+  }
+,
+  "junctions": 
+Map {
+    "article_blocks" => {
+      "allowedCollections": [
+        "source",
+        "hero",
+      ],
+      "collectionField": "collection",
+      "itemField": "item",
+    },
+  }
+,
 }
 `;
 
@@ -243,12 +291,29 @@ Map {
 }
 `;
 
-exports[`toSchema generates correct types for singleton.yaml 1`] = `
+exports[`toSchema generates correct types for image_custom.yaml 1`] = `
 {
-  "builtInCollections": Map {},
+  "builtInCollections": 
+Map {
+    "directus_files" => {
+      "fields": 
+Map {
+        "copyright" => {
+          "relation": undefined,
+          "required": false,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+      }
+,
+    },
+  }
+,
   "collections": 
 Map {
-    "website" => {
+    "article" => {
       "fields": 
 Map {
         "id" => {
@@ -259,17 +324,12 @@ Map {
             "value": "string",
           },
         },
-        "title" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "string",
+        "hero_image" => {
+          "relation": {
+            "collection": "directus_files",
+            "type": "One",
           },
-        },
-        "content" => {
-          "relation": undefined,
-          "required": false,
+          "required": true,
           "type": {
             "type": "primitive",
             "value": "string",
@@ -277,7 +337,7 @@ Map {
         },
       }
 ,
-      "isSingleton": true,
+      "isSingleton": false,
     },
   }
 ,
@@ -13210,15 +13270,51 @@ Map {
 }
 `;
 
-exports[`toSchema generates correct types for many_to_any.yaml 1`] = `
+exports[`toSchema generates correct types for singleton.yaml 1`] = `
 {
-  "builtInCollections": 
+  "builtInCollections": Map {},
+  "collections": 
 Map {
-    "directus_files" => {
-      "fields": Map {},
+    "website" => {
+      "fields": 
+Map {
+        "id" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+        "title" => {
+          "relation": undefined,
+          "required": true,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+        "content" => {
+          "relation": undefined,
+          "required": false,
+          "type": {
+            "type": "primitive",
+            "value": "string",
+          },
+        },
+      }
+,
+      "isSingleton": true,
     },
   }
 ,
+  "junctions": Map {},
+}
+`;
+
+exports[`toSchema generates correct types for many_to_many.yaml 1`] = `
+{
+  "builtInCollections": Map {},
   "collections": 
 Map {
     "article" => {
@@ -13232,9 +13328,9 @@ Map {
             "value": "string",
           },
         },
-        "blocks" => {
+        "sources" => {
           "relation": {
-            "collection": "article_blocks",
+            "collection": "article_source",
             "type": "Many",
           },
           "required": false,
@@ -13250,7 +13346,7 @@ Map {
 ,
       "isSingleton": false,
     },
-    "article_blocks" => {
+    "article_source" => {
       "fields": 
 Map {
         "id" => {
@@ -13272,46 +13368,15 @@ Map {
             "value": "string",
           },
         },
-        "item" => {
-          "relation": undefined,
-          "required": false,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-        "collection" => {
-          "relation": undefined,
-          "required": false,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-      }
-,
-      "isSingleton": false,
-    },
-    "hero" => {
-      "fields": 
-Map {
-        "id" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "number",
-          },
-        },
-        "image" => {
+        "source_id" => {
           "relation": {
-            "collection": "directus_files",
+            "collection": "source",
             "type": "One",
           },
           "required": false,
           "type": {
             "type": "primitive",
-            "value": "string",
+            "value": "number",
           },
         },
       }
@@ -13331,71 +13396,6 @@ Map {
         },
         "text" => {
           "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-      }
-,
-      "isSingleton": false,
-    },
-  }
-,
-  "junctions": 
-Map {
-    "article_blocks" => {
-      "allowedCollections": [
-        "source",
-        "hero",
-      ],
-      "collectionField": "collection",
-      "itemField": "item",
-    },
-  }
-,
-}
-`;
-
-exports[`toSchema generates correct types for image_custom.yaml 1`] = `
-{
-  "builtInCollections": 
-Map {
-    "directus_files" => {
-      "fields": 
-Map {
-        "copyright" => {
-          "relation": undefined,
-          "required": false,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-      }
-,
-    },
-  }
-,
-  "collections": 
-Map {
-    "article" => {
-      "fields": 
-Map {
-        "id" => {
-          "relation": undefined,
-          "required": true,
-          "type": {
-            "type": "primitive",
-            "value": "string",
-          },
-        },
-        "hero_image" => {
-          "relation": {
-            "collection": "directus_files",
-            "type": "One",
-          },
           "required": true,
           "type": {
             "type": "primitive",
